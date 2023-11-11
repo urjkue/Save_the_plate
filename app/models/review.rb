@@ -1,3 +1,6 @@
 class Review < ApplicationRecord
-  belong_to :user, :business
+  belongs_to :user
+  belongs_to :business
+  validates :comment, presence: true, length: { minimum: 6 }
+  # validates :rating, presence: true, value: { maximum: 10 }
 end
