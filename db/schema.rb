@@ -10,9 +10,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_07_162420) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_11_074707) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baskets", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "description", default: "", null: false
+    t.float "price", default: 0.0, null: false
+    t.date "availability", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "business_id", null: false
+    t.index ["business_id"], name: "index_baskets_on_business_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "cart_id", default: [], array: true
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "category", default: "", null: false
+    t.string "name", default: "", null: false
+    t.string "description", default: "", null: false
+    t.string "address", default: "", null: false
+    t.float "latitude", default: 0.0, null: false
+    t.float "longitude", default: 0.0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "cart_id", null: false
+    t.index ["cart_id"], name: "index_businesses_on_cart_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "basket_id", null: false
+    t.date "pick_up", null: false
+    t.bigint "business_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["basket_id"], name: "index_carts_on_basket_id"
+    t.index ["business_id"], name: "index_carts_on_business_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "favourits", force: :cascade do |t|
+    t.bigint "basket_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["basket_id"], name: "index_favourits_on_basket_id"
+    t.index ["user_id"], name: "index_favourits_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "comment", default: "", null: false
+    t.float "rating", default: 0.0, null: false
+    t.bigint "business_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_reviews_on_business_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +84,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_162420) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.string "first_name"
+    t.string "last_name"
+    t.float "longitude"
+    t.float "latitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "baskets", "businesses"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "businesses", "carts"
+  add_foreign_key "carts", "baskets"
+  add_foreign_key "carts", "businesses"
+  add_foreign_key "carts", "users"
+  add_foreign_key "favourits", "baskets"
+  add_foreign_key "favourits", "users"
+  add_foreign_key "reviews", "businesses"
 end
