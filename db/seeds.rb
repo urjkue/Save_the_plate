@@ -78,77 +78,73 @@
 
 # db/seeds.rb
 
-# # Clear existing data
-# User.destroy_all
-# Business.destroy_all
-# Basket.destroy_all
-# Cart.destroy_all
-# Favourit.destroy_all
-# Review.destroy_all
-# Booking.destroy_all
+# # db/seeds.rb
 
-# # Create users
-# user1 = User.create!(
-#   email: 'user1@example.com',
-#   password: 'password',
-#   first_name: 'John',
-#   last_name: 'Doe',
-#   address: '123 Main St',
-#   latitude: 40.7128,
-#   longitude: -74.0060
-# )
+# Seed Users
+5.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: 'password',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude
+  )
+end
 
-# # Create businesses
-# categories = ['restaurant', 'bakery', 'supermarket']
+# Seed Businesses
+categories = ['restaurant', 'bakery', 'supermarket']
 
-# categories.each do |category|
-#   5.times do |i|
-#     business = Business.create!(
-#       category: category,
-#       name: "#{category.capitalize} #{i + 1}",
-#       description: "Description for #{category.capitalize} #{i + 1}",
-#       address: "#{i + 1}#{category.capitalize} Street",
-#       latitude: 40.7128 + (i * 0.01),
-#       longitude: -74.0060 - (i * 0.01)
-#     )
+categories.each do |category|
+  5.times do
+    business = Business.create(
+      category: category,
+      name: Faker::Company.name,
+      description: Faker::Company.catch_phrase,
+      address: Faker::Address.full_address,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
 
-#     # Create baskets for each business
-#     3.times do |j|
-#       Basket.create!(
-#         name: "Basket #{j + 1} for #{business.name}",
-#         description: "Description for Basket #{j + 1}",
-#         price: (j + 1) * 5.0,
-#         availability: Date.today + j,
-#         business: business
-#       )
-#     end
+    # Seed Baskets
+    basket = Basket.create(
+      name: "Basket for #{business.name}",
+      description: Faker::Lorem.sentence,
+      price: Faker::Commerce.price,
+      availability: Faker::Date.forward(days: 30),
+      business: business
+    )
 
-#     # Create reviews for each business
-#     Review.create!(
-#       comment: "Great #{category}!",
-#       rating: 4.5,
-#       business: business,
-#       user: user1
-#     )
+    # Associate the Basket with the Business
+    business.update(basket: basket)
 
-#     # Create Favourites for each user
-#     Favourit.create!(
-#       basket: business.baskets.first,
-#       user: user1
-#     )
+    # Seed Reviews
+    Review.create(
+      comment: Faker::Lorem.paragraph,
+      rating: rand(1..5).to_f,
+      business: business,
+      user: User.all.sample
+    )
 
-#     # Create bookings for each user
-#     Booking.create!(
-#       cart_id: [business.baskets.first.id, business.baskets.second.id],
-#       user: user1
-#     )
+    # Seed Favourites
+    Favourit.create(
+      basket: basket,
+      user: User.all.sample
+    )
 
-#     # Create carts for each user
-#     Cart.create!(
-#       user: user1,
-#       basket: business.baskets.first,
-#       pick_up: Date.today + 1,
-#       business: business
-#     )
-#   end
-# end
+    # Seed Carts
+    Cart.create(
+      user: User.all.sample,
+      basket: basket,
+      pick_up: Faker::Date.forward(days: 7),
+      business: business
+    )
+
+    # Seed Bookings
+    Booking.create(
+      cart_id: Cart.all.sample.id,
+      user: User.all.sample
+    )
+  end
+end
