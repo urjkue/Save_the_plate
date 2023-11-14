@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_many :Favourit#, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :latitude, presence: true
-  validates :longitude, presence: true
+  # validates :latitude, presence: true
+  # validates :longitude, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :address, presence: true
