@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_11_074707) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_14_111818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_074707) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "business_id", null: false
+    t.datetime "pickup"
     t.index ["business_id"], name: "index_baskets_on_business_id"
   end
 
@@ -42,8 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_074707) do
     t.float "longitude", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "cart_id", null: false
-    t.index ["cart_id"], name: "index_businesses_on_cart_id"
+    t.bigint "basket_id", null: false
+    t.index ["basket_id"], name: "index_businesses_on_basket_id"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -53,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_074707) do
     t.bigint "business_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "pickup"
     t.index ["basket_id"], name: "index_carts_on_basket_id"
     t.index ["business_id"], name: "index_carts_on_business_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
@@ -73,7 +75,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_074707) do
     t.bigint "business_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "users_id", null: false
     t.index ["business_id"], name: "index_reviews_on_business_id"
+    t.index ["users_id"], name: "index_reviews_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -95,11 +99,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_074707) do
 
   add_foreign_key "baskets", "businesses"
   add_foreign_key "bookings", "users"
-  add_foreign_key "businesses", "carts"
+  add_foreign_key "businesses", "baskets"
   add_foreign_key "carts", "baskets"
   add_foreign_key "carts", "businesses"
   add_foreign_key "carts", "users"
   add_foreign_key "favourits", "baskets"
   add_foreign_key "favourits", "users"
   add_foreign_key "reviews", "businesses"
+  add_foreign_key "reviews", "users", column: "users_id"
 end
