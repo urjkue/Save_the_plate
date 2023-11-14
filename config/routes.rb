@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/basket/:id",to: "basket#show"
   get "/discover",to: "pages#discover"
   get "/favourites",to: "favourites#index"
-  get "favourites/new",to: "favourites#new"
+  get "favourites/new/:id",to: "favourites#new"
   post "/favourites/create",to: "favourites#create"
   get "/favourites/edit",to: "favourites#edit"
   get "/favourites/update",to: "favourites#update"
