@@ -1,4 +1,5 @@
 
+
 User.destroy_all
 Basket.destroy_all
 Review.destroy_all
@@ -43,11 +44,12 @@ business_categories.each do |category|
       description: Faker::Lorem.sentence,
       price: Faker::Commerce.price,
       availability: Faker::Date.forward(days: 30),
-      business_id: business.id
+      business_id: business.id,
+      pickup: DateTime.now + 1 ,
     )
     puts "basket"
 
-    # business.update(basket_id: basket.id)
+    #  business.update(basket_id: basket.id)
 
     puts "business basket"
 
