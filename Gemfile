@@ -28,6 +28,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 # devise
 gem "devise"
+#gem faker
+gem "faker"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
