@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get "/cart/update",to: "carts#update"
   get "/cart/destroy",to: "carts#destroy"
   get "/cart/show:id",to: "carts#show"
+
+  #test
+
    # params id
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
