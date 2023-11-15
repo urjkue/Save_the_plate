@@ -18,7 +18,13 @@
   padding: 20px 0;
 }
 
-.nav_link .nav_item  {
+.nav_link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.nav_item {
   text-decoration: none;
   color: black;
   font-size: 1.5rem;

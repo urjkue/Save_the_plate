@@ -1,1 +1,98 @@
 // Specific CSS for your home-page
+
+// Search bar
+
+.search-container {
+  max-width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+  display: flex;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+button {
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: #fff;
+  font-size: 16px;
+  border: 1px solid #2196F3;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0b7dda;
+}
+
+/* FontAwesome Icons */
+.fa {
+  font-size: 20px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .search-container {
+      max-width: 100%;
+  }
+
+  input[type="text"] {
+      width: 70%;
+  }
+
+  button {
+      width: 30%;
+  }
+}
+
+
+// Food card
+.card-trip {
+  width: 295px;
+  overflow: hidden;
+  border-radius: 25px;
+  border: 1px solid lavender;
+  margin: 10px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
