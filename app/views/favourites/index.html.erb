@@ -1,6 +1,9 @@
 <h1>Hello World !!</h1>
 
-#display favouries of the logged in user
- <% @favourites.each do |fav| %>
- <%fa%>
- <%end%>
+<% @favourites.each do |fav| %>
+  <% @fav_bask = Basket.where(id: fav.basket_id) %>
+  <% @fav_bask.each do |bask| %>
+    <%= link_to bask.name, basket_path(bask.id) %>
+    <%= button_to "Remove Favorite", favourite_path(fav), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>

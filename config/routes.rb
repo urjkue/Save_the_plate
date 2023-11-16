@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/localisation",to: "pages#localisation"
   get "/baskets", to: "basket#index"
-  get "/basket/:id",to: "basket#show"
+  get "/basket/:id",to: "basket#show", as: :basket
   get "/discover",to: "pages#discover"
   get "/favourites",to: "favourites#index"
   get "favourites/new/:id",to: "favourites#new"
