@@ -3,7 +3,7 @@
 User.destroy_all
 Basket.destroy_all
 Review.destroy_all
-# Business.destroy_all
+Business.destroy_all
 # Booking.destroy_all
 # Cart.destroy_all
 # Favourit.destroy_all
@@ -111,297 +111,73 @@ Business.create!(
 
 p "businesses done"
 
-Basket.create!(
-  name: "Creole Culinary Fusion",
-  description: "Experience a fusion of traditional Creole dishes and international flavors.",
-  price: 180,
-  business_id: 54,
-  pickup: DateTime.now + 1
-)
+baskets_data = [
+  # Previous entries...
+  {
+    business_id: 85,
+    baskets: [
+      { name: "Thai Street Food Extravaganza", description: "Explore the vibrant flavors of Thai street food.", price: 210, pickup: 2 },
+      { name: "Pad Thai Delicacies", description: "Indulge in the classic flavors of Pad Thai.", price: 195, pickup: 3 },
+      # Add more baskets for business_id: 85
+    ]
+  },
+  {
+    business_id: 86,
+    baskets: [
+      { name: "Indian Spice Paradise", description: "Experience the richness of Indian spices and flavors.", price: 200, pickup: 3 },
+      { name: "Tandoori Grilled Specialties", description: "Savor the aroma and taste of Tandoori cuisine.", price: 220, pickup: 4 },
+      # Add more baskets for business_id: 86
+    ]
+  },
+  {
+    business_id: 87,
+    baskets: [
+      { name: "Artisanal Pizza Selection", description: "Delight in handcrafted artisanal pizzas.", price: 180, pickup: 5 },
+      { name: "Italian Pasta Feast", description: "Experience the authenticity of Italian pasta dishes.", price: 190, pickup: 6 },
+      # Add more baskets for business_id: 87
+    ]
+  },
+  {
+    business_id: 88,
+    baskets: [
+      { name: "French Pastry Delights", description: "Indulge in a variety of exquisite French pastries.", price: 210, pickup: 4 },
+      { name: "Croissant & Coffee Combo", description: "Enjoy a classic French breakfast combo.", price: 200, pickup: 5 },
+      # Add more baskets for business_id: 88
+    ]
+  },
+  {
+    business_id: 89,
+    baskets: [
+      { name: "Mediterranean Seafood Medley", description: "Savor a diverse mix of Mediterranean seafood.", price: 220, pickup: 3 },
+      { name: "Greek Salad Selection", description: "Delight in the freshness of Greek salads.", price: 190, pickup: 4 },
+      # Add more baskets for business_id: 89
+    ]
+  },
+  {
+    business_id: 90,
+    baskets: [
+      { name: "Brazilian BBQ Fiesta", description: "Experience the flavors of a Brazilian barbecue feast.", price: 230, pickup: 2 },
+      { name: "Feijoada Festival", description: "Indulge in Brazil's traditional black bean stew.", price: 210, pickup: 3 },
+      # Add more baskets for business_id: 90
+    ]
+  },
+  # Continue adding similar data for other business_ids...
+]
+baskets_data.each do |business_data|
+  business = Business.find { |b| b.id == business_data[:business_id] }
+  next unless business
 
-Basket.create!(
-  name: "Flavors of Mauritius",
-  description: "Embark on a journey through the rich and vibrant flavors of Mauritius.",
-  price: 200,
-  business_id: 54,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Creole Spice Adventure",
-  description: "Explore a spice-filled adventure featuring the best of Creole cuisine.",
-  price: 170,
-  business_id: 54,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Creole Comfort Feast",
-  description: "Indulge in comforting Creole favorites in a curated feast.",
-  price: 190,
-  business_id: 54,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Savoring Creole Delicacies",
-  description: "Delight in a selection of Creole delicacies that capture the essence of Mauritius.",
-  price: 210,
-  business_id: 54,
-  pickup: DateTime.now + 5
-)
-Basket.create!(
-  name: "Aromatic Spice Adventure",
-  description: "Embark on an aromatic adventure with a blend of authentic Mauritian spices.",
-  price: 200,
-  business_id: 56,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Exotic Spice Fusion",
-  description: "Experience the fusion of exotic flavors curated by Spice Isle Cuisine.",
-  price: 190,
-  business_id: 56,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Spice Infused Delights",
-  description: "Delight in a collection of dishes infused with rich Mauritian spices.",
-  price: 180,
-  business_id: 56,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Sensory Spice Celebration",
-  description: "Celebrate your senses with a unique culinary journey through Spice Isle Cuisine.",
-  price: 195,
-  business_id: 56,
-  pickup: DateTime.now + 5
-)
-Basket.create!(
-  name: "Coastal Catch Delights",
-  description: "Savor the coastal catch delights with a blend of fresh seafood at Oceanfront Eats.",
-  price: 190,
-  business_id: 57,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Marine Medley Extravaganza",
-  description: "Indulge in an extravaganza of marine medley showcasing Oceanfront Eats' finest seafood.",
-  price: 185,
-  business_id: 57,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Seaside Sunset Platter",
-  description: "Enjoy a sunset platter curated with a variety of coastal flavors from Oceanfront Eats.",
-  price: 195,
-  business_id: 57,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Wave-inspired Cuisine",
-  description: "Dive into wave-inspired cuisine that brings the essence of the sea to your table.",
-  price: 180,
-  business_id: 57,
-  pickup: DateTime.now + 5
-)
-
-Basket.create!(
-  name: "Island Paradise Platter",
-  description: "Explore an exotic island paradise platter bursting with tropical flavors.",
-  price: 200,
-  business_id: 58,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Global Spice Journey",
-  description: "Embark on a global spice journey featuring international influences and tropical delights.",
-  price: 185,
-  business_id: 58,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Tropical Spice Extravaganza",
-  description: "Experience an extravaganza of tropical spices showcasing the essence of Tropical Spice Fusion.",
-  price: 190,
-  business_id: 58,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Tropical Fusion Delights",
-  description: "Delight in a combination of tropical fusion flavors specially crafted at Tropical Spice Fusion.",
-  price: 180,
-  business_id: 58,
-  pickup: DateTime.now + 5
-)
-
-Basket.create!(
-  name: "Coastal Bounty Showcase",
-  description: "Experience a showcase of coastal bounty with Oceanfront Market's premium selections.",
-  price: 195,
-  business_id: 59,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "International Flavors Collection",
-  description: "Explore an international collection of flavors handpicked from Oceanfront Market.",
-  price: 185,
-  business_id: 59,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Gourmet Delicacies Ensemble",
-  description: "Indulge in a gourmet ensemble featuring Oceanfront Market's finest delicacies.",
-  price: 200,
-  business_id: 59,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Market Fresh Extravaganza",
-  description: "Delight in an extravaganza of market-fresh produce from Oceanfront Market.",
-  price: 190,
-  business_id: 59,
-  pickup: DateTime.now + 5
-)
-Basket.create!(
-  name: "Fresh Harvest Selection",
-  description: "Explore a selection of freshly harvested products at Island Fresh Mart.",
-  price: 185,
-  business_id: 60,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Organic Delights Bundle",
-  description: "Indulge in a bundle of organic delights sourced from Island Fresh Mart.",
-  price: 195,
-  business_id: 60,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Garden-Fresh Medley",
-  description: "Experience a medley of garden-fresh produce curated at Island Fresh Mart.",
-  price: 180,
-  business_id: 60,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Farm-to-Table Selection",
-  description: "Delight in a farm-to-table selection highlighting freshness at Island Fresh Mart.",
-  price: 190,
-  business_id: 60,
-  pickup: DateTime.now + 5
-)
-Basket.create!(
-  name: "Seaside Spice Sensation",
-  description: "Indulge in a spice sensation inspired by coastal flavors at Coastal Essentials.",
-  price: 195,
-  business_id: 61,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Coastal Harvest Bounty",
-  description: "Experience a bountiful harvest from the coast with Coastal Essentials' finest picks.",
-  price: 185,
-  business_id: 61,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Oceanic Gourmet Selection",
-  description: "Explore a gourmet selection influenced by the ocean's bounty at Coastal Essentials.",
-  price: 200,
-  business_id: 61,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Coastal Fusion Feast",
-  description: "Savor a fusion feast that captures the essence of coastal cuisine at Coastal Essentials.",
-  price: 180,
-  business_id: 61,
-  pickup: DateTime.now + 5
-)
-Basket.create!(
-  name: "Exotic Fruit Medley",
-  description: "Indulge in a medley of exotic fruits sourced from Tropical Grocers.",
-  price: 190,
-  business_id: 62,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Tropical Spice Collection",
-  description: "Explore a collection of tropical spices and flavors at Tropical Grocers.",
-  price: 185,
-  business_id: 62,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Island Treats Sampler",
-  description: "Sample delightful island treats curated by Tropical Grocers.",
-  price: 195,
-  business_id: 62,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Tropical Pantry Essentials",
-  description: "Discover essential pantry items showcasing tropical goodness at Tropical Grocers.",
-  price: 180,
-  business_id: 62,
-  pickup: DateTime.now + 5
-)
-
-Basket.create!(
-  name: "Harbor Market Exclusive Selection",
-  description: "Explore an exclusive selection of gourmet treats and local specialties at Harbor Market.",
-  price: 200,
-  business_id: 63,
-  pickup: DateTime.now + 2
-)
-
-Basket.create!(
-  name: "Family Favorites Bundle",
-  description: "Curated bundle featuring family favorites for a delightful dining experience from Harbor Market.",
-  price: 150,
-  business_id: 63,
-  pickup: DateTime.now + 3
-)
-
-Basket.create!(
-  name: "Harbor Market Breakfast Essentials",
-  description: "Start your day right with a selection of breakfast essentials from Harbor Market.",
-  price: 170,
-  business_id: 63,
-  pickup: DateTime.now + 4
-)
-
-Basket.create!(
-  name: "Gourmet Delights Sampler",
-  description: "Indulge in a sampler of gourmet delights carefully crafted by Harbor Market.",
-  price: 220,
-  business_id: 63,
-  pickup: DateTime.now + 6
-)
-
+  business_data[:baskets].each do |basket_info|
+    Basket.create!(
+      name: basket_info[:name],
+      description: basket_info[:description],
+      price: basket_info[:price],
+      business_id: business.id,
+      availability: Date.today,
+      pickup: DateTime.now + basket_info[:pickup].days
+    )
+  end
+end
 
 p "basket done"
 
