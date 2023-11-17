@@ -4,6 +4,6 @@
   <% @fav_bask = Basket.where(id: fav.basket_id) %>
   <% @fav_bask.each do |bask| %>
     <%= link_to bask.name, basket_path(bask.id) %>
-    <%= button_to "Remove Favorite", favourite_path(fav), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Delete", favourit_destroy_path(fav.id)%>
   <% end %>
 <% end %>
