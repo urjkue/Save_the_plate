@@ -1,9 +1,23 @@
-<h1>Hello World !!</h1>
+<h3 class="fa-solid fa-heart"> Your favorits </h3>
 
 <% @favourites.each do |fav| %>
   <% @fav_bask = Basket.where(id: fav.basket_id) %>
   <% @fav_bask.each do |bask| %>
-    <%= link_to bask.name, basket_path(bask.id) %>
+  <div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <%
+=begin%>
+ <h2>Surprise bag</h2>
+<%
+=end%>
+      <%= link_to "#{bask.name}", basket_path(bask.id)%>
+      <p><%= bask.description%></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= bask.price%></h2>
+     <i class="fa-solid fa-heart" class="card-trip-user avatar-bordered"></i>
     <%= link_to "Delete", favourit_destroy_path(fav.id)%>
+  </div>
   <% end %>
 <% end %>
