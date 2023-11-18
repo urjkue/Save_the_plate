@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/home",to: "pages#home", as: :home
   # get "/baskets", to: "basket#index", as: :baskets
   get "/basket/:id",to: "basket#show", as: :basket
-  get "/browse",to: "pages#discover", as: :discover
+  # get "/browse",to: "pages#discover", as: :discover
   get "/favourites",to: "favourites#index", as: :favourit
   get "favourites/new/:id",to: "favourites#new", as: :favourit_new
   get "/favourites/create/:id",to: "favourites#create", as: :favourit_create
