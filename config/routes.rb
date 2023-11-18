@@ -1,24 +1,25 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  get "/localisation",to: "pages#localisation"
-  get "/baskets", to: "basket#index"
-  get "/basket/:id",to: "basket#show"
-  get "/discover",to: "pages#discover"
-  get "/favourites",to: "favourites#index"
-  get "favourites/new",to: "favourites#new"
-  post "/favourites/create",to: "favourites#create"
+  root to: "pages#index"
+  get "/home",to: "pages#home", as: :home
+  # get "/baskets", to: "basket#index", as: :baskets
+  get "/basket/:id",to: "basket#show", as: :basket
+  get "/browse",to: "pages#discover", as: :discover
+  get "/favourites",to: "favourites#index", as: :favourit
+  get "favourites/new/:id",to: "favourites#new", as: :favourit_new
+  get "/favourites/create/:id",to: "favourites#create", as: :favourit_create
   get "/favourites/edit",to: "favourites#edit"
   get "/favourites/update",to: "favourites#update"
-  get "/favourites/destroy",to: "favourites#destroy"
-  get "/favourites/:id",to: "favourites#show"
-  get "/cart",to: "carts#index"
-  get "cart/new",to: "carts#new"
-  post "cart/create",to: "carts#create"
-  get "cart/edit",to: "carts#edit"
-  get "/cart/update",to: "carts#update"
-  get "/cart/destroy",to: "carts#destroy"
-  get "/cart/show:id",to: "carts#show"
+  get "/favourites/destroy/:id",to: "favourites#destroy", as: :favourit_destroy
+  get "/profile", to: "profile#index", as: :profile
+  # get "/favourites/:id",to: "favourites#show"
+  get "/cart",to: "carts#index", as: :cart
+  # get "cart/new",to: "carts#new"
+  # post "cart/create",to: "carts#create"
+  # get "cart/edit",to: "carts#edit"
+  # get "/cart/update",to: "carts#update"
+  # get "/cart/destroy",to: "carts#destroy"
+  # get "/cart/show:id",to: "carts#show"
 
   #test
 

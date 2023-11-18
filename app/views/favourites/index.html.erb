@@ -1,1 +1,9 @@
 <h1>Hello World !!</h1>
+
+<% @favourites.each do |fav| %>
+  <% @fav_bask = Basket.where(id: fav.basket_id) %>
+  <% @fav_bask.each do |bask| %>
+    <%= link_to bask.name, basket_path(bask.id) %>
+    <%= link_to "Delete", favourit_destroy_path(fav.id)%>
+  <% end %>
+<% end %>

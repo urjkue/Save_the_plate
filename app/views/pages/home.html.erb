@@ -1,5 +1,44 @@
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<p>Test</p>
+<%# Search Bar %>
+
+<%# <div class="search-container">
+    <input type="text" placeholder="Search...">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</div> %>
+
+<div class="container-search">
+  <span>Locations: </span>
+  <div class="">
+    <div class="search-field">
+      <div class="form">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control form-input" placeholder="Search">
+        <%# <span class="left-pan"><i class="fa fa-microphone"></i></span> %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Categories buttons %>
+
+
+<%# Cards %>
+
+<p class="body">Recommended for you</p>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <%
+=begin%>
+ <h2>Surprise bag</h2>
+<%
+=end%>
+      <%= link_to "basket", basket_path(51)%>
+      <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
+    </div>
+    <h2 class="card-trip-pricing">150 MUR</h2>
+     <i class="fa-solid fa-heart" class="card-trip-user avatar-bordered"></i>
+  </div>
+</div>
