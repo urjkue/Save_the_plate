@@ -30,6 +30,8 @@ gem "jbuilder"
 gem "devise"
 #gem faker
 gem "faker"
+# Gemfile geocoder
+gem "geocoder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
