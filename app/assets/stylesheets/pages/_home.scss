@@ -2,56 +2,112 @@
 
 // Search bar
 
-.search-container {
-  max-width: 80%;
-  margin: 50px auto;
-  overflow: hidden;
-  display: flex;
+body{
+
+  background: #d1d5db;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  outline: none;
+.height{
+
+  height: 100vh;
 }
 
-button {
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: #fff;
-  font-size: 16px;
-  border: 1px solid #2196F3;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
+.form{
+
+  position: relative;
 }
 
-button:hover {
-  background: #0b7dda;
+.form .fa-search{
+
+  position: absolute;
+  top:20px;
+  left: 20px;
+  color: #9ca3af;
+
 }
 
-/* FontAwesome Icons */
-.fa {
-  font-size: 20px;
+// .form span{
+
+//       position: absolute;
+//   right: 17px;
+//   top: 13px;
+//   padding: 2px;
+//   border-left: 1px solid #d1d5db;
+
+// }
+
+// .left-pan{
+//   padding-left: 7px;
+// }
+
+// .left-pan i{
+
+//  padding-left: 10px;
+// }
+
+.form-input{
+
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px;
 }
 
-/* Responsive Styles */
-@media only screen and (max-width: 600px) {
-  .search-container {
-      max-width: 100%;
-  }
+.form-input:focus{
 
-  input[type="text"] {
-      width: 70%;
-  }
-
-  button {
-      width: 30%;
-  }
+  box-shadow: none;
+  border:none;
 }
+
+// .search-container {
+//   max-width: 80%;
+//   margin: 50px auto;
+//   overflow: hidden;
+//   display: flex;
+// }
+
+// input[type="text"] {
+//   width: 100%;
+//   padding: 10px;
+//   font-size: 16px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px 0 0 5px;
+//   outline: none;
+// }
+
+// button {
+//   width: 20%;
+//   padding: 5px;
+//   // background: #2196F3;
+//   // color: #fff;
+//   font-size: 16px;
+//   // border: 1px solid #2196F3;
+//   border-radius: 0 5px 5px 0;
+//   cursor: pointer;
+// }
+
+// button:hover {
+//   background: #0b7dda;
+// }
+
+// /* FontAwesome Icons */
+// .fa {
+//   font-size: 20px;
+// }
+
+// /* Responsive Styles */
+// @media only screen and (max-width: 600px) {
+//   .search-container {
+//       max-width: 100%;
+//   }
+
+//   input[type="text"] {
+//       width: 70%;
+//   }
+
+//   button {
+//       width: 30%;
+//   }
+// }
 
 
 // Food card
