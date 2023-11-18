@@ -2,26 +2,46 @@
 
 // Search bar
 
-body{
 
-  background: #d1d5db;
+
+// .height{
+
+//   height: 100vh;
+// }
+
+// .form {
+//   position: relative;
+// }
+
+.container-search {
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+  padding-block: 1rem;
 }
 
-.height{
-
-  height: 100vh;
-}
-
-.form{
-
+.search-field {
   position: relative;
 }
 
-.form .fa-search{
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
+.form input{
+  width: 90%;
+  height: 6vh;
+}
+
+.form .fa-search{
   position: absolute;
-  top:20px;
-  left: 20px;
+  top: 12px;
+  left: 40px;
   color: #9ca3af;
 
 }
