@@ -1,12 +1,27 @@
 
-<p class="body">Port Louis - Cart</p>
 
 <%# Search Bar %>
 
-<div class="search-container">
-    <input type="text" placeholder="Rechercher...">
+<%# <div class="search-container">
+    <input type="text" placeholder="Search...">
     <button type="submit"><i class="fa fa-search"></i></button>
+</div> %>
+
+<div class="container-search">
+  <span>Locations: </span>
+  <div class="">
+    <div class="search-field">
+      <div class="form">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control form-input" placeholder="Search">
+        <%# <span class="left-pan"><i class="fa fa-microphone"></i></span> %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<%# Categories buttons %>
+
 
 <%# Cards %>
 
@@ -15,7 +30,12 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2>Surprise bag</h2>
+      <%
+=begin%>
+ <h2>Surprise bag</h2>
+<%
+=end%>
+      <%= link_to "basket", basket_path(51)%>
       <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
     </div>
     <h2 class="card-trip-pricing">150 MUR</h2>
