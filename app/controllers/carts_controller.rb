@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   def index
-    @carts = Cart.all
+    # @carts = Cart.all
   end
   def new
   end
