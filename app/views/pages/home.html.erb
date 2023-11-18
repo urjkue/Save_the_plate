@@ -24,9 +24,29 @@
 
 
 <%# Cards %>
-
 <p class="body">Recommended for you</p>
+
+<%@basket.each do |basket|%>
 <div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= link_to "#{basket.name}", basket_path(basket.id)%></h2>
+
+      <p><%=basket.availability%></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= basket.price %> MUR</h2>
+
+   <a href="<%= favourit_new_path(basket.id) %>">
+  <i class="fa-solid fa-heart"></i>
+</a>
+
+  </div>
+<%end%>
+
+<%
+=begin%>
+ <div class="card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
@@ -35,10 +55,15 @@
  <h2>Surprise bag</h2>
 <%
 =end%>
-      <%= link_to "basket", basket_path(51)%>
+      <%
+=begin%>
+ <%= link_to "basket", basket_path(51)%>
       <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
     </div>
     <h2 class="card-trip-pricing">150 MUR</h2>
      <i class="fa-solid fa-heart" class="card-trip-user avatar-bordered"></i>
   </div>
+<%
+=end%>
+<%
 </div>

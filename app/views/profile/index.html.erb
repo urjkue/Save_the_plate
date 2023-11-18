@@ -1,3 +1,4 @@
+<%if current_user%>
 <h1>
 Hello
 <%= @user.first_name%>
@@ -13,3 +14,9 @@ Hello
  <%end%>
 <%end%>
 </div>
+<%else%>
+<div class="login">
+  <!-- Link to Devise default login page -->
+  <a href="<%= new_user_session_path %>">Login</a>
+</div>
+<%end%>
