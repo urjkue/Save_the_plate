@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  get "/localisation",to: "pages#localisation"
+  get "/localisation",to: "localisations#localisation"
   get "/baskets", to: "basket#index"
   get "/basket/:id",to: "basket#show"
   get "/discover",to: "pages#discover"
