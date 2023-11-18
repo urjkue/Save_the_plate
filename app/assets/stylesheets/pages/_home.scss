@@ -79,7 +79,7 @@
 
 // Food card
 .card-product {
-  width: 295px;
+  width: 275px;
   overflow: hidden;
   border-radius: 25px;
   border: 1px solid lavender;
@@ -87,7 +87,7 @@
 }
 
 .card-product > img {
-  height: 80px;
+  height: 100px;
   width: 100%;
   object-fit: cover;
 }
@@ -106,8 +106,11 @@
 
 
 .card-product .card-product-infos {
-  padding: 16px;
-  display: flex;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  // display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -118,4 +121,57 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+
+/* styles.css */
+
+.card-img {
+  position: relative;
+  width: 300px; /* Adjust the width as needed */
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-img > span {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.card-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Set the text color */
+  text-align: center;
+  font-size: 18px; /* Adjust the font size as needed */
+  font-weight: bold; /* Adjust the font weight as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add a text shadow */
+}
+
+.business-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-clickable {
+  text-decoration: none;
+  color: black;
+}
+
+.price-stars {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

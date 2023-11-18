@@ -21,19 +21,30 @@
 <%# Cards %>
 
 <p class="body">Recommended for you</p>
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-product-infos">
-    <div>
-      <%
-=begin%>
- <h2>Surprise bag</h2>
-<%
-=end%>
-      <%= link_to "basket", basket_path(51)%>
-      <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
-    </div>
-    <h2 class="card-product-pricing">150 MUR</h2>
-     <i class="fa-solid fa-heart" class="card-product-favorite"></i>
+
+
+<div class="cards-container">
+  <div class="card-product">
+    <a href="<%= basket_path(51) %>" class="card-clickable">
+      <div class="card-img">
+        <img src="https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg" class='card-image'>
+        <span>Business Name</span>
+      </div>
+      <div class="card-product-infos">
+        <div class="business-name">
+          <span>Business Name</span>
+          <i class="fa-solid fa-heart" class="card-product-favorite"></i>
+        </div>
+        <div class="card-surprise-basket">
+          <h2>Surprise basket</h2>
+        </div>
+        <div class="card-pick-up-date">
+          <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
+        </div>
+        <div class="price-stars">
+          <h2 class="card-product-pricing">150 MUR</h2>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
