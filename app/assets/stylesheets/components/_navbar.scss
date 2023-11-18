@@ -1,4 +1,5 @@
 .bottom_nav {
+  z-index: 9999;
   position: fixed;
   bottom: 0;
   background-color: white;
@@ -8,7 +9,8 @@
 
 .nav_container {
   width: 100%;
-  padding : 0 10px;
+  padding : 0 20px;
+  background-color: white;
 }
 
 .nav_links_container {
