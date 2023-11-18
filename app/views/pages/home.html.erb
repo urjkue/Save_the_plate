@@ -2,11 +2,6 @@
 
 <%# Search Bar %>
 
-<%# <div class="search-container">
-    <input type="text" placeholder="Search...">
-    <button type="submit"><i class="fa fa-search"></i></button>
-</div> %>
-
 <div class="container-search">
   <span>Locations: </span>
   <div class="">
@@ -26,9 +21,9 @@
 <%# Cards %>
 
 <p class="body">Recommended for you</p>
-<div class="card-trip">
+<div class="card-product">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
+  <div class="card-product-infos">
     <div>
       <%
 =begin%>
@@ -38,7 +33,7 @@
       <%= link_to "basket", basket_path(51)%>
       <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
     </div>
-    <h2 class="card-trip-pricing">150 MUR</h2>
-     <i class="fa-solid fa-heart" class="card-trip-user avatar-bordered"></i>
+    <h2 class="card-product-pricing">150 MUR</h2>
+     <i class="fa-solid fa-heart" class="card-product-favorite"></i>
   </div>
 </div>
