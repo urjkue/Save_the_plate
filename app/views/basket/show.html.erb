@@ -1,1 +1,21 @@
-<%= link_to "add", favourit_new_path(@basket.id)%>
+<%# <%= link_to "add", favourit_new_path(@basket.id) %>
+<div class="basket">
+  <div class="banner">
+    <div class="banner-img">
+
+    </div>
+  </div>
+  <div class="bth-main">
+  <a href="#" class="bth-description">description</a>
+  <a href="#" class="bth-price">price</a>
+
+  </div>
+
+    <div class="contanier">
+
+      <%= @baskets.name %>
+      <%= @baskets.description %>
+
+    <a href="#" class="bth-book">i book</a>
+  </div>
+</div>
