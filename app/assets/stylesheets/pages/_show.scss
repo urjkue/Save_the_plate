@@ -1,0 +1,39 @@
+.banner>.banner-img{
+  background-color: blanchedalmond;
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main{
+  // margin-left: 30px;
+  // display: space-between;
+text-decoration: none;
+text-align: center;
+display: inline-block;
+}
+.bth-description{
+  margin:10px 0 10px 0 ;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #121212;
+  color: white;
+
+  transition: background-color 0.3s;
+}
+.bth-description:hover{
+  background-color: #3e8e41;
+}
+
+.contanier>.bth-book{
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #272a27;
+
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s;
+}
