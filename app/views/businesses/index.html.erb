@@ -1,7 +1,34 @@
-<div class="container">
-<h1>
+<div class="container-head-name">
+  <h1>Choose a Location</h1>
 </div>
-<div style="width: 100%; height: 600px;"
+<div style="width: 100%; height: 400px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<%# <div class="container-search">
+  <div class="search-field">
+    <div class="form">
+      <i class="fa fa-search"></i>
+      <input type="text" class="form-control form-input" id="geocoder" placeholder="Search">
+    </div>
+  </div> %>
+  <%# <div class="btn-research">
+    <button class="btn-search">Search</button>
+  </div>
+</div> %>
+
+<div class="text-location">
+<h1>use the postions accutel</h1>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const geocoder = new MapboxGeocoder({
+      accessToken: '<%= ENV["MAPBOX_API_KEY"] %>',
+      mapboxgl: mapboxgl,
+    });
+    geocoder.addTo('#geocoder');
+  });
+</script>
