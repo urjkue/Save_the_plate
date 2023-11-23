@@ -15,6 +15,9 @@
   </div>
 </div>
 
+
+
+
 <%# Categories buttons %>
 
 
@@ -26,7 +29,7 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2><%= link_to "#{basket.name}", basket_path(basket.id)%></h2>
+      <h2><%= link_to "#{basket.name}", basket_path(basket.id,"")%></h2>
 
       <p><%=basket.availability%></p>
     </div>
@@ -35,7 +38,6 @@
    <a href="<%= favourit_new_path(basket.id) %>">
   <i class="fa-solid fa-heart"></i>
 </a>
-
   </div>
 <%end%>
 
