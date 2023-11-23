@@ -1,15 +1,34 @@
 // Specific CSS for your home-page
 
+
+// Categories button
+
+.round-button {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.round-button i {
+  font-size: 20px;
+  color: #000;
+}
+
+// @media (max-width: 600px) {
+//   .round-button {
+//     width: 40px;
+//     height: 40px;
+//   }
+// }
+
 // Search bar
-
-// .height{
-
-//   height: 100vh;
-// }
-
-// .form {
-//   position: relative;
-// }
 
 .container-search {
   background-color: white;
@@ -18,6 +37,10 @@
   gap: .5rem;
   flex-direction: column;
   padding-block: 1rem;
+}
+
+.container-search.home {
+  background-color:transparent;
 }
 
 .search-field {
@@ -41,137 +64,84 @@
   top: 12px;
   left: 40px;
   color: #9ca3af;
-
 }
 
-// .form span{
-
-//       position: absolute;
-//   right: 17px;
-//   top: 13px;
-//   padding: 2px;
-//   border-left: 1px solid #d1d5db;
-
-// }
-
-// .left-pan{
-//   padding-left: 7px;
-// }
-
-// .left-pan i{
-
-//  padding-left: 10px;
-// }
-
 .form-input{
-
   height: 55px;
   text-indent: 33px;
   border-radius: 10px;
 }
 
 .form-input:focus{
-
   box-shadow: none;
   border:none;
 }
 
-
 // Food card
-.card-product {
-  width: 275px;
+
+.card-trip {
   overflow: hidden;
-  border-radius: 25px;
-  border: 1px solid lavender;
-  margin: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-width: 270px;
+  border-radius: 10px;
 }
 
-.card-product > img {
-  height: 100px;
+.card-trip > img {
+  height: 90px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-product h2 {
+.card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
-
-.card-product .card-product-infos {
-  padding-top: 5px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  // display: flex;
+.card-trip .card-trip-infos {
+  padding: 10px;
+  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
 
-.card-product-infos .card-product-user {
+.card-trip-infos .heart {
   position: absolute;
-  right: 16px;
-  top: -20px;
+  right: 11px;
+  top: -90px;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.card-trip-infos .business-name {
+  position: absolute;
+  right: 95px;
+  top: -40px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.card-trip-infos .round-logo {
   width: 40px;
-}
-
-
-
-/* styles.css */
-
-.card-img {
-  position: relative;
-  width: 300px; /* Adjust the width as needed */
-}
-
-.card-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.card-img > span {
+  height: 40px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  margin: 10px;
   position: absolute;
-  top: 50%;
-  left: 25%;
-  width: 100%;
-  height: 100%;
-  color: white;
+  right: 210px;
+  top: -60px;
 }
 
-.card-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white; /* Set the text color */
-  text-align: center;
-  font-size: 18px; /* Adjust the font size as needed */
-  font-weight: bold; /* Adjust the font weight as needed */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add a text shadow */
-}
-
-.business-name {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card-clickable {
-  text-decoration: none;
-  color: black;
-}
-
-.price-stars {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.card-trip-infos .round-logo i {
+  font-size: 20px;
+  color: #000;
 }
