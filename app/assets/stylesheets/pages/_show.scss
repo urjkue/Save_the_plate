@@ -6,34 +6,45 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.main{
+.basket{
   // margin-left: 30px;
-  // display: space-between;
+  display: space-between;
+padding: auto;
 text-decoration: none;
 text-align: center;
 display: inline-block;
+margin: 0  10px 0 10px;
 }
-.bth-description{
+.bth-description-price{
   margin:10px 0 10px 0 ;
   font-size: 16px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #121212;
   color: white;
-
+  cursor: on-hover;
   transition: background-color 0.3s;
 }
-.bth-description:hover{
+.bth-description-price:hover{
   background-color: #3e8e41;
 }
+a{
+  text-decoration: none;
 
-.contanier>.bth-book{
+}
+
+.contanier{
+
+.bth-book{
   font-size: 16px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #272a27;
-
   color: white;
   text-align: center;
   transition: background-color 0.3s;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+}
 }

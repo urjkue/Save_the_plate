@@ -1,66 +1,52 @@
+<div class="container">
+  <%# Localisation %>
+    <p><i class="fa-solid fa-location-dot"></i> Port louis </p>
+    <p>À moins de 10km</p>
 
-
-<%# Search Bar %>
-
-<div class="container-search">
-  <span>Locations: </span>
-  <div class="">
-    <div class="search-field">
-      <div class="form">
-        <i class="fa fa-search"></i>
-        <input type="text" class="form-control form-input" placeholder="Search">
-        <%# <span class="left-pan"><i class="fa fa-microphone"></i></span> %>
+  <%# Search Bar %>
+  <div class="container-search home">
+    <div class="">
+      <div class="search-field">
+        <div class="form">
+          <i class="fa fa-search"></i>
+          <input type="text" class="form-control form-input" placeholder="Search">
+          <%# <span class="left-pan"><i class="fa fa-microphone"></i></span> %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <%# Categories buttons %>
 
+    <div class="round-button"><i class="fas fa-home"></i></div>
+    <div class="round-button"><i class="fas fa-bell"></i></div>
+    <div class="round-button"><i class="fas fa-cog"></i></div>
 
+  <%# Cards %>
+  <p class="text-start">Recommended for you</p>
 
-<%# Categories buttons %>
-
-
-<%# Cards %>
-<p class="body">Recommended for you</p>
-
-<%@basket.each do |basket|%>
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= link_to "#{basket.name}", basket_path(basket.id,"")%></h2>
-
-      <p><%=basket.availability%></p>
+  <div class="card-trip">
+    <img src="https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg" />
+    <span>
+    </span>
+    <div class="card-trip-infos">
+      <div>
+        <h2>Surprise basket</h2>
+        <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
+      </div>
+        <div class="business-name">
+          <span>Business Name</span>
+        </div>
+        <div class="round-logo"></div>
+      <span class="heart">Save </span>
     </div>
-    <h2 class="card-trip-pricing"><%= basket.price %> MUR</h2>
-
-   <a href="<%= favourit_new_path(basket.id) %>">
-  <i class="fa-solid fa-heart"></i>
-</a>
-  </div>
-<%end%>
-
-<%
-=begin%>
- <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <%
-=begin%>
- <h2>Surprise bag</h2>
-<%
-=end%>
-      <%
-=begin%>
- <%= link_to "basket", basket_path(51)%>
-      <p>Pick-up tomorrow 2:00 PM - 5:00 PM</p>
+    <div class="card-trip-infos pt-0">
+          <div>
+            <span><i class="fa-solid fa-star"></i> 4.5</span>
+          </div>
+          <h2>£99.99</h2>
+        </div>
     </div>
-    <h2 class="card-trip-pricing">150 MUR</h2>
-     <i class="fa-solid fa-heart" class="card-trip-user avatar-bordered"></i>
   </div>
-<%
-=end%>
-<%
-</div>
+
+  <p class="text-start">Save before it's too late</p>
