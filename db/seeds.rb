@@ -26,6 +26,9 @@ locations = [
   { address: 'Flacq, Mauritius', latitude: -20.2346, longitude: 57.7151 },
   { address: 'Flic en Flac, Mauritius', latitude: -20.2711, longitude: 57.3661 },
   { address: 'Rose Belle, Mauritius', latitude: -20.4047, longitude: 57.6191 },
+  { address: 'saint pierre, Mauritius', latitude: -20.225179, longitude: 57.5383 },
+  { address: 'saint mark, Mauritius', latitude: -20.2175, longitude: 57.5203 },
+  { address: 'saint yarn, Mauritius', latitude: -20.2279, longitude: 57.5377 },
   { address: 'Quatre Bornes, Mauritius', latitude: -20.2641, longitude: 57.4797 },
   { address: 'Bel Ombre, Mauritius', latitude: -20.4936, longitude: 57.3244 },
   { address: 'Le Morne, Mauritius', latitude: -20.4411, longitude: 57.3203 },
@@ -34,7 +37,10 @@ locations = [
   { address: 'Rivière Noire, Mauritius', latitude: -20.3602, longitude: 57.3615 },
   { address: 'Pamplemousses, Mauritius', latitude: -20.1058, longitude: 57.5707 },
   { address: 'Black River, Mauritius', latitude: -20.3566, longitude: 57.3619 },
-  { address: 'Grand Port, Mauritius', latitude: -20.4346, longitude: 57.7017 }
+  { address: 'Grand Port, Mauritius', latitude: -20.4346, longitude: 57.7017 },
+  { address: 'Moka, Mauritius', latitude: -20.2356, longitude: 57.4964 },
+  { address: 'Vacoas-Phoenix, Mauritius', latitude: -20.2986, longitude: 57.4783 }
+
 ]
 
 business_names = [
