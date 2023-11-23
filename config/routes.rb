@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/home",to: "pages#home", as: :home
   # get "/baskets", to: "basket#index", as: :baskets
   get "/basket/:id",to: "basket#show", as: :basket
+
   # get "/browse",to: "pages#discover", as: :discover
   get "/favourites",to: "favourites#index", as: :favourit
   get "favourites/new/:id",to: "favourites#new", as: :favourit_new
@@ -14,13 +15,13 @@ Rails.application.routes.draw do
   get "/favourites/destroy/:id",to: "favourites#destroy", as: :favourit_destroy
   get "/profile", to: "profile#index", as: :profile
   # get "/favourites/:id",to: "favourites#show"
-  get "/cart",to: "carts#index", as: :cart
-  # get "cart/new",to: "carts#new"
-  # post "cart/create",to: "carts#create"
+  # get "/cart",to: "carts#index", as: :cart
+  get "cart/new/:id",to: "carts#new", as: :cart_new
+  get "cart/create/:basketid",to: "carts#create",as: :cart_create
   # get "cart/edit",to: "carts#edit"
   # get "/cart/update",to: "carts#update"
   # get "/cart/destroy",to: "carts#destroy"
-  # get "/cart/show:id",to: "carts#show"
+  get "/cart/book/:id",to: "carts#show", as: :cart_show
 
   #test
 

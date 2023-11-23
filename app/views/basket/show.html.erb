@@ -15,7 +15,6 @@
 
       <%= @baskets.name %>
       <%= @baskets.description %>
-
-    <a href="#" class="bth-book">i book</a>
+       <a href="<%= cart_new_path(@baskets.id) %>" class="bth-book">Book</a>
   </div>
 </div>

@@ -1,6 +1,26 @@
-profile
-  <%
-=begin%>
- <%= render "cart" %>
-<%
-=end%>
+<%if current_user%>
+<h1>
+Hello
+<%= @user.first_name%>
+</h1>
+
+<h1>Bookings:</h1>
+
+<div class="booking">
+<%@booking.each do |booking|%>
+<%@booked_basket = Basket.where(id: booking.basket_id)%>
+ <%@booked_basket.each do |booked_bask|%>
+ <%=booked_bask.name%>
+ <%end%>
+<%end%>
+
+ <%= link_to "Log out", destroy_user_session_path , class: "dropdown-item", data: {turbo_method: :delete} %>
+
+
+</div>
+<%else%>
+<div class="login">
+  <!-- Link to Devise default login page -->
+  <a href="<%= new_user_session_path %>">Login</a>
+</div>
+<%end%>
