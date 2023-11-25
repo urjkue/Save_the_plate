@@ -1,20 +1,24 @@
-<%# <%= link_to "add", favourit_new_path(@basket.id) %>
-<div class="basket">
-  <div class="banner">
-    <div class="banner-img">
+<div class="banner">
+  <div class="banner-img"></div>
+  <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+  <p class="business-title"><%= @business.name %></p>
+</div>
 
-    </div>
+<div class="contanier-center">
+  <div class="basket-price">
+    <h2><i class="fas fa-shopping-cart"></i> basket suprise</i></h2>
+    <h2><%= @baskets.price %>MUR</h2>
   </div>
-  <div class="bth-main">
-  <a href="#" class="bth-description-price">description</a>
-  <a href="#" class="bth-description-price">price</a>
+</div>
 
-  </div>
+<div class="basket-infos">
+  <span><i class="fa fa-clock-o" aria-hidden="true"></i>Pick-up tomorrow 2PM-5PM</span>
+  <span><i class="fa-solid fa-map-marker"></i> 1.5 km</span>
+  <span><i class="fa-solid fa-star"></i> 4.5</span>
+</div>
 
-    <div class="contanier">
-
-      <%= @baskets.name %>
-      <%= @baskets.description %>
-       <a href="<%= cart_new_path(@baskets.id) %>" class="bth-book">Book</a>
-  </div>
+<div class="contanier_low">
+  <h1><strong>hi</strong></h1>
+  <p><%= @baskets.description %></p>
+  <a href="<%= cart_new_path(@baskets.id) %>" class="bth-book">Book</a>
 </div>
