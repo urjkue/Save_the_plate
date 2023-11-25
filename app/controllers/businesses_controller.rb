@@ -10,4 +10,5 @@ class BusinessesController < ApplicationController
       }
     end
   end
+
 end

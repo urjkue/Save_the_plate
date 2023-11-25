@@ -31,7 +31,7 @@
 <div class="main-container">
 
   <div class="card-trip">
-    <img src="https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg" />
+    <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
     <span>
     </span>
     <div class="card-trip-infos">
