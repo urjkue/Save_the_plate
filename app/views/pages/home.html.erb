@@ -1,7 +1,7 @@
 <div class="container">
   <%# Localisation %>
-    <p><i class="fa-solid fa-location-dot"></i> Port louis </p>
-    <p>À moins de 10km</p>
+    <h2><i class="fa-solid fa-location-dot"></i> Port louis </h2>
+    <h2>À moins de 10km</h2>
 
   <%# Search Bar %>
   <div class="container-search home">
@@ -23,10 +23,10 @@
     <div class="round-button"><i class="fas fa-cog"></i></div>
 
   <%# Cards %>
-  <p class="text-start">Recommended for you</p>
+  <h1>Recommended for you</h1>
 
   <div class="card-trip">
-    <img src="https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg" />
+    <%= cl_image_tag @business.photo.key, height: 300, width: 400, crop: :fill %>
     <span>
     </span>
     <div class="card-trip-infos">
@@ -38,7 +38,7 @@
           <span>Business Name</span>
         </div>
         <div class="round-logo"></div>
-      <span class="heart">Save </span>
+      <span class="heart"><i class="fa-regular fa-heart"></i></span>
     </div>
     <div class="card-trip-infos pt-0">
           <div>
@@ -49,4 +49,4 @@
     </div>
   </div>
 
-  <p class="text-start">Save before it's too late</p>
+  <h1>Save before it's too late</h1>

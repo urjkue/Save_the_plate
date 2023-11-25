@@ -1,3 +1,5 @@
+require 'open-uri'
+
 # Destroy existing data
 User.destroy_all
 Basket.destroy_all
