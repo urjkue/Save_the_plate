@@ -3,21 +3,31 @@
 <% @favourites.each do |fav| %>
   <% @fav_bask = Basket.where(id: fav.basket_id) %>
   <% @fav_bask.each do |bask| %>
+  <%@bus = Business.where(id: bask.business_id)%>
+  <div class="main-container">
+
   <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <%
-=begin%>
- <h2>Surprise bag</h2>
-<%
-=end%>
-      <%= link_to "#{bask.name}", basket_path(bask.id)%>
-      <p><%= bask.description%></p>
+    <img src="https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg" />
+    <span>
+    </span>
+    <div class="card-trip-infos">
+      <div>
+        <a  href="<%= basket_path(bask.id) %>" >Surprise basket</a>
+        <p> <%=bask.availability%></p>
+      </div>
+        <div class="business-name">
+          <span><%=@bus.name%></span> 
+        </div>
+        <div class="round-logo"></div>
     </div>
-    <h2 class="card-trip-pricing"><%= bask.price%></h2>
-     <i class="fa-solid fa-heart" class="card-trip-user avatar-bordered"></i>
-    <%= link_to "Delete", favourit_destroy_path(fav.id)%>
+    <div class="card-trip-infos pt-0">
+          <div>
+            <span><i class="fa-solid fa-star"></i> </span>
+          </div>
+          <h2><%=bask.price%></h2>
+        </div>
+    </div>
   </div>
+</div>
   <% end %>
 <% end %>
