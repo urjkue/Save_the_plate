@@ -3,8 +3,7 @@ class PagesController < ApplicationController
     # geocoding
   end
   def home
-    @basket = Basket.all
-    
+    @businesses = Business.all
   end
   def discover
   end

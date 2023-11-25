@@ -145,3 +145,50 @@
   font-size: 20px;
   color: #000;
 }
+
+
+// scroll
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 428px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 10%;
+}
+
+.horizontal-scroll-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 33vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-y: hidden;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  height: 150px;
+  width: 200px;
+  margin: 0 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-overflow: hidden;
+  text-decoration: ellipsis;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
