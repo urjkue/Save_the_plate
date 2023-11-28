@@ -1,6 +1,6 @@
 <div class="container">
   <%# Localisation %>
-    <p><i class="fa-solid fa-location-dot"></i> Port louis </p>
+    <p><i class="fa-solid fa-location-dot"></i> Port louis <i class="fa-solid fa-chevron-down"></i></p>
     <p>À moins de 10km</p>
 
   <%# Search Bar %>
@@ -9,7 +9,7 @@
       <div class="search-field">
         <div class="form">
           <i class="fa fa-search"></i>
-          <input type="text" class="form-control form-input" placeholder="Search">
+          <input type="text" class="form-control form-input" placeholder="Recherche">
           <%# <span class="left-pan"><i class="fa fa-microphone"></i></span> %>
         </div>
       </div>
@@ -18,46 +18,48 @@
 
   <%# Categories buttons %>
 
-    <div class="round-button"><i class="fas fa-home"></i></div>
-    <div class="round-button"><i class="fas fa-bell"></i></div>
-    <div class="round-button"><i class="fas fa-cog"></i></div>
+  <div class="container-categories">
+    <div class="round-button"><i class="fas fa-home"></i> </div> <p>Restaurants</p>
+    <div class="round-button"><i class="fas fa-bell"></i> </div> <p>Supermarchés</p>
+    <div class="round-button"><i class="fas fa-cog"></i> </div> <p>Boulangeries</p>
+  </div>
 
   <%# Cards %>
-  <p class="text-start">Recommended for you</p>
+  <p class="text-start">Recommandé pour vous</p>
 
   <%@businesses.each do |business|%>
   <%@basket = Basket.where(business_id: business.id).first%>
 
-<div class="main-container">
+  <div class="main-container">
 
-  <div class="card-trip">
+  <div class="card-trip"> <a href="<%= basket_path(@basket.id) %>"></a>
     <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
     <span>
     </span>
     <div class="card-trip-infos">
       <div>
-        <a  href="<%= basket_path(@basket.id) %>" >Surprise basket</a>
-        <p> <%=@basket.availability%></p>
+        <h1 class="card_title"><%=business.name%></h1>
+        <a  href="<%= basket_path(@basket.id) %>" >Panier Surprise</a>
+        <p> À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
       </div>
-        <div class="business-name">
-          <span><%=business.name%></span>
-        </div>
-        <div class="round-logo"></div>
-      <a href="<%= favourit_new_path(@basket.id) %>">
-  <i class="fa-solid fa-heart"></i>
-</a>
+      <div class="round">
+        <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+      </div>
     </div>
     <div class="card-trip-infos pt-0">
           <div>
-            <span><i class="fa-solid fa-star"></i> </span>
+            <span><i class="fa-solid fa-star"></i>
           </div>
-          <h2><%=@basket.price%></h2>
+          <h2><%=@basket.price%> MUR</h2>
         </div>
     </div>
+
   </div>
 
   <%end%>
 </div>
 
 
-  <p class="text-start">Save before it's too late</p>
+  <p class="text-start">À sauver quand qu'il ne soit trop tard</p>

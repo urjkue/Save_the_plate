@@ -39,40 +39,46 @@ locations = [
   { address: 'Vacoas-Phoenix, Mauritius', latitude: -20.2986, longitude: 57.4783 }
 ]
 bakery_name = [
-  "chez_mimi",
-  "laboulangerie_des_ile",
-  " le_cristalin",
-  "la_baguette_magic",
-  "la_boulangerie_du_coin"
+  "La Baguette Dorée",
+  "La Boulangerie des îles",
+  "Pains et Délices",
+  "Le Pétrin Magique",
+  "Au Fournil Gourmand"
 ]
 restaurant_name = [
-  "chez_jj",
-  "alberto",
-  "kt_mane",
-  "caton",
-  "le_bon_gout"
+  "Le Délice Épicurien",
+  "La Table Enchantée",
+  "Saveurs Divines",
+  "L'Auberge Gourmande",
+  "Le bon goût"
 ]
 supermarket_name = [
-  "winner",
-  "super_u",
-  "jumbo",
-  "shoprite" ,
-  "monoprix"
+  "Supermarché Étoile",
+  "Marché Fantastique",
+  "Supermarché Horizon",
+  "Épicentre Marchand" ,
+  "Magasin des Merveilles"
 ]
 restaurant_descriptions = [
-  "Savor the finest local and international cuisine with a breathtaking view.",
-  "Experience a fusion of flavors crafted by our seasoned chefs.",
-  "Indulge in a variety of dishes prepared with fresh, locally sourced ingredients."
+  "Discover an unforgettable culinary experience with our surprise basket of the day. Exquisite flavors and unique creations await you. Let our chef surprise you!",
+  "Immerse yourself in a world of delights with our surprise basket. Refined dishes and magical flavor combinations for an extraordinary gastronomic experience.",
+  "Embark on a taste journey with our surprise basket. Divine dishes prepared with passion await you. Let us awaken your taste buds!",
+  "Experience the best of our cuisine with our surprise basket. Tasty dishes, quality ingredients, and a breathtaking gastronomic experience.",
+  "Explore flavors from around the world with our surprise basket. Dishes inspired by different cultures for a unique culinary journey.",
 ]
 bakery_descriptions = [
-  "Delight in our assortment of freshly baked pastries and bread.",
-  "Taste the sweetness of life with our delectable cakes and desserts.",
-  "Experience the aroma of homemade bread and artisanal treats."
+  "Éveillez vos sens avec notre panier surprise rempli de délices croustillants. Baguettes fraîches, pains spéciaux et douceurs sucrées vous réservent une expérience gourmande.",
+  "Redécouvrez le plaisir du pain avec notre panier surprise. Des créations uniques, des saveurs variées et des douceurs qui réchauffent le cœur.",
+  "Laissez-vous charmer par notre panier surprise rempli de douceurs divines. Des pâtisseries délicates, des biscuits artisanaux et bien plus encore.",
+  "Plongez dans un monde féerique de saveurs avec notre panier surprise. Des créations magiques, des pains enchantés et des surprises sucrées vous attendent.",
+  "Découvrez le plaisir du fournil avec notre panier surprise. Des pains croustillants, des gâteaux moelleux et des saveurs gourmandes pour combler vos envies."
 ]
 supermarket_descriptions = [
-  "Your one-stop destination for fresh produce and daily essentials.",
-  "Explore a wide selection of locally sourced groceries and organic products.",
-  "Stock up on quality food items and household necessities."
+  "Explorez notre panier surprise rempli d'étoiles du quotidien. Des produits frais, des trouvailles inattendues et des pépites gourmandes pour un shopping étoilé.",
+  "Découvrez le fantastique avec notre panier surprise. Des produits de qualité, des saveurs surprenantes et des trouvailles uniques pour un quotidien extraordinaire.",
+  "Faites un voyage autour du monde avec notre panier surprise. Des produits exotiques, des découvertes culinaires et des surprises pour éveiller votre curiosité.",
+  "Transformez votre routine avec notre panier surprise. Des produits du quotidien de qualité, des promotions spéciales et des surprises enchantées pour chaque panier.",
+  "Plongez dans un univers de merveilles avec notre panier surprise. Des produits de tous les jours transformés en trouvailles extraordinaires pour un shopping magique.",
 ]
 
 # Define Cloudinary image URLs for each category
@@ -109,13 +115,14 @@ while business_count < 5
     puts 'Not enough images available for each category!'
     break
   end
+
   # Bakery
   p business_count
   bakery_location = locations.pop
   bakery = Business.create!(
-    category: 'bakery',
+    category: 'Bakery',
     name: bakery_name[business_count],
-    description: 'Delight in our assortment of freshly baked pastries and bread.',
+    description: bakery_descriptions[business_count],
     address: bakery_location[:address],
     latitude: bakery_location[:latitude],
     longitude: bakery_location[:longitude],
@@ -124,18 +131,21 @@ while business_count < 5
   5.times do
     Basket.create!(
       name: "Basket at #{bakery.name}",
-      description: 'A unique selection of bakery items for your enjoyment.',
-      price: rand(15.0..80.0).round(2),
+      description: bakery_descriptions[business_count],
+      price: rand(150..250).integer,
+      pickup: DateTime.now + rand(1..30).days,
       availability: Date.today + rand(1..30).days,
-      business: bakery
+      business: bakery,
+      rating: rand(3..5).float
     )
   end
+
   # Restaurant
   restaurant_location = locations.pop
   restaurant = Business.create!(
     category: 'restaurant',
     name: restaurant_name[business_count],
-    description: 'Savor the finest local and international cuisine with a breathtaking view.',
+    description: restaurant_descriptions[business_count],
     address: restaurant_location[:address],
     latitude: restaurant_location[:latitude],
     longitude: restaurant_location[:longitude],
@@ -144,18 +154,20 @@ while business_count < 5
   5.times do
     Basket.create!(
       name: "Basket at #{restaurant.name}",
-      description: 'A unique selection of restaurant items for your enjoyment.',
-      price: rand(15.0..80.0).round(2),
+      description: restaurant_descriptions[business_count],
+      price: rand(15..80),
+      pickup: DateTime.now + rand(1..30).days,
       availability: Date.today + rand(1..30).days,
       business: restaurant
     )
   end
+
   # Supermarket
   supermarket_location = locations.pop
   supermarket = Business.create!(
     category: 'supermarket',
     name: supermarket_name[business_count],
-    description: 'Your one-stop destination for fresh produce and daily essentials.',
+    description: supermarket_descriptions[business_count],
     address: supermarket_location[:address],
     latitude: supermarket_location[:latitude],
     longitude: supermarket_location[:longitude],
@@ -164,8 +176,9 @@ while business_count < 5
   5.times do
     Basket.create!(
       name: "Basket at #{supermarket.name}",
-      description: 'A unique selection of supermarket items for your enjoyment.',
-      price: rand(15.0..80.0).round(2),
+      description: supermarket_descriptions[business_count],
+      price: rand(15..80).round(2),
+      pickup: DateTime.now + rand(1..30).days,
       availability: Date.today + rand(1..30).days,
       business: supermarket
     )
