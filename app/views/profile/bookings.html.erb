@@ -1,14 +1,21 @@
-<%if current_user%>
-
-<h1>Bookings:</h1>
-<div class="booking">
-<%@booking.each do |booking|%>
-<%@booked_basket = Basket.where(id: booking.basket_id)%>
- <%@booked_basket.each do |booked_bask|%>
- <p></p>
-<a href="<%= basket_path(booked_bask.id) %>"> <%= booked_bask.name%></a>
- <p></p>
- <%end%>
-<%end%>
-</div>
-<%end%>
+<% if current_user %>
+  <h1>Bookings:</h1>
+  <div class="booking">
+    <% @booking.each do |booking| %>
+      <% @booked_basket = Basket.where(id: booking.basket_id) %>
+      <% @booked_basket.each do |booked_bask| %>
+        <div class="booking-item">
+          <div class="booking-details">
+            <a href="<%= basket_path(booked_bask.id) %>"><%= booked_bask.name %></a>
+          </div>
+          <% business = Business.where(id: booked_bask.business_id).first %>
+          <% if business.image_url.present? %>
+            <div class="booking-image">
+              <%= image_tag(business.image_url, alt: business.name) %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

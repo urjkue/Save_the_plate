@@ -1,4 +1,6 @@
 # Destroy existing data
+Favourit.destroy_all
+Cart.destroy_all
 User.destroy_all
 Basket.destroy_all
 Business.destroy_all
@@ -121,6 +123,9 @@ while business_count < 5
     longitude: bakery_location[:longitude],
     image_url: bakery_images[business_count]
   )
+  file = URI.open(bakery_images[business_count])
+  bakery.photo.attach(io: file, filename: bakery.name, content_type: 'image/jpg')
+  puts "added photo"
   5.times do
     Basket.create!(
       name: "Basket at #{bakery.name}",
@@ -129,6 +134,14 @@ while business_count < 5
       availability: Date.today + rand(1..30).days,
       business: bakery
     )
+    5.times do
+      Review.create!(
+        comment: Faker::Restaurant.review,
+        rating: rand(1..5),
+        user: User.first,
+        business: bakery
+      )
+    end
   end
   # Restaurant
   restaurant_location = locations.pop
@@ -149,6 +162,15 @@ while business_count < 5
       availability: Date.today + rand(1..30).days,
       business: restaurant
     )
+    5.times do
+      Review.create!(
+        comment: Faker::Restaurant.review,
+        rating: rand(1..5),
+        user: User.first,
+        business: restaurant
+      )
+    end
+
   end
   # Supermarket
   supermarket_location = locations.pop
@@ -169,6 +191,14 @@ while business_count < 5
       availability: Date.today + rand(1..30).days,
       business: supermarket
     )
+    5.times do
+      Review.create!(
+        comment: Faker::Restaurant.review,
+        rating: rand(1..5),
+        user: User.first,
+        business: supermarket
+      )
+    end
   end
   business_count += 1
 end
