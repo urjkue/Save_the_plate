@@ -1,10 +1,12 @@
 <div class="banner">
-  <div class="banner-img"></div>
+  <div class="banner-img">
+  <%# <%= image_tag(@business.image_url, alt: @business.name, style: "width: 100px; height: 100px;")%>
+  </div>
   <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-  <p class="business-title"><%= @business.name %></p>
 </div>
 
 <div class="contanier-center">
+  <h3 class="business-title"><%= @business.name %></h3>
   <div class="basket-price">
     <h2><i class="fas fa-shopping-cart"></i> basket suprise</i></h2>
     <h2><%= @baskets.price %>MUR</h2>
@@ -15,6 +17,7 @@
   <span><i class="fa fa-clock-o" aria-hidden="true"></i>Pick-up tomorrow 2PM-5PM</span>
   <span><i class="fa-solid fa-map-marker"></i> 1.5 km</span>
   <span><i class="fa-solid fa-star"></i> 4.5</span>
+  <ion-icon name="glasses-sharp"> welcome</ion-icon>
 </div>
 
 <div class="contanier_low">

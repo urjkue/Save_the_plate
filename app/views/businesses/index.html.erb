@@ -1,11 +1,11 @@
 <div class="container-head-name">
-  <h1>Choose a Location</h1>
-</div>
+    <h1>Choose a Location</h1>
+  </div>
 <div style="width: 100%; height: 400px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 <%# <div class="container-search">
   <div class="search-field">
     <div class="form">
@@ -13,14 +13,12 @@
       <input type="text" class="form-control form-input" id="geocoder" placeholder="Search">
     </div>
   </div> %>
-  <%# <div class="btn-research">
-    <button class="btn-search">Search</button>
-  </div>
-</div> %>
+
 
 <div class="text-location">
-<h1>use the postions accutel</h1>
-</div>
+    <h1>Use the position actual</h1>
+  <div ><a id="btn_search" href="#">Search</a></div>
+  </div>
 
 
 <script>
