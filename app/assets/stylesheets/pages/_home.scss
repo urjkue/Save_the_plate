@@ -69,9 +69,13 @@
 
 /* Styling for round category buttons */
 
+/* Updated CSS for responsive round category buttons */
+
+/* Updated CSS for responsive round category buttons with centered and larger icons */
+
 .category-buttons {
   display: flex;
-  justify-content: space-between; /* Adjust as needed */
+  justify-content: space-around; /* Adjust alignment as needed */
   gap: 10px; /* Adjust the space between buttons */
   padding: 10px; /* Add padding around buttons */
 }
@@ -80,22 +84,46 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* Set width for circular shape */
-  height: 40px; /* Set height for circular shape */
+  width: 10vw; /* Set width for circular shape (10% of viewport width) */
+  height: 10vw; /* Set height for circular shape (10% of viewport width) */
+  max-width: 60px; /* Set maximum width for larger screens */
+  max-height: 60px; /* Set maximum height for larger screens */
   border-radius: 50%; /* Create a circular shape */
   background-color: rgba(123, 179, 93, 0.51); /* Background color */
   color: #fff; /* Text color */
   text-decoration: none; /* Remove underline from links */
   transition: background-color 0.3s ease; /* Smooth transition */
+  flex-shrink: 0; /* Prevent button from shrinking too much */
+  font-size: 24px; /* Adjust icon size */
 }
 
 .category-button i {
+  display: flex; /* Enable flexbox for centering */
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
   margin-right: 5px; /* Adjust spacing between icon and text */
 }
 
 .category-button:hover {
   background-color: rgba(123, 179, 93, 0.8); /* Change color on hover */
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .category-buttons {
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  }
+
+  .category-button {
+    width: 15vw; /* Adjust width for smaller screens */
+    height: 15vw; /* Adjust height for smaller screens */
+    max-width: 70px; /* Adjust maximum width for smaller screens */
+    max-height: 70px; /* Adjust maximum height for smaller screens */
+    font-size: 20px; /* Adjust icon size for smaller screens */
+  }
+}
+
+
 
 
 /* Your other existing CSS */
