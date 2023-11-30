@@ -58,12 +58,44 @@
 .round {
   display: inline-block;
   background-color: grey;
-  border-radius: 50%;
-  padding: 3px;
+  border-radius: 45%;
+  padding: 10px;
 }
 
 .heart {
   font-size: 1em;
   color: #ffffff;
 }
+
+/* Styling for round category buttons */
+
+.category-buttons {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  gap: 10px; /* Adjust the space between buttons */
+  padding: 10px; /* Add padding around buttons */
+}
+
+.category-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Set width for circular shape */
+  height: 40px; /* Set height for circular shape */
+  border-radius: 50%; /* Create a circular shape */
+  background-color: rgba(123, 179, 93, 0.51); /* Background color */
+  color: #fff; /* Text color */
+  text-decoration: none; /* Remove underline from links */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.category-button i {
+  margin-right: 5px; /* Adjust spacing between icon and text */
+}
+
+.category-button:hover {
+  background-color: rgba(123, 179, 93, 0.8); /* Change color on hover */
+}
+
+
 /* Your other existing CSS */

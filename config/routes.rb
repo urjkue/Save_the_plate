@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/favourites/destroy/:id",to: "favourites#destroy", as: :favourit_destroy
   get "/profile", to: "profile#index", as: :profile
   get "/profile/bookings", to: "profile#bookings", as: :profile_bookings
+  get "/category/:name", to: "pages#category", as: :category
   # get "/favourites/:id",to: "favourites#show"
   # get "/cart",to: "carts#index", as: :cart
   get "cart/new/:id",to: "carts#new", as: :cart_new

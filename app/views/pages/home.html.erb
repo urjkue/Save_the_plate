@@ -13,113 +13,80 @@
     </div>
   </div>
 
-  <!-- Categories sections -->
-  <div class="categories-section">
+<div class="category-buttons">
+  <%= link_to category_path("restaurant"), class: "category-button" do %>
+    <i class="fas fa-utensils"></i> <!-- Font Awesome icon for Restaurant -->
+  <% end %>
 
-    <!-- Restaurants -->
-    <div class="category">
-      <div class="round-button"><i class="fas fa-home"></i></div>
-      <p>Restaurants</p>
+  <%= link_to category_path("Bakery"), class: "category-button" do %>
+    <i class="fas fa-birthday-cake"></i> <!-- Font Awesome icon for Bakery -->
 
-      <!-- Display restaurant cards -->
-      <div class="main-container">
-        <div class="horizontal-scroll-container">
-          <% @businesses.each do |business| %>
-            <% if business.category.downcase == "restaurant" %>
-              <% @basket = Basket.where(business_id: business.id).first %>
-              <div class="card">
-                <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
-                <div class="card-description">
-                  <h2 class="card_title"><%= business.name %></h2>
-                  <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
-                  <p>À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
-                  <div class="round">
-                    <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
-                      <i class="fa-regular fa-heart"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <h2><%=@basket.price%> MUR</h2>
-                  </div>
-                </div>
+  <% end %>
+
+  <%= link_to category_path("supermarket"), class: "category-button" do %>
+    <i class="fas fa-shopping-cart"></i> <!-- Font Awesome icon for Supermarket -->
+  <% end %>
+</div>
+
+
+
+
+  <div class="save-section">
+
+  <P></P>
+    <p>fOR YOU 💖 </p>
+
+    <div class="main-container">
+      <div class="horizontal-scroll-container">
+        <% @businesses.each do |business| %>
+          <% @basket = Basket.where(business_id: business.id).first %>
+          <div class="card">
+            <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
+            <div class="card-description">
+              <h2 class="card_title"><%= business.name %></h2>
+              <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+              <p>À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
+              <div class="round">
+                <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                  <i class="fa-regular fa-heart"></i>
+                </a>
               </div>
-            <% end %>
-          <% end %>
-        </div>
+              <div>
+                <span><i class="fa-solid fa-star"></i></span>
+                <h2><%=@basket.price%> MUR</h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-
-    <!-- Supermarkets -->
-    <div class="category">
-      <div class="round-button"><i class="fas fa-bell"></i></div>
-      <p>Supermarchés</p>
-
-      <!-- Display supermarket cards -->
-      <div class="main-container">
-        <div class="horizontal-scroll-container">
-          <% @businesses.each do |business| %>
-            <% if business.category.downcase == "supermarket" %>
-              <% @basket = Basket.where(business_id: business.id).first %>
-              <div class="card">
-                <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
-                <div class="card-description">
-                  <h2 class="card_title"><%= business.name %></h2>
-                  <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
-                  <p>À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
-                  <div class="round">
-                    <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
-                      <i class="fa-regular fa-heart"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <h2><%=@basket.price%> MUR</h2>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bakeries -->
-    <div class="category">
-      <div class="round-button"><i class="fas fa-cog"></i></div>
-      <p>Boulangeries</p>
-
-      <!-- Display bakery cards -->
-      <div class="main-container">
-        <div class="horizontal-scroll-container">
-          <% @businesses.each do |business| %>
-            <% if business.category.downcase == "bakery" %>
-              <% @basket = Basket.where(business_id: business.id).first %>
-              <div class="card">
-                <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
-                <div class="card-description">
-                  <h2 class="card_title"><%= business.name %></h2>
-                  <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
-                  <p>À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
-                  <div class="round">
-                    <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
-                      <i class="fa-regular fa-heart"></i>
-                    </a>
-                  </div>
-                  <div>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <h2><%=@basket.price%> MUR</h2>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
   </div>
+  <div class="save-section">
+  <p>Save before it’s too late</p>
 
-  <!-- Remaining content -->
-  <p class="text-start">À sauver avant qu'il ne soit trop tard</p>
+  <div class="main-container">
+    <div class="horizontal-scroll-container">
+      <% @ranbus.each do |business| %>
+        <% @basket = Basket.where(business_id: business.id).first %>
+        <div class="card">
+          <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
+          <div class="card-description">
+            <h2 class="card_title"><%= business.name %></h2>
+            <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+            <p>À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
+            <div class="round">
+              <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                <i class="fa-regular fa-heart"></i>
+              </a>
+            </div>
+            <div>
+              <span><i class="fa-solid fa-star"></i></span>
+              <h2><%=@basket.price%> MUR</h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 </div>
