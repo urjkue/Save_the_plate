@@ -12,15 +12,23 @@
   position: absolute;
   left: 350px;
   top: 0px;
-
 }
 
 .business-title {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, 150%);
+  position: relative;
+
+  // top: 20%;
+  // left: 50%;
+  // transform: translate(-50%, 150%);
 }
+.contanier-centre{
+background-color: beige;
+}
+
+
+
+
+
 
 .basket-price{
   display: flex;
@@ -29,15 +37,25 @@
 }
 
 .basket-infos{
-  color: aqua;
+
   display: grid;
   margin: 10px;
 
+  .contanier_low{
+    h1{
+      position: relative;
+      left: 4rem;
+    }
 }
 // .container_low{
 //   margin: 10px;
 //   overflow: hidden;
 // }
+.contanier_low{
+  margin: 10px;
+  }
+  overflow: hidden;
+}
 .bth-book{
   font-size: 16px;
   padding: 10px 20px;
