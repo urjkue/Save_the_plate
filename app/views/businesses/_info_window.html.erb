@@ -1,1 +1,2 @@
 <h2><%= business.name  %></h2>
+<%= image_tag(business.image_url, alt: business.name, style: "width: 100px; height: 100px;") if business.image_url.present? %>
