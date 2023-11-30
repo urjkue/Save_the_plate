@@ -21,7 +21,7 @@
   // left: 50%;
   // transform: translate(-50%, 150%);
 }
-.contanier-centre{
+.container-centre{
 background-color: beige;
 }
 
@@ -36,19 +36,22 @@ background-color: beige;
   gap: 3rem;
 }
 
-
 .basket-infos{
 
   display: grid;
   margin: 10px;
 
-  .contanier_low{
+  .container-low{
     h1{
       position: relative;
       left: 4rem;
     }
 }
-.contanier_low{
+// .container_low{
+//   margin: 10px;
+//   overflow: hidden;
+// }
+.container-low{
   margin: 10px;
   }
   overflow: hidden;
@@ -69,3 +72,29 @@ background-color: beige;
 .bth-book:hover{
   background-color: #3e8e41;
 }
+
+// Button
+
+// .custom-button {
+//   /* Button styles */
+//   padding: 12px 24px;
+//   background-color: blue;
+//   color: white;
+//   text-decoration: none;
+//   border-radius: 5px;
+//   transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+//   border-radius: 25%;
+// }
+
+// .custom-button:hover {
+//   /* Hover effect styles */
+//   background-color: navy;
+// }
+
+// @media screen and (max-width: 768px) {
+//   /* Adjust button size for smaller screens */
+//   .custom-button {
+//     padding: 10px 20px;
+//     font-size: 14px;
+//   }
+// }
