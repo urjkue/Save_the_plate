@@ -1,211 +1,69 @@
-// Specific CSS for your home-page
+/* Your existing CSS */
 
-
-// Categories button
-
-.round-button {
-  width: 50px;
-  height: 50px;
-  background-color: #ccc;
-  border: none;
-  border-radius: 50%;
-  margin: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.round-button i {
-  font-size: 20px;
-  color: #000;
-}
-
-// @media (max-width: 600px) {
-//   .round-button {
-//     width: 40px;
-//     height: 40px;
-//   }
-// }
-
-// Search bar
-
-.container-search {
-  background-color: white;
-  z-index: 9999;
-  display: flex;
-  gap: .5rem;
-  flex-direction: column;
-  padding-block: 1rem;
-}
-
-.container-search.home {
-  background-color:transparent;
-}
-
-.search-field {
-  position: relative;
-}
-
-.form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.form input{
-  width: 90%;
-  height: 6vh;
-}
-
-.form .fa-search{
-  position: absolute;
-  top: 12px;
-  left: 40px;
-  color: #9ca3af;
-}
-
-.form-input{
-  height: 55px;
-  text-indent: 33px;
-  border-radius: 10px;
-}
-
-.form-input:focus{
-  box-shadow: none;
-  border:none;
-}
-
-// Food card
-
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  max-width: 270px;
-  border-radius: 10px;
-}
-
-.card-trip > img {
-  height: 70px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card_title {
-  margin-top: -5px;
-  margin-bottom: 0px;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-.card-trip .card-trip-infos {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.heart {
-  font-size: 1em;
-  color: #ffffff;
-  padding-left: 3px;
-}
-
-.round {
-  border-radius: 100%;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: -60px;
-  right: 16px;
-  font-size: 1.5em;
-  background-color: grey;
-  opacity: 0.8;
-  display: block;
-}
-
-// .card-trip .business-name {
-//   // position: absolute;
-//   right: 122px;
-//   top: -7px;
-//   font-size: 16px;
-//   color: #030303;
-//   margin: 0;
-// }
-
-// .card-trip-infos .round-logo {
-//   width: 40px;
-//   height: 40px;
-//   background-color: #ccc;
-//   border: none;
-//   border-radius: 50%;
-//   margin: 10px;
-//   position: absolute;
-//   right: 210px;
-//   top: -60px;
-// }
-
-// .card-trip-infos .round-logo i {
-//   font-size: 20px;
-//   color: #000;
-// }
-
-
-// scroll
+/* Scroll */
 .main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 428px;
+  max-width: 100%; /* Adjust width as needed */
   margin: 0 auto;
   background-color: #fff;
-  padding: 10%;
+  padding: 10px; /* Adjust padding as needed */
 }
 
 .horizontal-scroll-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  height: 33vh;
+  overflow-x: auto;
   width: 100%;
-  overflow-y: scroll;
-  overflow-y: hidden;
+  padding: 10px 0; /* Adjust padding as needed */
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  height: 150px;
+  flex: 0 0 auto;
+  height: auto; /* Adjust height as needed */
   width: 200px;
-  margin: 0 10px;
+  margin-right: 10px; /* Adjust margin as needed */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.card-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  text-overflow: hidden;
-  text-decoration: ellipsis;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.card img {
+  height: 100px; /* Adjust image height as needed */
+  width: 100%; /* Adjust image width as needed */
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
+
+.card-description {
+  padding: 10px;
+}
+
+.card_title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-description a,
+.card-description p {
+  font-size: 12px;
+  margin: 5px 0;
+  opacity: .7;
+}
+
+.round {
+  display: inline-block;
+  background-color: grey;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.heart {
+  font-size: 1em;
+  color: #ffffff;
+}
+/* Your other existing CSS */
