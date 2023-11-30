@@ -13,21 +13,11 @@
   left: 350px;
   top: 0px;
 }
-
-.business-title {
-  position: relative;
-
-  // top: 20%;
-  // left: 50%;
-  // transform: translate(-50%, 150%);
-}
-.contanier-centre{
+.contanier-center{
 background-color: beige;
+position: relative;
+left: 10px;
 }
-
-
-
-
 
 
 .basket-price{
@@ -36,22 +26,13 @@ background-color: beige;
   gap: 3rem;
 }
 
-
 .basket-infos{
-
   display: grid;
   margin: 10px;
-
-  .contanier_low{
-    h1{
-      position: relative;
-      left: 4rem;
-    }
 }
-.contanier_low{
-  margin: 10px;
-  }
-  overflow: hidden;
+  .contanier_low{
+      position: relative;
+      left: 10px;
 }
 .bth-book{
   font-size: 16px;
