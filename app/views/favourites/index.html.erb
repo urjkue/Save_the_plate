@@ -1,11 +1,11 @@
 <h3 class="fa-solid fa-heart"> Your favorits </h3>
 
+<% if current_user %>
 <% @favourites.each do |fav| %>
   <% @fav_bask = Basket.where(id: fav.basket_id) %>
   <% @fav_bask.each do |bask| %>
-  <%@bus = Business.where(id: bask.business_id)%>
+  <%@bus = Business.where(id: bask.business_id).first%>
   <div class="main-container">
-
   <div class="card-trip">
     <img src="https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg" />
     <span>
@@ -16,13 +16,15 @@
         <p> <%=bask.availability%></p>
       </div>
         <div class="business-name">
-          <span><%=@bus.name%></span> 
+          <span><%=@bus.name%></span>
         </div>
         <div class="round-logo"></div>
     </div>
     <div class="card-trip-infos pt-0">
           <div>
-            <span><i class="fa-solid fa-star"></i> </span>
+             <a href="<%= favourit_destroy_path(fav.id) %>">
+  <i class="fa-solid fa-heart"></i>
+</a>
           </div>
           <h2><%=bask.price%></h2>
         </div>
@@ -30,4 +32,19 @@
   </div>
 </div>
   <% end %>
+<% end %>
+
+<% else %>
+<% unless current_user %>
+  <% redirect_to new_user_session_path, notice: "Please log in to add to favourites." %>
+<% end %>
+
+  <%
+=begin%>
+ <div class="login">
+    <!-- Link to Devise default login page -->
+    <a href="<%= new_user_session_path %>" class="login-link">Login</a>
+  </div>
+<%
+=end%>
 <% end %>
