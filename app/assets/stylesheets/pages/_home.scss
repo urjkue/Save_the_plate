@@ -1,70 +1,69 @@
-/* Your existing CSS */
-
-/* Scroll */
+/* Additional CSS for Horizontal Scrolling */
 .main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 100%; /* Adjust width as needed */
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 10px; /* Adjust padding as needed */
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .horizontal-scroll-container {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
+  display: inline-block;
+}
+
+.card-trip {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px; /* Adjust margin between cards */
+  white-space: normal; /* Allow normal text wrapping inside the cards */
+}
+
+
+.card-trip > img {
+  height: 70px;
   width: 100%;
-  padding: 10px 0; /* Adjust padding as needed */
-}
-
-.card {
-  flex: 0 0 auto;
-  height: auto; /* Adjust height as needed */
-  width: 200px;
-  margin-right: 10px; /* Adjust margin as needed */
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-  height: 100px; /* Adjust image height as needed */
-  width: 100%; /* Adjust image width as needed */
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
-.card-description {
-  padding: 10px;
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .card_title {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 16px;
-  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: 0px;
 }
 
-.card-description a,
-.card-description p {
+.card-trip p {
   font-size: 12px;
-  margin: 5px 0;
   opacity: .7;
+  margin: 0;
 }
 
-.round {
-  display: inline-block;
-  background-color: grey;
-  border-radius: 45%;
+.card-trip .card-trip-infos {
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
 
 .heart {
   font-size: 1em;
   color: #ffffff;
+  padding-left: 3px;
+}
+
+.round {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -60px;
+  right: 16px;
+  font-size: 1.5em;
+  background-color: grey;
+  opacity: 0.8;
+  display: block;
 }
 
 /* Styling for round category buttons */
