@@ -1,18 +1,16 @@
-<%if current_user%>
-<h1>
-Hello
-<%= @user.first_name%>
-</h1>
-<%= link_to "orders", profile_bookings_path %>
+<% if current_user %>
+  <div id="profile-heading">
+    Hello <%= current_user.first_name %>
+  </div>
+  <%= link_to "Orders", profile_bookings_path, class: "profile-link" %>
+  <p></p>
+  <%= link_to "Change Password", edit_user_password_path, class: "profile-link" %><br />
+  <p></p>
 
-
-
-
- <%= link_to "Log out", destroy_user_session_path , class: "dropdown-item", data: {turbo_method: :delete} %>
-<%else%>
-
-<div class="login">
-  <!-- Link to Devise default login page -->
-  <a href="<%= new_user_session_path %>">Login</a>
-</div>
-<%end%>
+  <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
+<% else %>
+  <div class="login">
+    <!-- Link to Devise default login page -->
+    <a href="<%= new_user_session_path %>" class="login-link">Login</a>
+  </div>
+<% end %>

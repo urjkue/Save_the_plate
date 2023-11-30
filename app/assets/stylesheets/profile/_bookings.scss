@@ -1,0 +1,50 @@
+/* Styling for the bookings section */
+
+.booking {
+  margin-top: 20px;
+}
+
+.booking-item {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.booking-details {
+  flex: 1;
+}
+
+.booking-details a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.booking-image {
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.booking-image img {
+  max-width: 100px; /* Adjust the max width as needed */
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .booking-item {
+    flex-direction: column;
+  }
+
+  .booking-image {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .booking-image img {
+    max-width: 100%; /* Set image width to fill container */
+  }
+}
