@@ -5,7 +5,7 @@
   <p class="business-title"><%= @business.name %></p>
 </div>
 
-<div class="contanier-center">
+<div class="container-center">
   <div class="basket-price">
     <h2><i class="fas fa-shopping-cart"></i> basket suprise</i></h2>
     <h2><%= @baskets.price %>MUR</h2>
@@ -21,5 +21,5 @@
 <div class="contanier_low">
   <h1><strong>hi</strong></h1>
   <p><%= @baskets.description %></p>
-  <a href="<%= cart_new_path(@baskets.id) %>" class="bth-book">Book</a>
+  <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Book</a>
 </div>

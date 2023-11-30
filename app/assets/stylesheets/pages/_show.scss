@@ -22,18 +22,11 @@
   transform: translate(-50%, 150%);
 }
 
-
-
-
-
-
-
 .basket-price{
   display: flex;
   font-size: inherit;
   gap: 3rem;
 }
-
 
 .basket-infos{
   color: aqua;
@@ -41,10 +34,10 @@
   margin: 10px;
 
 }
-.contanier_low{
-  margin: 10px;
-  overflow: hidden;
-}
+// .container_low{
+//   margin: 10px;
+//   overflow: hidden;
+// }
 .bth-book{
   font-size: 16px;
   padding: 10px 20px;
@@ -60,4 +53,30 @@
 }
 .bth-book:hover{
   background-color: #3e8e41;
+}
+
+// Button
+
+.custom-button {
+  /* Button styles */
+  padding: 12px 24px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+  border-radius: 25%;
+}
+
+.custom-button:hover {
+  /* Hover effect styles */
+  background-color: navy;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust button size for smaller screens */
+  .custom-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
