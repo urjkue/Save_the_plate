@@ -1,0 +1,36 @@
+/* Styling for the payment form */
+
+.payment-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form label,
+.payment-form input,
+.payment-form p {
+  margin-bottom: 10px;
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.payment-form input[type="submit"] {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.payment-form input[type="submit"]:hover {
+  background-color: navy;
+}
