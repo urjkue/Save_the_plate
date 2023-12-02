@@ -6,19 +6,16 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-<%# <div class="container-search">
-  <div class="search-field">
-    <div class="form">
-      <i class="fa fa-search"></i>
-      <input type="text" class="form-control form-input" id="geocoder" placeholder="Search">
-    </div>
-  </div> %>
+
 
 
 <div class="text-location">
-<h1>Choisir la localisation</h1>
+<span><i class="fa-solid fa-location-dot">Choisir la localisation</i></span>
 </div>
 
+<div class="btn-home">
+  <a linkto= home_path> Results</a>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
