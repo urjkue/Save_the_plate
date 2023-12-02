@@ -14,58 +14,63 @@
   top: 0px;
 }
 
-.business-title {
-  position: relative;
-
-  // top: 20%;
-  // left: 50%;
-  // transform: translate(-50%, 150%);
-}
-.contanier-centre{
+.container-center{
 background-color: beige;
+position: relative;
+left: 10px;
 }
-
-
-
-
 
 
 .basket-price{
   display: flex;
   font-size: inherit;
-  gap: 3rem;
+  gap: 5rem;
 }
-
 
 .basket-infos{
-
   display: grid;
   margin: 10px;
+  background: antiquewhite;
+}
+.container-address{
+  background-color: beige;
+  position:relative;
+  left: 10px;
 
-  .contanier_low{
-    h1{
+}
+.container-low{
       position: relative;
-      left: 4rem;
-    }
-}
-.contanier_low{
-  margin: 10px;
+      left: 10px;
+      background-color: beige;
+      overflow: hidden;
   }
-  overflow: hidden;
-}
-.bth-book{
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #272a27;
+
+
+// Button
+
+.custom-button {
+  /* Button styles */
+  position: relative;
+  left: 150px;
+  
+  padding: 12px 24px;
+  background-color: blue;
   color: white;
-  text-align: center;
-  transition: background-color 0.3s;
-  display: flex;
-  width: fit-content;
-  margin: 0 auto;
   text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+  border-radius: 25%;
 }
-.bth-book:hover{
-  background-color: #3e8e41;
+
+.custom-button:hover {
+  /* Hover effect styles */
+  background-color: navy;
 }
+
+// @media screen and (max-width: 768px) {
+//   /* Adjust button size for smaller screens */
+//   .custom-button {
+//     padding: 10px 20px;
+//     font-size: 14px;
+//   }
+// }

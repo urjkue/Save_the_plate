@@ -4,23 +4,25 @@
   <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
 </div>
 
-<div class="contanier-center">
+<div class="container-center">
   <h3 class="business-title"><%= @business.name %></h3>
-  <div class="basket-price">
-    <h2><i class="fas fa-shopping-cart"></i> basket suprise</i></h2>
-    <h2><%= @baskets.price %>MUR</h2>
-  </div>
+  <span><i class="fa-solid fa-star"></i> 4.5</span>
 </div>
 
 <div class="basket-infos">
-  <span><i class="fa fa-clock-o" aria-hidden="true"></i>Pick-up tomorrow 2PM-5PM</span>
-  <span><i class="fa-solid fa-map-marker"></i> 1.5 km</span>
-  <span><i class="fa-solid fa-star"></i> 4.5</span>
-  <ion-icon name="glasses-sharp"> welcome</ion-icon>
+  <div class="basket-price">
+    <h2><i class="fa-solid fa-basket-shopping"></i>basket suprise</i></h2>
+    <h2><%= @baskets.price %>MUR</h2>
+  </div>
+  <span><i class="fa-solid fa-clock"></i>Pick-up tomorrow 2PM-5PM</span>
+  <br>
+</div>
+<div class="container-address">
+  <span><i class="fa-solid fa-location-dot"></i>address</span>
 </div>
 
-<div class="contanier_low">
+<div class="container-low">
   <h1><strong>hi</strong></h1>
   <p><%= @baskets.description %></p>
-  <a href="<%= cart_new_path(@baskets.id) %>" class="bth-book">Book</a>
 </div>
+  <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Book</a>

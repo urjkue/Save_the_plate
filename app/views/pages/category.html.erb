@@ -1,0 +1,24 @@
+<div class="card-container-category">
+  <% @businesses.each do |bus| %>
+    <% @basket = Basket.where(business_id: bus.id).first %>
+    <div class="card">
+      <p></p>
+      <%= image_tag(bus.image_url, alt: bus.name) if bus.image_url.present? %>
+      <div class="card-description">
+        <h2 class="card_title"><%= bus.name %></h2>
+        <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+        <p>À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
+        <div class="round">
+          <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+        </div>
+        <div>
+          <span><i class="fa-solid fa-star"></i></span>
+          <h2><%=@basket.price%> MUR</h2>
+        </div>
+      </div>
+    </div>
+    <p></p>
+  <% end %>
+</div>

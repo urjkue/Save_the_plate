@@ -7,5 +7,14 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import HomeController from "./home_controller"
+application.register("home", HomeController)
+
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+
+
+
+
+// app/javascript/controllers/index.js

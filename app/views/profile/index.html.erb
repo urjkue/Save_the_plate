@@ -31,3 +31,11 @@
     </div>
   <% end %>
 </div>
+    <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
+  <% else %>
+    <div class="login">
+      <!-- Link to Devise default login page -->
+      <a href="<%= new_user_session_path %>" class="login-link">Login</a>
+    </div>
+  <% end %>
+</div>
