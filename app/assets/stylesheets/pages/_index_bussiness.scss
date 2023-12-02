@@ -1,24 +1,29 @@
+
 .container-head-name{
   position: relative;
   text-align: center;
 }
 .text-location{
-  position: absolute;
-  left: auto;
+  position: relative;
+text-align: center;
 }
-// #bth_search{
-//   font-size: 16px;
-//   padding: 10px 20px;
-//   border-radius: 10px;
-//   background-color: #272a27;
-//   color: white;
-//   text-align: center;
-//   transition: background-color 0.3s;
-//   display: flex;
-//   width: fit-content;
-//   margin: 0 auto;
-//   text-decoration: none;
-// }
-// #bth_search:hover{
-//   background-color: #3e8e41;
-// }
+.carte-info{
+  background-color: beige;
+}
+.btn-home {
+  background-color: #201095;
+  color: #fff;
+  align-content: center;
+  border: 10px;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  bottom: -8px;
+  padding: 8px 16px;
+  width: 12vh;
+  margin-left: 9rem;
+  a{
+    color: #fff;
+  }
+}

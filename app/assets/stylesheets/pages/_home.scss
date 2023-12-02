@@ -1,96 +1,51 @@
-// Specific CSS for your home-page
-
-
-// Categories button
-
-.round-button {
-  width: 50px;
-  height: 50px;
-  background-color: #ccc;
-  border: none;
-  border-radius: 50%;
-  margin: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.round-button i {
-  font-size: 20px;
-  color: #000;
-}
-
-// @media (max-width: 600px) {
-//   .round-button {
-//     width: 40px;
-//     height: 40px;
-//   }
-// }
-
-// Search bar
-
-.container-search {
-  background-color: white;
-  z-index: 9999;
+/* Additional CSS for Horizontal Scrolling */
+.main-container {
   display: flex;
-  gap: .5rem;
   flex-direction: column;
-  padding-block: 1rem;
-}
-
-.container-search.home {
-  background-color:transparent;
-}
-
-.search-field {
-  position: relative;
-}
-
-.form {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+
 }
 
-.form input{
-  width: 90%;
-  height: 6vh;
+.horizontal-scroll-container {
+  display: flex;
+  flex-direction: row;
+  height: 39vh;
+  gap: 12px;
+  overflow-y:scroll;
+  overflow-y: hidden;
+  padding-block: 30px;
 }
 
-.form .fa-search{
+.clickable2{
   position: absolute;
-  top: 12px;
-  left: 40px;
-  color: #9ca3af;
+  background-color: transparent;
+  top: 0;
+  width: 287px;
+  height: 199px;
+  border-radius: 30px;
+  z-index: 7;
+
 }
-
-.form-input{
-  height: 55px;
-  text-indent: 33px;
-  border-radius: 10px;
-}
-
-.form-input:focus{
-  box-shadow: none;
-  border:none;
-}
-
-// Food card
-
 .card-trip {
-  overflow: hidden;
+  // overflow: hidden;
+  position: relative;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  max-width: 270px;
-  border-radius: 10px;
+  // width: 270px;
+  border-radius: 30px;
+  width: calc(100vh - 30px);
 }
 
 .card-trip > img {
-  height: 70px;
-  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 80px;
+  width: calc(100vw - 30px);
   object-fit: cover;
+
 }
 
 .card-trip h2 {

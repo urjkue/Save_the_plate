@@ -1,2 +1,9 @@
-<h2><%= business.name  %></h2>
-<%= image_tag(business.image_url, alt: business.name, style: "width: 100px; height: 100px;") if business.image_url.present? %>
+  <%= image_tag(business.image_url, alt: business.name, style: "width: 100%; height: 100px;  ") if business.image_url.present? %>
+
+<div class="carte-info">
+  <% @basket = Basket.where(business_id: business.id).first%>
+ <h2><a href="<%= basket_path(@basket.id) %>"><%= business.name%></a></h2>
+</div>
+
+
+

@@ -1,6 +1,5 @@
 <div class="banner">
-  <div class="banner-img">
-  </div>
+    <%= image_tag(@business.image_url, alt: @business.name, class:"img") if @business.image_url.present?%>
   <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
 </div>
 
@@ -14,7 +13,7 @@
     <h2><i class="fa-solid fa-basket-shopping"></i>basket suprise</i></h2>
     <h2><%= @baskets.price %>MUR</h2>
   </div>
-  <span><i class="fa-solid fa-clock"></i>Pick-up tomorrow 2PM-5PM</span>
+  <span><i class="fa-solid fa-clock"></i>Pick-up tomorrow </span>
   <br>
 </div>
 <div class="container-address">
