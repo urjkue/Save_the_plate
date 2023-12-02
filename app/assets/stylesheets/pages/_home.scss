@@ -1,25 +1,51 @@
 /* Additional CSS for Horizontal Scrolling */
 .main-container {
-  overflow-x: auto;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+
 }
 
 .horizontal-scroll-container {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  height: 39vh;
+  gap: 12px;
+  overflow-y:scroll;
+  overflow-y: hidden;
+  padding-block: 30px;
 }
 
+.clickable2{
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  width: 287px;
+  height: 199px;
+  border-radius: 30px;
+  z-index: 7;
+
+}
 .card-trip {
-  overflow: hidden;
+  // overflow: hidden;
+  position: relative;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  max-width: 270px;
-  border-radius: 10px;
+  // width: 270px;
+  border-radius: 30px;
+  width: calc(100vh - 30px);
 }
 
 .card-trip > img {
-  height: 70px;
-  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 80px;
+  width: calc(100vw - 30px);
   object-fit: cover;
+
 }
 
 .card-trip h2 {
