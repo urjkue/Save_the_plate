@@ -1,46 +1,46 @@
 <nav class="bottom_nav">
   <div class="nav_container">
-   <ul class="nav_links_container">
-      <li class="nav-link">
+    <ul class="nav_links_container">
+      <li class="nav-link <%= 'active' if current_page?(home_path) %>">
         <%= link_to home_path, class: "nav_item" do %>
           <div class="icon_container">
-          <i class="fa-solid fa-house"></i>
-          <p class="body">
-            Découvrir
-          </p>
+            <i class="fa-solid fa-house"></i>
+            <p class="navbar-text">
+              Découvrir
+            </p>
           </div>
         <% end %>
-    </li>
-    <li class="nav-link">
-          <%= link_to businesses_path, class: "nav_item" do %>
+      </li>
+      <li class="nav-link <%= 'active' if current_page?(businesses_path) %>">
+        <%= link_to businesses_path, class: "nav_item" do %>
           <div class="icon_container">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <p class="body">
-            Parcourir
-          </p>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p class="navbar-text">
+              Parcourir
+            </p>
           </div>
-          <% end %>
-    </li>
-    <li class="nav-link">
-          <%= link_to favourit_path, class: "nav_item" do %>
+        <% end %>
+      </li>
+      <li class="nav-link <%= 'active' if current_page?(favourit_path) %>">
+        <%= link_to favourit_path, class: "nav_item" do %>
           <div class="icon_container">
-          <i class="fa-solid fa-heart"></i>
-          <p class="body">
-            Favoris
-          </p>
+            <i class="fa-solid fa-heart"></i>
+            <p class="navbar-text">
+              Favoris
+            </p>
           </div>
-          <% end %>
-    </li>
-    <li class="nav-link">
-          <%= link_to profile_path, class: "nav_item" do %>
+        <% end %>
+      </li>
+      <li class="nav-link <%= 'active' if current_page?(profile_path) %>">
+        <%= link_to profile_path, class: "nav_item" do %>
           <div class="icon_container">
-          <i class="fa-solid fa-user"></i>
-          <p class="body">
-            Profil
-          </p>
+            <i class="fa-solid fa-user"></i>
+            <p class="navbar-text">
+              Profil
+            </p>
           </div>
-          <% end %>
-    </li>
-   </ul>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </nav>

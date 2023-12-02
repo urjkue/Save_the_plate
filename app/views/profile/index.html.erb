@@ -1,41 +1,77 @@
 <div class="container">
-  <div class="back-button">
-      <i class="fa-solid fa-chevron-left"></i>
-    </div>
-    <p>Mon profil</p>
 
-  <% if current_user %>
+  <div class="profile-button-container">
+    <%= link_to :back, class: "back-button" do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <h1>Mon profil</h1>
+  </div>
+</div>
+
+<% if @user %>
     <div id="profile-heading">
-      Hello <%= current_user.first_name %>
+      <h1>Hello <%= @user.first_name%> !</h1>
+  <% end %>
     </div>
 
-
-<div class="container-profile">
+  <div class="container-profile">
     <div class="header">
+      <div class ="parameter">
       <i class="fa-solid fa-basket-shopping"></i>
-      <h2>Mes commandes</h2>
+      <h2><%= link_to "Mes commandes", profile_bookings_path  %></h2>
+      </div>
       <i class="fa-solid fa-chevron-right"></i>
     </div>
+  </div>
 
-
-    <%= link_to "Orders", profile_bookings_path, class: "profile-link" %>
-    <p></p>
-    <%= link_to "Change Password", edit_user_password_path, class: "profile-link" %><br />
-    <p></p>
-
-    <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
-  <% else %>
-    <div class="login">
-      <!-- Link to Devise default login page -->
-      <a href="<%= new_user_session_path %>" class="login-link">Login</a>
+  <div class="container-profile">
+    <div class="header">
+      <div class ="parameter">
+      <i class="fa-solid fa-user"></i>
+      <h2>Détails du compte</h2>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
     </div>
-  <% end %>
+  </div>
+
+  <div class="container-profile">
+    <div class="header">
+      <div class ="parameter">
+      <i class="fa-solid fa-lock"></i>
+      <h2><%= link_to "Changer mon mot de passe", edit_user_password_path  %></h2>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <div class="container-profile">
+    <div class="header">
+      <div class ="parameter">
+      <i class="fa-solid fa-credit-card"></i>
+      <h2>Moyens de paiement</h2>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <div class="container-profile">
+    <div class="header">
+      <div class ="parameter">
+      <i class="fa-solid fa-circle-question"></i>
+      <h2>FAQ</h2>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <div class="container-profile">
+    <div class="header">
+      <div class ="parameter">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <h2> <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %></h2>
+      </div>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
 </div>
-    <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
-  <% else %>
-    <div class="login">
-      <!-- Link to Devise default login page -->
-      <a href="<%= new_user_session_path %>" class="login-link">Login</a>
-    </div>
-  <% end %>
 </div>

@@ -1,12 +1,9 @@
 <div class="container">
-  <!-- Localisation -->
-  <p>
-    <i class="fa-solid fa-location-dot"></i> Port Louis
-    <i class="fa-solid fa-chevron-down"></i>
-  </p>
-  <p>À moins de 10km</p>
+  <%# Localisation %>
+    <p><i class="fa-solid fa-location-dot"></i> Port louis <i class="fa-solid fa-chevron-down"></i></p>
+    <p>À moins de 10km</p>
 
-  <!-- Search Bar -->
+  <%# Search Bar %>
   <div class="container-search home">
     <div class="search-field">
       <div class="form">
@@ -30,13 +27,10 @@
       <i class="fas fa-utensils"></i> <!-- Font Awesome icon for Restaurant -->
     <% end %>
 
-    <%= link_to category_path("Bakery"), class: "category-button" do %>
-      <i class="fas fa-birthday-cake"></i> <!-- Font Awesome icon for Bakery -->
-    <% end %>
-
-    <%= link_to category_path("supermarket"), class: "category-button" do %>
-      <i class="fas fa-shopping-cart"></i> <!-- Font Awesome icon for Supermarket -->
-    <% end %>
+  <div class="container-categories">
+    <div class="round-button"><i class="fas fa-home"></i> </div> <p>Restaurants</p>
+    <div class="round-button"><i class="fas fa-bell"></i> </div> <p>Supermarchés</p>
+    <div class="round-button"><i class="fas fa-cog"></i> </div> <p>Boulangeries</p>
   </div>
 
   <div class="try">
@@ -190,8 +184,14 @@
               <h2><%= @basket.price.round() %> MUR</h2>
             </div>
           </div>
-        <% end %>
-      </div>
+          <h2><%=@basket.price%> MUR</h2>
+        </div>
     </div>
+
   </div>
+
+  <%end%>
 </div>
+
+
+  <p class="text-start">À sauver quand qu'il ne soit trop tard</p>

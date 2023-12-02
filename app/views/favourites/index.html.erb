@@ -1,4 +1,13 @@
-<h3 class="fa-solid fa-heart"> Your favorits </h3>
+<%# <h3 class="fa-solid fa-heart"> Your favorits </h3> %>
+
+  <div class="favourites-button-container">
+    <%= link_to :back, class: "back-button" do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <h1>Mes favoris</h1>
+  </div>
+</div>
+
 <% if current_user %>
 <% @favourites.each do |fav| %>
   <% @fav_bask = Basket.where(id: fav.basket_id) %>

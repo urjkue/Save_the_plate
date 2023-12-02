@@ -1,25 +1,123 @@
-/* profile.css */
-#profile-heading {
+// /* profile.css */
+
+// #profile-heading {
+//   /* Styles for the profile heading */
+//   font-size: 24px;
+//   color: #333;
+// }
+
+// .profile-link {
+//   /* Styles for profile links */
+//   color: blue;
+//   text-decoration: none;
+//   margin-right: 10px;
+// }
+
+// #logout-link {
+//   /* Styles for the logout link */
+//   color: red;
+//   text-decoration: none;
+// }
+
+// .login-link {
+//   /* Styles for the login link */
+//   color: green;
+//   text-decoration: none;
+// }
+
+// My profile
+
+
+.profile-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  h1 {
+    padding-top: 0.5rem;
+  }
+}
+
+// Back- button
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 20px;
+  background-color: #7BB35D;
+  opacity: 0.5;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #5e8e3e;
+}
+
+.fa-chevron-left {
+  margin-right: 5px;
+}
+
+// Hello
+
+.profile-heading h1 {
   /* Styles for the profile heading */
-  font-size: 24px;
-  color: #333;
+  padding-left: 10px;
 }
 
-.profile-link {
-  /* Styles for profile links */
-  color: blue;
-  text-decoration: none;
+// Paramètres
+
+.container-profile {
+  background-color: #ffffff;
+  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.container-profile i {
+  color: black;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  justify-content: space-between;
+}
+
+.header i {
   margin-right: 10px;
+  color: #000000; /* Couleur de l'icône */
+  padding-right: 2px;
 }
 
-#logout-link {
-  /* Styles for the logout link */
-  color: red;
-  text-decoration: none;
+// .header h1 {
+//   margin: 0;
+//   font-size: 24px;
+// }
+
+.parameter {
+  display: inline-flex;
 }
 
-.login-link {
-  /* Styles for the login link */
-  color: green;
-  text-decoration: none;
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
+
+.content p {
+  margin: 0;
+}
+
+// .divider {
+//   height: 1px;
+//   background-color: #eeeded;
+// }
