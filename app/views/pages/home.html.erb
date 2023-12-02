@@ -1,75 +1,65 @@
 <div class="container">
-  <!-- Localisation -->
-  <p>
-    <i class="fa-solid fa-location-dot"></i> Port Louis
-    <i class="fa-solid fa-chevron-down"></i>
-  </p>
-  <p>À moins de 10km</p>
+  <%# Localisation %>
+    <p><i class="fa-solid fa-location-dot"></i> Port louis <i class="fa-solid fa-chevron-down"></i></p>
+    <p>À moins de 10km</p>
 
-  <!-- Search Bar -->
+  <%# Search Bar %>
   <div class="container-search home">
-    <div class="search-field">
-      <div class="form">
-        <i class="fa fa-search"></i>
-        <input type="text" class="form-control form-input" placeholder="Recherche">
+    <div class="">
+      <div class="search-field">
+        <div class="form">
+          <i class="fa fa-search"></i>
+          <input type="text" class="form-control form-input" placeholder="Recherche">
+          <%# <span class="left-pan"><i class="fa fa-microphone"></i></span> %>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Category Buttons -->
-  <div class="category-buttons">
-    <%= link_to category_path("restaurant"), class: "category-button" do %>
-      <i class="fas fa-utensils"></i> <!-- Font Awesome icon for Restaurant -->
-    <% end %>
+  <%# Categories buttons %>
 
-    <%= link_to category_path("Bakery"), class: "category-button" do %>
-      <i class="fas fa-birthday-cake"></i> <!-- Font Awesome icon for Bakery -->
-    <% end %>
-
-    <%= link_to category_path("supermarket"), class: "category-button" do %>
-      <i class="fas fa-shopping-cart"></i> <!-- Font Awesome icon for Supermarket -->
-    <% end %>
+  <div class="container-categories">
+    <div class="round-button"><i class="fas fa-home"></i> </div> <p>Restaurants</p>
+    <div class="round-button"><i class="fas fa-bell"></i> </div> <p>Supermarchés</p>
+    <div class="round-button"><i class="fas fa-cog"></i> </div> <p>Boulangeries</p>
   </div>
 
-  <div class="save-section">
-    <P></P>
-    <p>fOR YOU 💖 </p>
+  <%# Cards %>
+  <p class="text-start">Recommandé pour vous</p>
 
-    <!-- Business Cards -->
-    <div class="main-container">
-      <div class="horizontal-scroll-container">
-        <% @businesses.each do |business| %>
-        <%@rating = 0%>
-          <% @basket = Basket.where(business_id: business.id).first %>
-          <% @review =  Review.where(business_id: business.id).all%>
-          <%@review.each do |reve|%>
-          <% @rating =  @rating + reve.rating%>
-          <%end%>
-          <div class="card-trip">
-            <a href="<%= basket_path(@basket.id) %>"></a>
-            <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
-            <span></span>
-            <div class="card-trip-infos">
-              <div>
-                <h1 class="card_title"><%= business.name %></h1>
-                <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
-                <p> À récupérer aujourd'hui <%= @basket.pickup.strftime("%H") %></p>
-              </div>
-              <div class="round">
-                <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
-                  <i class="fa-regular fa-heart"></i>
-                </a>
-              </div>
-            </div>
-            <div class="card-trip-infos pt-0">
-              <div>
-                <span><i class="fa-solid fa-star"></i><%=(@rating/@review.count).round(1)%></span>
-              </div>
-              <h2><%= @basket.price %> MUR</h2>
-            </div>
+  <%@businesses.each do |business|%>
+  <%@basket = Basket.where(business_id: business.id).first%>
+
+  <div class="main-container">
+
+  <div class="card-trip"> <a href="<%= basket_path(@basket.id) %>"></a>
+    <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
+    <span>
+    </span>
+    <div class="card-trip-infos">
+      <div>
+        <h1 class="card_title"><%=business.name%></h1>
+        <a  href="<%= basket_path(@basket.id) %>" >Panier Surprise</a>
+        <p> À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
+      </div>
+      <div class="round">
+        <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+      </div>
+    </div>
+    <div class="card-trip-infos pt-0">
+          <div>
+            <span><i class="fa-solid fa-star"></i>
           </div>
-        <% end %>
-      </div>
+          <h2><%=@basket.price%> MUR</h2>
+        </div>
     </div>
+
   </div>
+
+  <%end%>
 </div>
+
+
+  <p class="text-start">À sauver quand qu'il ne soit trop tard</p>
