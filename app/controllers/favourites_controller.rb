@@ -13,9 +13,9 @@ class FavouritesController < ApplicationController
       @check = Favourit.where(basket_id: @basket.id).first
       if @check == nil
       @favs = Favourit.new
-      redirect_to favourit_create_path(@basket.id)
+      redirect_to favourit_create_path(@basket.id),notice: "fav created."
       else
-        redirect_to favourit_path, notice: "Favourit was successfully created."
+        redirect_to favourit_path, notice: "already fav."
       end
     else
       redirect_to new_user_session_path, notice: "Please log in to view favourites."
