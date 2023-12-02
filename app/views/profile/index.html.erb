@@ -15,22 +15,7 @@
       <i class="fa-solid fa-basket-shopping"></i>
       <h2>Mes commandes</h2>
       <i class="fa-solid fa-chevron-right"></i>
-      <p>Voir toutes mes commandes</p>
     </div>
-    <%# <div class="content">
-    </div> %>
-    <div class="divider"></div>
-      <div class="header">
-      <i class="fa-solid fa-basket-shopping"></i>
-      <h2>Mes commandes</h2>
-      <p>Voir toutes mes commandes</p>
-      <i class="fa-solid fa-chevron-right"></i>
-    </div>
-    <%# <div class="content">
-    </div> %>
-    <div class="divider"></div>
-</div>
-
 
 
     <%= link_to "Orders", profile_bookings_path, class: "profile-link" %>
@@ -38,6 +23,14 @@
     <%= link_to "Change Password", edit_user_password_path, class: "profile-link" %><br />
     <p></p>
 
+    <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
+  <% else %>
+    <div class="login">
+      <!-- Link to Devise default login page -->
+      <a href="<%= new_user_session_path %>" class="login-link">Login</a>
+    </div>
+  <% end %>
+</div>
     <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
   <% else %>
     <div class="login">
