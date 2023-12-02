@@ -18,7 +18,7 @@ class FavouritesController < ApplicationController
         redirect_to favourit_path, notice: "Favourit was successfully created."
       end
     else
-      redirect_to new_user_session_path, notice: "Please log in to add to favourites."
+      redirect_to new_user_session_path, notice: "Please log in to view favourites."
     end
     # Assuming you want to redirect after initializing @favs
 
