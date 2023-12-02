@@ -1,5 +1,4 @@
 <h3 class="fa-solid fa-heart"> Your favorits </h3>
-
 <% if current_user %>
 <% @favourites.each do |fav| %>
   <% @fav_bask = Basket.where(id: fav.basket_id) %>
@@ -7,29 +6,27 @@
   <%@bus = Business.where(id: bask.business_id).first%>
   <div class="main-container">
   <div class="card-trip">
-    <img src="https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg" />
-    <span>
-    </span>
-    <div class="card-trip-infos">
-      <div>
-        <a  href="<%= basket_path(bask.id) %>" >Surprise basket</a>
-        <p> <%=bask.availability%></p>
-      </div>
-        <div class="business-name">
-          <span><%=@bus.name%></span>
-        </div>
-        <div class="round-logo"></div>
-    </div>
-    <div class="card-trip-infos pt-0">
-          <div>
-             <a href="<%= favourit_destroy_path(fav.id) %>">
-  <i class="fa-solid fa-heart"></i>
-</a>
+            <a href="<%= basket_path(bask.id) %>"></a>
+            <span></span>
+            <div class="card-trip-infos">
+              <div>
+                <h1 class="card_title"><%= @bus.name %></h1>
+                <a href="<%= basket_path(bask.id) %>">Panier Surprise</a>
+                <p> À récupérer aujourd'hui <%= bask.pickup.strftime("%H") %></p>
+              </div>
+              <div class="round">
+                <a class="heart" href="<%= favourit_new_path(bask.id) %>">
+                  <i class="fa-regular fa-heart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="card-trip-infos pt-0">
+              <div>
+                <span><i class="fa-solid fa-star"></i></span>
+              </div>
+              <h2><%= bask.price %> MUR</h2>
+            </div>
           </div>
-          <h2><%=bask.price%></h2>
-        </div>
-    </div>
-  </div>
 </div>
   <% end %>
 <% end %>

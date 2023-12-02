@@ -1,19 +1,12 @@
-# Destroy existing data
+# Destroy existing
+Review.destroy_all
 Favourit.destroy_all
 Cart.destroy_all
 User.destroy_all
 Basket.destroy_all
 Business.destroy_all
 # Create Users
-User.create!(
-  email: 'user@example.com',
-  password: 'password',
-  address: 'Some Address',
-  first_name: 'John',
-  last_name: 'Doe',
-  latitude: -20.3484,
-  longitude: 57.5522
-)
+
 # Create businesses (restaurants, bakeries, supermarkets) around Mauritius
 categories = ['restaurant', 'bakery', 'supermarket']
 # Unique locations
@@ -106,7 +99,17 @@ supermarket_images = [
   'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152260/Supermarket/rob-maxwell-6Xb0-zJM_lU-unsplash_hbsz0m.jpg'
 ]
 business_count = 0
+@user = User.create!(
+  email: 'user@example.com',
+  password: 'password',
+  address: 'Some Address',
+  first_name: 'John',
+  last_name: 'Doe',
+  latitude: -20.3484,
+  longitude: 57.5522
+)
 while business_count < 5
+
   # Ensure there are enough locations
   if locations.empty?
     puts 'Not enough locations available!'
@@ -120,7 +123,7 @@ while business_count < 5
 
   # Bakery
   p business_count
-  bakery_location = locations.pop
+  bakery_location = locations.pop # use sample instead of pop
   bakery = Business.create!(
     category: 'Bakery',
     name: bakery_name[business_count],
@@ -142,6 +145,17 @@ while business_count < 5
       availability: Date.today + rand(1..30).days,
       business: bakery,
     )
+
+    5.times do
+
+      Review.create!(
+        comment: Faker::Restaurant.review,
+        rating: rand(1..5),
+        users_id: @user.id,
+        business_id: bakery.id
+      )
+    end
+    #review
 
   end
 
@@ -166,6 +180,17 @@ while business_count < 5
       business: restaurant
     )
 
+    5.times do
+
+      Review.create!(
+        comment: Faker::Restaurant.review,
+        rating: rand(1..5),
+        users_id: @user.id,
+        business_id: restaurant.id
+      )
+    end
+
+
 
   end
 
@@ -189,14 +214,15 @@ while business_count < 5
       availability: Date.today + rand(1..30).days,
       business: supermarket
     )
-    # 5.times do
-    #   Review.create!(
-    #     comment: Faker::Restaurant.review,
-    #     rating: rand(1..5),
-    #     user: User.first,
-    #     business: supermarket
-    #   )
-    # end
+    5.times do
+
+      Review.create!(
+        comment: Faker::Restaurant.review,
+        rating: rand(1..5),
+        users_id: @user.id,
+        business_id: supermarket.id
+      )
+    end
   end
   business_count += 1
 end
