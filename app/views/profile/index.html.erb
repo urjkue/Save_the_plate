@@ -1,16 +1,33 @@
-<% if current_user %>
-  <div id="profile-heading">
-    Hello <%= current_user.first_name %>
-  </div>
-  <%= link_to "Orders", profile_bookings_path, class: "profile-link" %>
-  <p></p>
-  <%= link_to "Change Password", edit_user_password_path, class: "profile-link" %><br />
-  <p></p>
+<div class="container">
+  <div class="back-button">
+      <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <p>Mon profil</p>
 
-  <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
-<% else %>
-  <div class="login">
-    <!-- Link to Devise default login page -->
-    <a href="<%= new_user_session_path %>" class="login-link">Login</a>
-  </div>
-<% end %>
+  <% if current_user %>
+    <div id="profile-heading">
+      Hello <%= current_user.first_name %>
+    </div>
+
+
+<div class="container-profile">
+    <div class="header">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <h2>Mes commandes</h2>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+
+    <%= link_to "Orders", profile_bookings_path, class: "profile-link" %>
+    <p></p>
+    <%= link_to "Change Password", edit_user_password_path, class: "profile-link" %><br />
+    <p></p>
+
+    <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %>
+  <% else %>
+    <div class="login">
+      <!-- Link to Devise default login page -->
+      <a href="<%= new_user_session_path %>" class="login-link">Login</a>
+    </div>
+  <% end %>
+</div>
