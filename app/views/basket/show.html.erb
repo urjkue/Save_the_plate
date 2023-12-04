@@ -1,3 +1,5 @@
+
+<div class="page">
 <div class="banner">
     <%= image_tag(@business.image_url, alt: @business.name, class:"img") if @business.image_url.present?%>
   <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
@@ -25,3 +27,5 @@
   <p><%= @baskets.description %></p>
 </div>
   <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Book</a>
+
+</div>
