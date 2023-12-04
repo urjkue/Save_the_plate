@@ -28,7 +28,8 @@
 
 .custom-button {
   /* Button styles */
-  padding: 12px 24px;
+  position: absolute;
+  left: 150px;
   background-color: blue;
   color: white;
   text-decoration: none;
@@ -44,7 +45,7 @@
 @media screen and (max-width: 768px) {
   /* Adjust button size for smaller screens */
   .custom-button {
-    padding: 10px 20px;
+
     font-size: 14px;
   }
 }

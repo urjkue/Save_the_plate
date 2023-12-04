@@ -12,6 +12,7 @@ class PagesController < ApplicationController
       @bus =  Business.where(name: params[:query]).first
      elsif(@bus.nil?)
       @bus = nil
+      rediect_to home_path, notice: "No results found."
      end
     else
       @bus = nil

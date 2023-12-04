@@ -10,5 +10,8 @@
   padding: 10px;
   //add a little space between the items
   gap: 10px;
-
+}
+.page-category{
+  height: 173vh;
+  overflow-y: scroll;
 }

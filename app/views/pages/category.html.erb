@@ -1,24 +1,42 @@
+
+<div class="page-category">
 <div class="card-container-category">
-  <% @businesses.each do |bus| %>
-    <% @basket = Basket.where(business_id: bus.id).first %>
-    <div class="card">
-      <p></p>
-      <%= image_tag(bus.image_url, alt: bus.name) if bus.image_url.present? %>
-      <div class="card-description">
-        <h2 class="card_title"><%= bus.name %></h2>
-        <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
-        <p>À récupérer aujourd'hui <%=@basket.pickup.strftime("%H")%></p>
-        <div class="round">
-          <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
-            <i class="fa-regular fa-heart"></i>
-          </a>
-        </div>
-        <div>
-          <span><i class="fa-solid fa-star"></i></span>
-          <h2><%=@basket.price%> MUR</h2>
-        </div>
-      </div>
-    </div>
-    <p></p>
-  <% end %>
+  <% @businesses.each do |business| %>
+        <%@rating = 0%>
+          <% @basket = Basket.where(business_id: business.id).first %>
+          <% @review =  Review.where(business_id: business.id).all%>
+          <%@review.each do |reve|%>
+          <% @rating =  @rating + reve.rating%>
+          <%end%>
+          <div class="card-trip">
+            <%= link_to "", basket_path(@basket.id), class: "clickable2" %>
+            <a href="<%= basket_path(@basket.id) %>"></a>
+            <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
+            <span></span>
+            <div class="card-trip-infos">
+              <div>
+                <h1 class="card_title"><%= business.name %></h1>
+                <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+                <p> À récupérer aujourd'hui 16h - 20h</p>
+              </div>
+              <div class="round">
+                 <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                <% if Favourit.exists?(basket_id: @basket.id) %>
+                  <i class="fa-solid fa-heart"></i>
+                <% else %>
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
+                </a><a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                </a>
+              </div>
+            </div>
+            <div class="card-trip-infos pt-0">
+              <div>
+                <span><i class="fa-solid fa-star"></i> <%=(@rating/@review.count).round(1)%></span>
+              </div>
+              <h2><%= @basket.price.round() %> MUR</h2>
+            </div>
+          </div>
+        <% end %>
+</div>
 </div>

@@ -9,37 +9,47 @@
 </div>
 
 <% if current_user %>
-<% @favourites.each do |fav| %>
-  <% @fav_bask = Basket.where(id: fav.basket_id) %>
-  <% @fav_bask.each do |bask| %>
-  <%@bus = Business.where(id: bask.business_id).first%>
-  <div class="main-container">
-  <div class="card-trip">
-            <a href="<%= basket_path(bask.id) %>"></a>
+<div class="card-container-category">
+<%@favourites.each do |favs|%>
+  <%@basket = Basket.where(id: favs.basket_id).first%>
+  <%business = Business.where(id:@basket.business_id).first%>
+        <%@rating = 0%>
+          <% @basket = Basket.where(business_id: business.id).first %>
+          <% @review =  Review.where(business_id: business.id).all%>
+          <%@review.each do |reve|%>
+          <% @rating =  @rating + reve.rating%>
+          <%end%>
+          <div class="card-trip">
+            <%= link_to "", basket_path(@basket.id), class: "clickable2" %>
+            <a href="<%= basket_path(@basket.id) %>"></a>
+            <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
             <span></span>
             <div class="card-trip-infos">
               <div>
-                <h1 class="card_title"><%= @bus.name %></h1>
-                <a href="<%= basket_path(bask.id) %>">Panier Surprise</a>
-                <p> À récupérer aujourd'hui <%= bask.pickup.strftime("%H") %></p>
+                <h1 class="card_title"><%= business.name %></h1>
+                <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+                <p> À récupérer aujourd'hui 16h - 20h</p>
               </div>
               <div class="round">
-                <a class="heart" href="<%= favourit_new_path(bask.id) %>">
+                 <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                <% if Favourit.exists?(basket_id: @basket.id) %>
+                  <i class="fa-solid fa-heart"></i>
+                <% else %>
                   <i class="fa-regular fa-heart"></i>
+                <% end %>
+                </a><a class="heart" href="<%= favourit_new_path(@basket.id) %>">
                 </a>
               </div>
             </div>
             <div class="card-trip-infos pt-0">
               <div>
-                <span><i class="fa-solid fa-star"></i></span>
+                <span><i class="fa-solid fa-star"></i> <%=(@rating/@review.count).round(1)%></span>
               </div>
-              <h2><%= bask.price %> MUR</h2>
+              <h2><%= @basket.price.round() %> MUR</h2>
             </div>
           </div>
-</div>
-  <% end %>
-<% end %>
-<% else %>
+        <% end %>
+        </div>
   <% unless current_user %>
   <p> You need to be logged in to see your favourites </p>
 <% end %>

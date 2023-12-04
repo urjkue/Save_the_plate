@@ -20,10 +20,10 @@ class CartsController < ApplicationController
       pick_up: @pick_up
     )
     if @booking.save
-      redirect_to profile_path, notice: 'Booking was successfully created.'
+     redirect_to cart_thx_path , notice: 'Booking was not successfully created.'
     else
 
-      render :profile , notice: 'Booking was not successfully created.'
+      redirect_to home_path , notice: 'Booking was not successfully created.'
     end
   end
   def edit
@@ -34,15 +34,23 @@ class CartsController < ApplicationController
   end
   def show
     @params = params[:id]
-      if params[:fname].present? && params[:lname].present? && params[:cardnum].present? && params[:expdate].present? && params[:cvv].present?
-        # Form is filled, you can redirect here
-        redirect_to cart_create_path, notice: 'Form is filled, redirecting...'
-      else
-        # Form is not completely filled, show an error or redirect back to the form
-        redirect_to cart_payment_path, alert: 'Please fill in all fields'
-      end
+    if params[:fname].to_s.match?(/\A[\p{L}\s]+\z/) &&   # Only letters and spaces allowed
+       params[:lname].to_s.match?(/\A[\p{L}\s]+\z/) &&   # Only letters and spaces allowed
+       params[:cardnum].to_s.match?(/\A\d{16}\z/) &&      # 16-digit card number
+       params[:expdate].to_s.match?(/\A\d{2}\/\d{2}\z/) && # MM/YY format for expiration date
+       params[:cvv].to_s.match?(/\A\d{3,4}\z/)            # 3 or 4 digit CVV
+      # Form fields match the expected regex patterns
+      redirect_to cart_create_path, notice: 'Form is filled correctly, redirecting...'
+    else
+      # Form is not completely filled or contains invalid data, show an error or redirect back to the form
+      redirect_to cart_payment_path, alert: 'Denied!'
+    end
+
   end
   def payment
     @params = params[:id]
+  end
+
+  def thx
   end
 end

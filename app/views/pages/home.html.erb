@@ -1,5 +1,5 @@
-<div class="container sticky-top">
 
+<div class="container sticky-top">
   <!-- Localisation -->
   <div class="localisation">
   <p>
@@ -25,6 +25,7 @@
   </div>
 </div>
 
+<div class = "page-home">
 <div class="container">
   <!-- Category Buttons -->
   <div class="category-buttons">
@@ -56,11 +57,6 @@
    <!-- Search -->
   <div class="try">
   <% if @bus.nil?%>
-  <p>Search Test</p>
-  <% else %>
-    <p> <%= @bus.name%></p>
-    <%end%>
-  </div>
   <div class="save-section">
     <P></P>
     <h1>Recommandés pour vous</h1>
@@ -201,4 +197,45 @@
         </div>
       </div>
     </div>
+</div>
+  <% else %>
+   <div class="card-container-category">
+        <%@rating = 0%>
+          <% @basket = Basket.where(business_id: @bus.id).first %>
+          <% @review =  Review.where(business_id: @bus.id).all%>
+          <%@review.each do |reve|%>
+          <% @rating =  @rating + reve.rating%>
+          <%end%>
+          <div class="card-trip">
+            <%= link_to "", basket_path(@basket.id), class: "clickable2" %>
+            <a href="<%= basket_path(@basket.id) %>"></a>
+            <%= image_tag(@bus.image_url, alt: @bus.name) if @bus.image_url.present? %>
+            <span></span>
+            <div class="card-trip-infos">
+              <div>
+                <h1 class="card_title"><%= @bus.name %></h1>
+                <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+                <p> À récupérer aujourd'hui 16h - 20h</p>
+              </div>
+              <div class="round">
+                 <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                <% if Favourit.exists?(basket_id: @basket.id) %>
+                  <i class="fa-solid fa-heart"></i>
+                <% else %>
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
+                </a><a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                </a>
+              </div>
+            </div>
+            <div class="card-trip-infos pt-0">
+              <div>
+                <span><i class="fa-solid fa-star"></i> <%=(@rating/@review.count).round(1)%></span>
+              </div>
+              <h2><%= @basket.price.round() %> MUR</h2>
+            </div>
+          </div>
+        <% end %>
+        </div>
+  </div>
 </div>

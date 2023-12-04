@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "cart/new/:id",to: "carts#new", as: :cart_new
   get "cart/create/:id",to: "carts#create",as: :cart_create
   get "cart/payment/:id",to: "carts#payment",as: :cart_payment
+  get "cart/thx",to: "carts#thx",as: :cart_thx
   # get "cart/edit",to: "carts#edit"
   # get "/cart/update",to: "carts#update"
   # get "/cart/destroy",to: "carts#destroy"
