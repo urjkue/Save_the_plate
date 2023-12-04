@@ -153,7 +153,7 @@ while business_count < 5
 
       Review.create!(
         comment: Faker::Restaurant.review,
-        rating: rand(1..5),
+        rating: rand(4..5),
         users_id: @user.id,
         business_id: bakery.id
       )
@@ -177,7 +177,7 @@ while business_count < 5
     Basket.create!(
       name: "Basket at #{restaurant.name}",
       description: restaurant_descriptions[business_count],
-      price: rand(15..80),
+      price: rand(150..250),
       pickup: DateTime.now + rand(1..30).days,
       availability: Date.today + rand(1..30).days,
       business: restaurant
@@ -187,7 +187,7 @@ while business_count < 5
 
       Review.create!(
         comment: Faker::Restaurant.review,
-        rating: rand(1..5),
+        rating: rand(4..5),
         users_id: @user.id,
         business_id: restaurant.id
       )
@@ -212,7 +212,7 @@ while business_count < 5
     Basket.create!(
       name: "Basket at #{supermarket.name}",
       description: supermarket_descriptions[business_count],
-      price: rand(15..80).round(2),
+      price: rand(150..250).round(2),
       pickup: DateTime.now + rand(1..30).days,
       availability: Date.today + rand(1..30).days,
       business: supermarket
@@ -221,7 +221,7 @@ while business_count < 5
 
       Review.create!(
         comment: Faker::Restaurant.review,
-        rating: rand(1..5),
+        rating: rand(4..5),
         users_id: @user.id,
         business_id: supermarket.id
       )

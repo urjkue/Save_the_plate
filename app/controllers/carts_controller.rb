@@ -20,10 +20,10 @@ class CartsController < ApplicationController
       pick_up: @pick_up
     )
     if @booking.save
-      redirect_to profile_path, notice: 'Booking was successfully created.'
+     redirect_to cart_thx_path , notice: 'Booking was not successfully created.'
     else
 
-      render :cart_thx , notice: 'Booking was not successfully created.'
+      redirect_to home_path , notice: 'Booking was not successfully created.'
     end
   end
   def edit
