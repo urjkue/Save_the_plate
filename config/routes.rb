@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "businesses#index"
+  root to: "pages#splashscreen"
   resources :businesses
   get "/home",to: "pages#home", as: :home
+  get "/splash/login",to: "pages#splashlogin", as: :splashlogin
   # get "/baskets", to: "basket#index", as: :baskets
   get "/basket/:id",to: "basket#show", as: :basket
 
