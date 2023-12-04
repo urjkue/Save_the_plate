@@ -1,50 +1,42 @@
 
 <div class="page">
-<div class="banner">
-    <%= image_tag(@business.image_url, alt: @business.name, class:"img") if @business.image_url.present?%>
-  <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-</div>
+    <div class="round-basket">
+      <a class="heart-basket">
+          <i class="fa-solid fa-heart"></i>
+      </a>
+    </div>
 
-<div class="container-center">
-  <h3 class="business-title"><%= @business.name %></h3>
-  <span><i class="fa-solid fa-star"></i> 4.5</span>
-</div>
+    <div class="basket-button-container">
+      <%= link_to :back, class: "basket-back-button" do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
 
-<div class="basket-infos">
-  <div class="basket-price">
-    <h2><i class="fa-solid fa-basket-shopping"></i>basket suprise</i></h2>
-    <h2><%= @baskets.price %>MUR</h2>
+  <div class="banner">
+      <%= image_tag(@business.image_url, alt: @business.name, class:"img") if @business.image_url.present?%>
   </div>
-  <span><i class="fa-solid fa-clock"></i>Pick-up tomorrow </span>
-  <br>
-</div>
-<div class="container-address">
-  <span><i class="fa-solid fa-location-dot"></i>address</span>
-</div>
 
-<div class="container-low">
-  <h1><strong>hi</strong></h1>
-  <p><%= @baskets.description %></p>
-</div>
-<%
-=begin%>
- <% @booking.each do |bookin|%>
-<%bask = Basket.where(id:bookin.basket_id).first%>
-<% if bask.id == @baskets.id %>
-<h1>Already Booked</h1>
-<%else%>
-<%
-=end%>
-  <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Book</a>
-<%
-=begin%>
- <%end%>
-<%
-=end%>
-<%
-=begin%>
- <%end%>
-<%
-=end%>
+  <div class="container-title-price">
+    <h1 class="business-title" style="margin-top: 10px"><%= @business.name %></h1>
+    <div class="basket-price">
+      <h2><%= @baskets.price %>MUR</h2>
+    </div>
+  </div>
 
+  <div class="basket-infos">
+    <span><i class="fa-solid fa-star"></i> 4.5</span>
+    <h2><i class="fa-solid fa-basket-shopping"></i>Panier suprise</i></h2>
+    <span><i class="fa-solid fa-clock"></i>À récupérer aujourd'hui 16h-20h</span>
+    <br>
+  </div>
+  <div class="container-address">
+    <span><i class="fa-solid fa-location-dot"></i>address</span>
+  </div>
+
+  <div class="container-low">
+    <h1>Ce que vous pouvez avoir</h1>
+    <p><%= @baskets.description %></p>
+  </div>
+    <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Book</a>
+  </div>
 </div>

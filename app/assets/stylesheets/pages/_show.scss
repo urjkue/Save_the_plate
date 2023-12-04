@@ -1,37 +1,93 @@
-
-
 .page{
   height: 150vh;
   overflow-y: scroll;
 }
 
-.banner {
-  position: relative;
-}
-.img{
-  width: 103%;
-  height: 10%;
-}
-
-
-.heart-icon {
+/* Styles pour le cœur et le fond en haut à gauche */
+.heart-basket {
+  font-size: 2em;
+  color: #FFFFFF;
+  padding-left: 320px;
   position: absolute;
-  left: 350px;
-  top: 0px;
+  top: 25px; /* Ajustez la position verticale selon vos besoins */
+  left: 10px; /* Ajustez la position horizontale selon vos besoins */
 }
 
-.container-center{
+// .round-basket {
+//   border-radius: 100%;
+//   width: 30px;
+//   height: 30px;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   font-size: 1.5em;
+//   background-color: grey;
+//   opacity: 0.8;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
-position: relative;
+.basket-button-container {
+  position: absolute;
+  top: 10px; /* Ajustez la position verticale selon vos besoins */
+  left: 10px; /* Ajustez la position horizontale selon vos besoins */
+  z-index: 1; /* Assurez-vous que le bouton est au-dessus des autres éléments */
+}
+
+.banner {
+  max-height: 200px; /* Ajustez la hauteur maximale selon vos besoins */
+  overflow: hidden; /* Masquer tout contenu dépassant de la bannière */
+}
+
+
+// Back- button
+
+.basket-back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 20px;
+  background-color: grey;
+  opacity: 0.5;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.basket-back-button:hover {
+  background-color: grey;
+}
+
+.fa-chevron-left {
+  margin-right: 5px;
+}
+
+// Image
+
+.img {
+  max-width: 100%; /* L'image ne dépassera pas la largeur de son conteneur */
+  height: auto; /* La hauteur s'ajustera automatiquement pour conserver les proportions originales de l'image */
+}
+
+// Informations
+
+.container-title-price {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px; /* Ajustez la marge à droite selon vos besoins */
+  position: relative;
 left: 10px;
 }
 
-
-.basket-price{
+.basket-price {
   display: flex;
   font-size: inherit;
   gap: 5rem;
 }
+
 
 .basket-infos{
   display: grid;
@@ -48,7 +104,6 @@ left: 10px;
 
       overflow: hidden;
   }
-
 
 // Button
 
