@@ -24,4 +24,11 @@ class PagesController < ApplicationController
     @category = params[:name]
   @businesses = Business.where(category: @category).all
   end
+  def splashscreen
+    
+
+  end
+  def splashlogin
+
+  end
 end
