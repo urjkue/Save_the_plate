@@ -44,7 +44,8 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    @favourit = Favourit.find(params[:id])
+    @basket = Basket.find(params[:id])
+    @favourit = Favourit.where(basket_id: @basket.id).first
     if @favourit.destroy
       redirect_to favourit_path, notice: "Favourit was successfully destroyed."
     else

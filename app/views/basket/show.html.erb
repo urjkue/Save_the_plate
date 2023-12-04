@@ -26,25 +26,9 @@
   <h1><strong>hi</strong></h1>
   <p><%= @baskets.description %></p>
 </div>
-<%
-=begin%>
- <% @booking.each do |bookin|%>
-<%bask = Basket.where(id:bookin.basket_id).first%>
-<% if bask.id == @baskets.id %>
-<h1>Already Booked</h1>
+<%if @check == false%>
+ <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Book</a>
 <%else%>
-<%
-=end%>
-  <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Book</a>
-<%
-=begin%>
- <%end%>
-<%
-=end%>
-<%
-=begin%>
- <%end%>
-<%
-=end%>
-
+<h1>booked</h1>
+    <%end%>
 </div>

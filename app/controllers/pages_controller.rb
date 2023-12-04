@@ -23,9 +23,21 @@ class PagesController < ApplicationController
   def category
     @category = params[:name]
   @businesses = Business.where(category: @category).all
+  if params[:query].present?
+    @businesses.each do |business|
+      if business.name == params[:query]
+        @bus = business
+        break
+      else
+        @bus = nil
+      end
+    end
+  else
+    @bus = nil
+  end
   end
   def splashscreen
-    
+
 
   end
   def splashlogin
