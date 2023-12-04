@@ -1,77 +1,78 @@
 <div class="container">
 
-  <div class="profile-button-container">
-    <%= link_to :back, class: "back-button" do %>
-      <i class="fas fa-chevron-left"></i>
+    <div class="profile-button-container">
+      <%= link_to :back, class: "back-button" do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+      <h1>Mon profil</h1>
+    </div>
+
+
+  <% if @user %>
+      <div id="profile-heading">
+        <h1>Hello <%= @user.first_name%> !</h1>
     <% end %>
-    <h1>Mon profil</h1>
-  </div>
-</div>
-
-<% if @user %>
-    <div id="profile-heading">
-      <h1>Hello <%= @user.first_name%> !</h1>
-  <% end %>
-    </div>
-
-  <div class="container-profile">
-    <div class="header">
-      <div class ="parameter">
-      <i class="fa-solid fa-basket-shopping"></i>
-      <h2><%= link_to "Mes commandes", profile_bookings_path  %></h2>
       </div>
-      <i class="fa-solid fa-chevron-right"></i>
-    </div>
-  </div>
 
-  <div class="container-profile">
-    <div class="header">
-      <div class ="parameter">
-      <i class="fa-solid fa-user"></i>
-      <h2>Détails du compte</h2>
+    <div class="container-profile">
+      <div class="header">
+        <div class ="parameter">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <h2><%= link_to "Mes commandes", profile_bookings_path  %></h2>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
-      <i class="fa-solid fa-chevron-right"></i>
     </div>
-  </div>
 
-  <div class="container-profile">
-    <div class="header">
-      <div class ="parameter">
-      <i class="fa-solid fa-lock"></i>
-      <h2><%= link_to "Changer mon mot de passe", edit_user_password_path  %></h2>
+    <div class="container-profile">
+      <div class="header">
+        <div class ="parameter">
+        <i class="fa-solid fa-user"></i>
+        <h2>Détails du compte</h2>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
-      <i class="fa-solid fa-chevron-right"></i>
     </div>
-  </div>
 
-  <div class="container-profile">
-    <div class="header">
-      <div class ="parameter">
-      <i class="fa-solid fa-credit-card"></i>
-      <h2>Moyens de paiement</h2>
+    <div class="container-profile">
+      <div class="header">
+        <div class ="parameter">
+        <i class="fa-solid fa-lock"></i>
+        <h2><%= link_to "Changer mon mot de passe", edit_user_password_path  %></h2>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
-      <i class="fa-solid fa-chevron-right"></i>
     </div>
-  </div>
 
-  <div class="container-profile">
-    <div class="header">
-      <div class ="parameter">
-      <i class="fa-solid fa-circle-question"></i>
-      <h2>FAQ</h2>
+    <div class="container-profile">
+      <div class="header">
+        <div class ="parameter">
+        <i class="fa-solid fa-credit-card"></i>
+        <h2>Moyens de paiement</h2>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
-      <i class="fa-solid fa-chevron-right"></i>
     </div>
-  </div>
 
-  <div class="container-profile">
-    <div class="header">
-      <div class ="parameter">
-      <i class="fa-solid fa-right-from-bracket"></i>
-      <h2> <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %></h2>
+    <div class="container-profile">
+      <div class="header">
+        <div class ="parameter">
+        <i class="fa-solid fa-circle-question"></i>
+        <h2>FAQ</h2>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
-      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <div class="container-profile">
+      <div class="header">
+        <div class ="parameter">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <h2> <%= link_to "Log out", destroy_user_session_path, id: "logout-link", class: "dropdown-item", data: { turbo_method: :delete } %></h2>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
     </div>
   </div>
-</div>
+  </div>
 </div>
