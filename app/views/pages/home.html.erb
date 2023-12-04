@@ -1,50 +1,68 @@
 
-<div class = "page-home" >
-<div class="container">
+<div class = "page-home">
+<div class="container sticky-top">
   <!-- Localisation -->
   <div class="localisation">
   <p>
-    <i class="fa-solid fa-location-dot"></i> Port Louis
+    <i class="fa-solid fa-location-dot" ></i> Moka
     <i class="fa-solid fa-chevron-down"></i>
   </p>
-  <p>À moins de 10km</p>
+  <%# <p>À moins de 10km</p> %>
   </div>
+
   <!-- Search Bar -->
   <div class="container-search home">
-    <div class="search-field">
-      <div class="form">
-        <i class="fa fa-search"></i>
-        <%= form_with url: home_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
+    <%= form_with url: home_path, method: :get, class: "d-flex" do %>
+      <div class="search-container">
+        <i class="fa fa-search" style="color: #ccc;"></i>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control custom-rounded",
+          placeholder: "Rechercher"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
       </div>
-    </div>
+      <%= submit_tag "Search", name: "", class: "btn-hidden" %>
+    <% end %>
   </div>
+</div>
+
+<div class="container">
   <!-- Category Buttons -->
   <div class="category-buttons">
-    <%= link_to category_path("restaurant"), class: "category-button" do %>
-      <i class="fas fa-utensils"></i> <!-- Font Awesome icon for Restaurant -->
-    <% end %>
-    <%= link_to category_path("Bakery"), class: "category-button" do %>
-      <i class="fas fa-birthday-cake"></i> <!-- Font Awesome icon for Bakery -->
-    <% end %>
-    <%= link_to category_path("supermarket"), class: "category-button" do %>
-      <i class="fas fa-shopping-cart"></i> <!-- Font Awesome icon for Supermarket -->
-    <% end %>
+    <!-- Restaurant Button -->
+    <div class="category-button-container">
+      <%= link_to category_path("restaurant"), class: "category-button" do %>
+        <i class="fas fa-utensils"></i> <!-- Font Awesome icon for Restaurant -->
+      <% end %>
+      <span class="category-label">Restaurant</span>
+    </div>
+
+    <!-- Bakery Button -->
+    <div class="category-button-container">
+      <%= link_to category_path("Bakery"), class: "category-button" do %>
+        <i class="fa-solid fa-bread-slice"></i> <!-- Font Awesome icon for Bakery -->
+      <% end %>
+      <span class="category-label">Boulangerie</span>
+    </div>
+
+    <!-- Supermarket Button -->
+    <div class="category-button-container">
+      <%= link_to category_path("supermarket"), class: "category-button" do %>
+        <i class="fas fa-shopping-cart"></i> <!-- Font Awesome icon for Supermarket -->
+      <% end %>
+      <span class="category-label">Supermarché</span>
+    </div>
   </div>
+
+   <!-- Search -->
   <div class="try">
   <% if @bus.nil?%>
-  <h1>Search</h1>
   <div class="save-section">
     <P></P>
     <h1>Recommandés pour vous</h1>
+
     <!-- Business Cards -->
-    <div class="main-container">
+    <div class="cards-container">
       <div class="horizontal-scroll-container">
         <% @businesses.each do |business| %>
         <%@rating = 0%>
@@ -87,57 +105,58 @@
     </div>
   </div>
 
-  <div class="save-section">
-      <P></P>
-      <h1>À sauver avant qu'il ne soit trop tard</h1>
-      <!-- Business Cards -->
-      <div class="main-container">
-        <div class="horizontal-scroll-container">
-          <% @ranbus.each do |business| %>
-          <%@rating = 0%>
-            <% @basket = Basket.where(business_id: business.id).first %>
-            <% @review =  Review.where(business_id: business.id).all%>
-            <%@review.each do |reve|%>
-            <% @rating =  @rating + reve.rating%>
-            <%end%>
-            <div class="card-trip">
-              <%= link_to "", basket_path(@basket.id), class: "clickable2" %>
-              <a href="<%= basket_path(@basket.id) %>"></a>
-              <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
-              <span></span>
-              <div class="card-trip-infos">
-                <div>
-                  <h1 class="card_title"><%= business.name %></h1>
-                  <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
-                  <p> À récupérer aujourd'hui 16h - 20h</p>
+    <div class="save-section">
+        <P></P>
+        <h1>À sauver avant qu'il ne soit trop tard</h1>
+        <!-- Business Cards -->
+        <div class="cards-container">
+          <div class="horizontal-scroll-container">
+            <% @ranbus.each do |business| %>
+            <%@rating = 0%>
+              <% @basket = Basket.where(business_id: business.id).first %>
+              <% @review =  Review.where(business_id: business.id).all%>
+              <%@review.each do |reve|%>
+              <% @rating =  @rating + reve.rating%>
+              <%end%>
+              <div class="card-trip">
+                <%= link_to "", basket_path(@basket.id), class: "clickable2" %>
+                <a href="<%= basket_path(@basket.id) %>"></a>
+                <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
+                <span></span>
+                <div class="card-trip-infos">
+                  <div>
+                    <h1 class="card_title"><%= business.name %></h1>
+                    <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+                    <p> À récupérer aujourd'hui 16h - 20h</p>
+                  </div>
+                  <div class="round">
+                    <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                    <% if Favourit.exists?(basket_id: @basket.id) %>
+                      <i class="fa-solid fa-heart"></i>
+                    <% else %>
+                      <i class="fa-regular fa-heart"></i>
+                    <% end %>
+                    </a>
+                  </div>
                 </div>
-                <div class="round">
-                  <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
-                  <% if Favourit.exists?(basket_id: @basket.id) %>
-                    <i class="fa-solid fa-heart"></i>
-                  <% else %>
-                    <i class="fa-regular fa-heart"></i>
-                  <% end %>
-                  </a>
+                <div class="card-trip-infos pt-0">
+                  <div>
+                    <span><i class="fa-solid fa-star"></i> <%=(@rating/@review.count).round(1)%></span>
+                  </div>
+                  <h2><%= @basket.price.round() %> MUR</h2>
                 </div>
               </div>
-              <div class="card-trip-infos pt-0">
-                <div>
-                  <span><i class="fa-solid fa-star"></i> <%=(@rating/@review.count).round(1)%></span>
-                </div>
-                <h2><%= @basket.price.round() %> MUR</h2>
-              </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="save-section">
+
+    <div class="save-section">
       <P></P>
       <h1>Pour demain</h1>
       <!-- Business Cards -->
-      <div class="main-container">
+      <div class="cards-container">
         <div class="horizontal-scroll-container">
           <% @ranbustwo.each do |business| %>
           <%@rating = 0%>
