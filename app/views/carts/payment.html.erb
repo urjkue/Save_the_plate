@@ -1,19 +1,19 @@
-
 <form action="<%= cart_show_path(@params) %>" method="post" class="payment-form">
   <label for="fname">Prénom:</label><br>
-  <input type="text" id="fname" name="fname"><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
 
   <label for="lname">Nom de famille:</label><br>
-  <input type="text" id="lname" name="lname"><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br>
 
   <label for="cardnum">Numéro de carte:</label><br>
-  <input type="text" id="cardnum" name="cardnum"><br>
+  <input type="text" id="cardnum" name="cardnum" value="1234567890123456"><br>
 
   <label for="expdate">Date d'expiration:</label><br>
-  <input type="text" id="expdate" name="expdate"><br>
+  <input type="text" id="expdate" name="expdate" value="12/25"><br>
 
   <label for="cvv">CVV:</label><br>
-  <input type="text" id="cvv" name="cvv"><br>
+  <input type="text" id="cvv" name="cvv" value="123"><br>
+
   <p>En cliquant sur Soumettre, vous acceptez nos conditions générales.</p>
   <input type="submit" value="Payer">
 </form>

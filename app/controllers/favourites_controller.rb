@@ -15,10 +15,10 @@ class FavouritesController < ApplicationController
       @favs = Favourit.new
       redirect_to favourit_create_path(@basket.id),notice: "fav created."
       else
-        redirect_to favourit_path, notice: "already fav."
+        redirect_to favourit_path
       end
     else
-      redirect_to new_user_session_path, notice: "Please log in to view favourites."
+      redirect_to new_user_session_path
     end
     # Assuming you want to redirect after initializing @favs
 
@@ -31,7 +31,7 @@ class FavouritesController < ApplicationController
     )
 
     if @favs.save
-      redirect_to favourit_path, notice: "Favourit was successfully created."
+      redirect_to favourit_path
     else
       render :new
     end
@@ -47,9 +47,9 @@ class FavouritesController < ApplicationController
     @basket = Basket.find(params[:id])
     @favourit = Favourit.where(basket_id: @basket.id).first
     if @favourit.destroy
-      redirect_to favourit_path, notice: "Favourit was successfully destroyed."
+      redirect_to favourit_path
     else
-      redirect_to favourit_path, notice: "Favourit was not destroyed."
+      redirect_to favourit_path
     end
   end
 
