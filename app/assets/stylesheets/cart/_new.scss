@@ -1,29 +1,75 @@
+// Ce que vous devez savoir
 
+.new-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // padding-bottom: 60px;
+
+  h1 {
+    padding-top: 0.5rem;
+  }
+}
+
+// Back- button
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 20px;
+  background-color: #7BB35D;
+  opacity: 0.5;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #5e8e3e;
+}
+
+.fa-chevron-left {
+  margin-right: 5px;
+}
+
+// Informations panier surprise
 
 .top_text{
   text-align: center;
   top: 100px;
 }
+
 #img-gif-basket{
   position: relative;
   top:100px;
   text-align: center;
 }
-.big {
+.container-surprise-basket {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
+  text-align: center; /* Ajout pour centrer le texte à l'intérieur du conteneur */
 }
 
 .content {
-  background-color: #f7f7f7;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 80%; /* Add margin to separate content from the button */
+  max-width: 80%;
+  margin-top: 20px; /* Ajout d'une marge en haut pour séparer le contenu du haut du conteneur */
+  margin-bottom: 20px; /* Ajout d'une marge en bas pour séparer le contenu du bas du conteneur */
+}
+
+#img-gif-basket {
+  position: relative;
+  top: 50px; /* Ajustement de la propriété top */
+  text-align: center;
 }
 
 .custom-button {

@@ -82,7 +82,7 @@ supermarket_descriptions = [
 # Define Cloudinary image URLs for each category
 bakery_images = [
   'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152376/Bakery/siebe-warmoesken-R3iAcQxylmE-unsplash_abpi8i.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1701700088/Bakery/prrbe3moq7chmm4u3iyt.jpg',
   'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152375/Bakery/mae-mu-_h-2jrL9cMU-unsplash_wgsewi.jpg',
   'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152375/Bakery/yeh-xintong-go3DT3PpIw4-unsplash_rxcajc.jpg',
   'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152374/Bakery/mae-mu-m9pzwmxm2rk-unsplash_du53ci.jpg'

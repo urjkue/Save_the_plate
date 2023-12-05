@@ -1,73 +1,166 @@
-
-
-.page{
+.page-show {
   height: 150vh;
   overflow-y: scroll;
 }
 
-.banner {
-  position: relative;
-}
-.img{
-  width: 103%;
-  height: 10%;
-}
-
-
-.heart-icon {
+/* Styles pour le cœur et le fond en haut à gauche */
+.heart-basket {
+  font-size: 2em;
+  color: #FFFFFF;
+  padding-left: 320px;
   position: absolute;
-  left: 350px;
-  top: 0px;
+  top: 25px; /* Ajustez la position verticale selon vos besoins */
+  left: 10px; /* Ajustez la position horizontale selon vos besoins */
 }
 
-.container-center{
+// .round-basket {
+//   border-radius: 100%;
+//   width: 30px;
+//   height: 30px;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   font-size: 1.5em;
+//   background-color: grey;
+//   opacity: 0.8;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
-position: relative;
-left: 10px;
+.basket-button-container {
+  position: absolute;
+  top: 10px; /* Ajustez la position verticale selon vos besoins */
+  left: 10px; /* Ajustez la position horizontale selon vos besoins */
+  z-index: 1; /* Assurez-vous que le bouton est au-dessus des autres éléments */
 }
 
+.banner {
+  max-height: 200px; /* Ajustez la hauteur maximale selon vos besoins */
+  overflow: hidden; /* Masquer tout contenu dépassant de la bannière */
+}
 
-.basket-price{
+// Back- button
+
+.basket-back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 20px;
+  background-color: grey;
+  opacity: 0.5;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.basket-back-button:hover {
+  background-color: rgb(199, 195, 195);
+}
+
+.fa-chevron-left {
+  margin-right: 5px;
+}
+
+// Image
+
+.img {
+  max-width: 100%; /* L'image ne dépassera pas la largeur de son conteneur */
+  height: auto; /* La hauteur s'ajustera automatiquement pour conserver les proportions originales de l'image */
+}
+
+// Informations
+
+.basket-description {
+  padding: 0 2%; /* Ajoute de l'espace à gauche et à droite, équivalent à 5% de la largeur de la fenêtre */
+}
+
+@media screen and (min-width: 768px) {
+  .basket-description {
+    padding: 0 10%; /* Ajoute plus d'espace sur des écrans plus larges */
+  }
+}
+
+.container-title-price {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px; /* Ajustez la marge à droite selon vos besoins */
+  position: relative;
+  left: 10px;
+}
+
+.basket-price {
   display: flex;
   font-size: inherit;
   gap: 5rem;
+  padding-top: 15px;
 }
 
-.basket-infos{
-  display: grid;
-  margin: 10px;
+.basket-price h2 {
+  font-weight: bold; /* Mettre le texte en gras */
+  color: #7BB35D; /* Mettre la couleur verte */
 }
+
+.basket-infos {
+  display: grid;
+  grid-gap: 5px; /* Ajoutez de l'espace entre les icônes et le texte */
+  margin: 10px; /* Ajustez la marge globale selon vos besoins */
+  font-size: 14px;
+}
+
+.basket-infos i {
+  margin-right: 5px; /* Ajoutez une marge à droite pour créer de l'espace entre les icônes et le texte */
+}
+
 .container-address{
   position:relative;
   left: 10px;
-
 }
-.container-low{
-      position: relative;
-      left: 10px;
 
-      overflow: hidden;
-  }
+.container-low {
+  position: relative;
+  left: 10px;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: 'VotrePolice', sans-serif;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column; /* Empiler les éléments les uns sur les autres */
+}
 
+.business-title,
+.container-low h1 {
+  font-family: inherit;
+  font-size: inherit;
+  margin-top: 10px;
+}
 
-// Button
+.container-low p {
+  text-align: justify; /* Aligner le texte à gauche et à droite */
+  margin: 10px 0; /* Ajouter une marge au-dessus et en dessous du paragraphe */
+}
 
+/* Déplacer le bouton en dehors du .container-low */
 .custom-button {
   /* Button styles */
   position: relative;
-  left: 150px;
-
+  left: 0; /* Ajustez la position horizontale selon vos besoins */
   padding: 12px 24px;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+  transition: background-color 0.3s ease-in-out;
   border-radius: 25%;
+  color: #FFFFFF;
+  background-color: #201095;
 }
 
 .custom-button:hover {
   /* Hover effect styles */
-  background-color: navy;
+  background-color: #201095;
 }
+
 
 // @media screen and (max-width: 768px) {
 //   /* Adjust button size for smaller screens */
