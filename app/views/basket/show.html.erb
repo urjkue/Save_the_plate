@@ -2,18 +2,49 @@
 <div class="page-show">
 
     <div class="round-basket">
-      <a class="heart-basket">
+      <%
+=begin%>
+ <a class="heart-basket">
           <i class="fa-solid fa-heart"></i>
       </a>
+<%
+=end%>
     </div>
+    <% @basket = Basket.where(business_id: @business.id).first %>
     <div class="basket-button-container">
       <%= link_to :back, class: "basket-back-button" do %>
         <i class="fas fa-chevron-left"></i>
+
+          <% if Favourit.exists?(basket_id: @basket.id) %>
+          <div class="round-basket">
+                 <a class="heart-basket" href="<%= favourit_destroy_path(@basket.id) %>">
+                  <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <% else %>
+                     <div class="round-basket">
+                <a class="heart-basket" href="<%= favourit_new_path(@basket.id) %>">
+                  <i class="fa-regular fa-heart"></i>
+                  </div>
+                <% end %>
       <% end %>
+
     </div>
   <div class="banner">
+
       <%= image_tag(@business.image_url, alt: @business.name, class:"img") if @business.image_url.present?%>
+
   </div>
+
+   <%@rating = 0%>
+          <%
+=begin%>
+ <% @basket = Basket.where(business_id: @business.id).first %>
+<%
+=end%>
+          <% @review =  Review.where(business_id: @business.id).all%>
+          <%@review.each do |reve|%>
+          <% @rating =  @rating + reve.rating%>
+          <%end%>
 
 
   <div class="basket-description">
@@ -24,16 +55,18 @@
       </div>
     </div>
     <div class="basket-infos">
-      <span><i class="fa-solid fa-star"></i>4.5</span>
+      <span><i class="fa-solid fa-star"></i><%=(@rating/@review.count).round(1)%></span>
       <span><i class="fa-solid fa-basket-shopping"></i>Panier suprise</i></span>
       <span><i class="fa-solid fa-clock"></i>À récupérer aujourd'hui 16h-20h</span>
     </div>
 
-
-    <%# <div class="container-address">
-      <span><i class="fa-solid fa-location-dot"></i>address</span>
+    <div class="container-address">
+      <span>
+      <i class="fa-solid fa-location-dot">
+      <p></p>
+      </i> <%= @business.address%></span>
     </div>
-    %>
+
   <div class="container-low">
     <h1>Ce que vous pouvez avoir</h1>
     <p><%= @baskets.description %></p>
