@@ -1,9 +1,6 @@
 
 <div class="page-show">
   <div class="round-basket">
-      <a class="heart-basket">
-          <i class="fa-solid fa-heart"></i>
-      </a>
   </div>
   <% @basket = Basket.where(business_id: @business.id).first %>
   <div class="basket-button-container">
@@ -61,14 +58,22 @@
       <span><i class="fa-solid fa-star"></i><%=(@rating/@review.count).round(1)%></span>
       <span><i class="fa-solid fa-basket-shopping"></i>Panier suprise</i></span>
       <span><i class="fa-solid fa-clock"></i>À récupérer aujourd'hui 16h-20h</span>
+         <span>
+      <i class="fa-solid fa-location-dot">
+      <p></p>
+      </i> <%= @business.address%></span>
     </div>
 
-    <div class="container-address">
+    <%
+=begin%>
+ <div class="container-address">
       <span>
       <i class="fa-solid fa-location-dot">
       <p></p>
       </i> <%= @business.address%></span>
     </div>
+<%
+=end%>
 
 
 
