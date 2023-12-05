@@ -40,4 +40,10 @@
   </div>
 
   <!-- Bouton en dehors de container-low -->
+
+  <%if @check == false%>
   <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Réserver</a>
+  <%else%>
+  <h1>Reservé</h1>
+      <%end%>
+</div>
