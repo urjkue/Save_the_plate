@@ -18,11 +18,14 @@
   <body>
     <%# <%= controller_name %>
     <%# <%= action_name %>
-    <%# <%= current_page?(favourit_path) %> 
+    <%# <%= current_page?(favourit_path) %>
 
 
     <%= render "shared/flashes" %>
+    <%if current_page?(splashlogin_path)%>
+    <%else%>
     <%= render "shared/navbarnew" %>
+    <%end%>
     <%= yield %>
 
   </body>

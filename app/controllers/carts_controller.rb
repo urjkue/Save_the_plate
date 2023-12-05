@@ -20,10 +20,10 @@ class CartsController < ApplicationController
       pick_up: @pick_up
     )
     if @booking.save
-     redirect_to cart_thx_path , notice: 'Booking was not successfully created.'
+     redirect_to cart_thx_path
     else
 
-      redirect_to home_path , notice: 'Booking was not successfully created.'
+      redirect_to home_path
     end
   end
   def edit
@@ -40,10 +40,10 @@ class CartsController < ApplicationController
        params[:expdate].to_s.match?(/\A\d{2}\/\d{2}\z/) && # MM/YY format for expiration date
        params[:cvv].to_s.match?(/\A\d{3,4}\z/)            # 3 or 4 digit CVV
       # Form fields match the expected regex patterns
-      redirect_to cart_create_path, notice: 'Form is filled correctly, redirecting...'
+      redirect_to cart_create_path
     else
       # Form is not completely filled or contains invalid data, show an error or redirect back to the form
-      redirect_to cart_payment_path, alert: 'Denied!'
+      redirect_to cart_payment_path
     end
 
   end
