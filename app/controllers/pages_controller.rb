@@ -7,11 +7,11 @@ class PagesController < ApplicationController
     @ranbus = Business.all.sample(5)
     @ranbustwo = Business.all.sample(5)
     if params[:query].present?
-      @bus = Basket.where(name: params[:query]).first
+      @bus  = Business.where("name ILIKE ?", "%#{params[:query]}%").first
      if(@bus.nil?)
-      @bus =  Business.where(name: params[:query]).first
+      @bus  = Basket.where("name ILIKE ?", "%#{params[:query]}%").first
      elsif(@bus.nil?)
-      @bus = nil
+      @bus  = nil
       rediect_to home_path
      end
     else
@@ -26,10 +26,10 @@ class PagesController < ApplicationController
   if params[:query].present?
     @businesses.each do |business|
       if business.name == params[:query]
-        @bus = business
+        @bus  = business
         break
       else
-        @bus = nil
+        @bus  = Business.where("name ILIKE ?", "%#{params[:query]}%").first
       end
     end
   else
