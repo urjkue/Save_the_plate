@@ -1,34 +1,37 @@
 
 <div class="page-show">
-
-    <div class="round-basket">
-      <%
-=begin%>
- <a class="heart-basket">
+  <div class="round-basket">
+      <a class="heart-basket">
           <i class="fa-solid fa-heart"></i>
       </a>
-<%
-=end%>
-    </div>
-    <% @basket = Basket.where(business_id: @business.id).first %>
-    <div class="basket-button-container">
-      <%= link_to :back, class: "basket-back-button" do %>
-        <i class="fas fa-chevron-left"></i>
+  </div>
+  <% @basket = Basket.where(business_id: @business.id).first %>
+  <div class="basket-button-container">
+    <%= link_to :back, class: "basket-back-button" do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
 
-          <% if Favourit.exists?(basket_id: @basket.id) %>
-          <div class="round-basket">
-                 <a class="heart-basket" href="<%= favourit_destroy_path(@basket.id) %>">
-                  <i class="fa-solid fa-heart"></i>
-                  </div>
-                  <% else %>
-                     <div class="round-basket">
-                <a class="heart-basket" href="<%= favourit_new_path(@basket.id) %>">
-                  <i class="fa-regular fa-heart"></i>
-                  </div>
-                <% end %>
-      <% end %>
+    <% if Favourit.exists?(basket_id: @basket.id) %>
+      <div class="round-basket">
+        <a class="heart-basket" href="<%= favourit_destroy_path(@basket.id) %>">
+          <i class="fa-solid fa-heart"></i>
+        </a>
+      </div>
+    <% else %>
+      <div class="round-basket">
+        <a class="heart-basket" href="<%= favourit_new_path(@basket.id) %>">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+      </div>
+    <% end %>
 
-    </div>
+  </div>
+
+  <div class="basket-button-container">
+    <%= link_to :back, class: "basket-back-button" do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
   <div class="banner">
 
       <%= image_tag(@business.image_url, alt: @business.name, class:"img") if @business.image_url.present?%>
@@ -67,16 +70,17 @@
       </i> <%= @business.address%></span>
     </div>
 
-  <div class="container-low">
-    <h1>Ce que vous pouvez avoir</h1>
-    <p><%= @baskets.description %></p>
+
+
+    <div class="container-low">
+      <h1>Ce que vous pouvez avoir</h1>
+      <p><%= @baskets.description %></p>
+    </div>
+
+    <%if @check == false%>
+      <a href="<%= cart_new_path(@baskets.id) %>" class="surprise-button">Réserver</a>
+    <%else%>
+      <h1>Reservé</h1>
+    <%end%>
   </div>
-
-  <!-- Bouton en dehors de container-low -->
-
-  <%if @check == false%>
-  <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Réserver</a>
-  <%else%>
-  <h1>Reservé</h1>
-      <%end%>
 </div>
