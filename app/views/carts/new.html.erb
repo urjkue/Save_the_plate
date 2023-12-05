@@ -9,21 +9,19 @@
 
   <h1 id="img-gif-basket"><%= image_tag("Surprise basket.gif", alt: "Surprise Basket GIF") %></h1>
 
+
   <div class="container-surprise-basket">
+    <h1>Votre panier est une surprise</h1>
     <div class="content">
-      <h1>Votre panier est une surprise</h1>
       <p>On aimerait pouvoir vous dire ce qu'il y aura exactement dans votre Panier Surprise - mais cela sera toujours une surprise! Le commerçant le remplira de ses invendus du jour. Pour toute question sur les allergènes ou la composition, veuillez demander au commerçant pendant la collecte.</p>
     </div>
 
-    <div class="button">
-      <%= link_to "Book", cart_payment_path(@params), class: "custom-button" %>
-    </div>
+      <%= link_to "J'ai compris !", cart_payment_path(@params), class: "surprise-button" %>
   </div>
 
 <% else %>
   <div class="login">
     <!-- Link to Devise default login page -->
-    <a href="<%= new_user_session_path %>" class="login-link">Login</a>
+    <a href="<%= new_user_session_path %>" class="login-link">Se connecter</a>
   </div>
 <% end %>
-

@@ -1,16 +1,16 @@
 
 <div class="page-show">
 
-    <div class="round-basket">
-      <a class="heart-basket">
-          <i class="fa-solid fa-heart"></i>
-      </a>
-    </div>
-    <div class="basket-button-container">
-      <%= link_to :back, class: "basket-back-button" do %>
-        <i class="fas fa-chevron-left"></i>
-      <% end %>
-    </div>
+  <div class="round-basket">
+    <a class="heart-basket">
+        <i class="fa-solid fa-heart"></i>
+    </a>
+  </div>
+  <div class="basket-button-container">
+    <%= link_to :back, class: "basket-back-button" do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
   <div class="banner">
       <%= image_tag(@business.image_url, alt: @business.name, class:"img") if @business.image_url.present?%>
   </div>
@@ -28,7 +28,7 @@
       <span><i class="fa-solid fa-basket-shopping"></i>Panier suprise</i></span>
       <span><i class="fa-solid fa-clock"></i>À récupérer aujourd'hui 16h-20h</span>
     </div>
-
+  </div>
 
     <%# <div class="container-address">
       <span><i class="fa-solid fa-location-dot"></i>address</span>
@@ -39,11 +39,10 @@
     <p><%= @baskets.description %></p>
   </div>
 
-  <!-- Bouton en dehors de container-low -->
-
   <%if @check == false%>
-  <a href="<%= cart_new_path(@baskets.id) %>" class="custom-button">Réserver</a>
+    <a href="<%= cart_new_path(@baskets.id) %>" class="surprise-button">Réserver</a>
   <%else%>
-  <h1>Reservé</h1>
-      <%end%>
+    <h1>Reservé</h1>
+  <%end%>
+
 </div>
