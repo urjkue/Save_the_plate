@@ -1,3 +1,25 @@
+ <div class="profile-button-container">
+      <%= link_to :back, class: "back-button" do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+    <div class="containersearchcategory">
+    <%= form_with url: category_path{params[:name]}, method: :get, class: "d-flex" do %>
+      <div class="searchcontainercategory">
+        <i class="fa fa-search" style="color: #ccc;"></i>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control custom-rounded",
+          placeholder: "Rechercher"
+        %>
+      </div>
+      <%= submit_tag "Search", name: "", class: "btn-hidden" %>
+    <% end %>
+  </div>
+</div>
+
+<% if @bus.nil?%>
+
 
 <div class="page-category">
 <div class="card-container-category">
@@ -19,14 +41,16 @@
                 <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
                 <p> À récupérer aujourd'hui 16h - 20h</p>
               </div>
-              <div class="round">
-                 <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+             <div class="round">
                 <% if Favourit.exists?(basket_id: @basket.id) %>
+
+                 <a class="heart" href="<%= favourit_destroy_path(@basket.id) %>">
                   <i class="fa-solid fa-heart"></i>
                 <% else %>
+                <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
                   <i class="fa-regular fa-heart"></i>
                 <% end %>
-                </a><a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                </a>
                 </a>
               </div>
             </div>
@@ -40,3 +64,47 @@
         <% end %>
 </div>
 </div>
+
+
+<%else%>
+<div class="card-container-category">
+  <% business = @bus%>
+        <%@rating = 0%>
+          <% @basket = Basket.where(business_id: business.id).first %>
+          <% @review =  Review.where(business_id: business.id).all%>
+          <%@review.each do |reve|%>
+          <% @rating =  @rating + reve.rating%>
+          <%end%>
+          <div class="card-trip">
+            <%= link_to "", basket_path(@basket.id), class: "clickable2" %>
+            <a href="<%= basket_path(@basket.id) %>"></a>
+            <%= image_tag(business.image_url, alt: business.name) if business.image_url.present? %>
+            <span></span>
+            <div class="card-trip-infos">
+              <div>
+                <h1 class="card_title"><%= business.name %></h1>
+                <a href="<%= basket_path(@basket.id) %>">Panier Surprise</a>
+                <p> À récupérer aujourd'hui 16h - 20h</p>
+              </div>
+             <div class="round">
+                <% if Favourit.exists?(basket_id: @basket.id) %>
+
+                 <a class="heart" href="<%= favourit_destroy_path(@basket.id) %>">
+                  <i class="fa-solid fa-heart"></i>
+                <% else %>
+                <a class="heart" href="<%= favourit_new_path(@basket.id) %>">
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
+                </a>
+                </a>
+              </div>
+            </div>
+            <div class="card-trip-infos pt-0">
+              <div>
+                <span><i class="fa-solid fa-star"></i> <%=(@rating/@review.count).round(1)%></span>
+              </div>
+              <h2><%= @basket.price.round() %> MUR</h2>
+            </div>
+          </div>
+</div>
+<%end%>
