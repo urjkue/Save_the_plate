@@ -1,5 +1,45 @@
 /* Styling for the bookings section */
 
+// My booking back button
+
+
+.booking-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 60px;
+
+  h1 {
+    padding-top: 0.5rem;
+  }
+}
+
+// Back- button
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 20px;
+  background-color: #7BB35D;
+  opacity: 0.5;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #5e8e3e;
+}
+
+.fa-chevron-left {
+  margin-right: 5px;
+}
+
+// Booking
+
 .booking {
   margin-top: 20px;
 }
