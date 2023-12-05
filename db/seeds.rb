@@ -81,25 +81,25 @@ supermarket_descriptions = [
 
 # Define Cloudinary image URLs for each category
 bakery_images = [
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1701700088/Bakery/prrbe3moq7chmm4u3iyt.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152375/Bakery/mae-mu-_h-2jrL9cMU-unsplash_wgsewi.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152375/Bakery/yeh-xintong-go3DT3PpIw4-unsplash_rxcajc.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152374/Bakery/mae-mu-m9pzwmxm2rk-unsplash_du53ci.jpg'
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1701700088/Bakery/prrbe3moq7chmm4u3iyt.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152375/Bakery/mae-mu-_h-2jrL9cMU-unsplash_wgsewi.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152375/Bakery/yeh-xintong-go3DT3PpIw4-unsplash_rxcajc.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152374/Bakery/mae-mu-m9pzwmxm2rk-unsplash_du53ci.jpg'
 ]
 restaurant_images = [
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152364/Restaurant/jakub-kapusnak-4f4YZfDMLeU-unsplash_tvicnt.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152364/Restaurant/orijit-chatterjee-wEBg_pYtynw-unsplash_mmzcck.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152357/Restaurant/ali-inay-y3aP9oo9Pjc-unsplash_avmqkr.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152349/Restaurant/debbie-tea-LO7rNP0LRro-unsplash_v2nsbo.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152340/Restaurant/mahmoud-fawzy-n1DePkKznLY-unsplash_krmasu.jpg'
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60//v1700152364/Restaurant/jakub-kapusnak-4f4YZfDMLeU-unsplash_tvicnt.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152364/Restaurant/orijit-chatterjee-wEBg_pYtynw-unsplash_mmzcck.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152357/Restaurant/ali-inay-y3aP9oo9Pjc-unsplash_avmqkr.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152349/Restaurant/debbie-tea-LO7rNP0LRro-unsplash_v2nsbo.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152340/Restaurant/mahmoud-fawzy-n1DePkKznLY-unsplash_krmasu.jpg'
 ]
 supermarket_images = [
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152260/Supermarket/tara-clark-Gk8LG7dsHWA-unsplash_vjigkz.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152257/Supermarket/oren-elbaz-4vJepwg_aB0-unsplash_epxau6.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152251/Supermarket/nrd-D6Tu_L3chLE-unsplash_akhg4o.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152257/Supermarket/nrd-7vvNhFSBW2Y-unsplash_ffvf9h.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/v1700152260/Supermarket/rob-maxwell-6Xb0-zJM_lU-unsplash_hbsz0m.jpg'
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152260/Supermarket/tara-clark-Gk8LG7dsHWA-unsplash_vjigkz.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152257/Supermarket/oren-elbaz-4vJepwg_aB0-unsplash_epxau6.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152251/Supermarket/nrd-D6Tu_L3chLE-unsplash_akhg4o.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152257/Supermarket/nrd-7vvNhFSBW2Y-unsplash_ffvf9h.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152260/Supermarket/rob-maxwell-6Xb0-zJM_lU-unsplash_hbsz0m.jpg'
 ]
 business_count = 0
 @user = User.create!(
