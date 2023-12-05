@@ -7,9 +7,9 @@
   //add a little margin between the items
   margin: 0 10px;
   //add a little margin between the container and the edge of the screen
-  padding: 10px;
+  padding: 5px;
   //add a little space between the items
-  gap: 10px;
+  gap: 5px;
 }
 .page-category{
   height: 173vh;
@@ -25,4 +25,6 @@
     position: relative;
     display: flex;
     width: 100%;
+    top: -53px;
+    left: 41px;
   }
