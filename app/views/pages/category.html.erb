@@ -2,7 +2,15 @@
       <%= link_to :back, class: "back-button" do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
+      <%if @category == "Bakery"%>
+      <h1>Boulangeries</h1>
+      <%elsif @category == "restaurant"%>
+      <h1>Restaurants</h1>
+      <%else%>
+      <h1>Supermarchés</h1>
+      <%end%>
     </div>
+
     <div class="containersearchcategory">
     <%= form_with url: category_path{params[:name]}, method: :get, class: "d-flex" do %>
       <div class="searchcontainercategory">
@@ -61,6 +69,7 @@
               <h2><%= @basket.price.round() %> MUR</h2>
             </div>
           </div>
+          <p></p>
         <% end %>
 </div>
 </div>
