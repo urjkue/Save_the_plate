@@ -1,66 +1,52 @@
-// .container {
-//   position: relative;
-// }
+.splash-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative; /* Ajoutez une position relative au conteneur pour positionner l'image */
+}
 
-// .splash-image {
-//   position: relative;
-// }
-
-.splash_click {
+.splash-image {
   position: absolute;
-  background-color: transparent;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  // z-index: 7;
-  clip-path: ellipse(60% 50% at 50% 20%);
-  background-image: url("https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152377/Bakery/angelo-pantazis-2-U0A2tNYhM-unsplash_hbsk6h.jpg");
+  clip-path: ellipse(65% 50% at 50% 20%);
+  background-image: url("https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1701861844/bmbsz3mgmfnkrp2tuytg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 .container-demarrer {
- top:70%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 140px;
 }
 
 .splash-button {
-  /* Button styles */
-  position: absolute;
-  // left: 150px;
-  // margin: 0 auto;
   padding: 12px 24px;
   background-color: #201095;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+  transition: background-color 0.3s ease-in-out;
 }
 
 .splash-button:hover {
-  /* Hover effect styles */
   background-color: #201095;
 }
 
 @media screen and (max-width: 768px) {
-  /* Adjust button size for smaller screens */
   .splash-button {
-
     font-size: 14px;
   }
 }
-// .blue-button {
-//   background-color: #201095;
-//   color: #fff;
-//   border: none;
-//   padding: 10px 20px;
-//   border-radius: 10px;
-//   cursor: pointer;
-//   font-size: 16px;
-// }
-// @media (max-width: 600px) {
-//   .blue-button {
-//     font-size: 14px;
-//     padding: 8px 16px;
-//   }
-// }
