@@ -7,7 +7,7 @@
       <h1>Mes commandes</h1>
     </div>
 
-<div class="card-container-category">
+<div class="card-container-booking">
         <%@booking.each do |bookin|%>
         <%business = Business.where(id: bookin.business_id).first%>
         <%@basket = Basket.where(id: bookin.basket_id).first%>

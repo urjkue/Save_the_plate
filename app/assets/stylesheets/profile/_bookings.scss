@@ -7,7 +7,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 60px;
+  padding-bottom: 10px;
 
   h1 {
     padding-top: 0.5rem;
@@ -39,6 +39,20 @@
 }
 
 // Booking
+
+.card-container-booking{
+  //center it
+  display: flex;
+  justify-content: center;
+  //make the items wrap inside the container
+  flex-wrap: wrap;
+  //add a little margin between the items
+  margin: 0 10px;
+  //add a little margin between the container and the edge of the screen
+  padding: 5px;
+  //add a little space between the items
+  gap: 15px;
+}
 
 .booking {
   margin-top: 20px;

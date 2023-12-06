@@ -22,7 +22,7 @@
 
 
     <%= render "shared/flashes" %>
-    <%if current_page?(splashlogin_path)%>
+    <%if (current_page?(splashlogin_path)) || (current_page?(cart_thx_path))%>
     <%else%>
     <%= render "shared/navbarnew" %>
     <%end%>
