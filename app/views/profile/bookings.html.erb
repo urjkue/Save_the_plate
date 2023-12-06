@@ -1,6 +1,13 @@
 <% if current_user %>
-  <h1>Bookings:</h1>
-<div class="card-container-category">
+
+      <div class="booking-button-container">
+      <%= link_to :back, class: "back-button" do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+      <h1>Mes commandes</h1>
+    </div>
+
+<div class="card-container-booking">
         <%@booking.each do |bookin|%>
         <%business = Business.where(id: bookin.business_id).first%>
         <%@basket = Basket.where(id: bookin.basket_id).first%>

@@ -13,7 +13,7 @@ class FavouritesController < ApplicationController
       @check = Favourit.where(basket_id: @basket.id).first
       if @check == nil
       @favs = Favourit.new
-      redirect_to favourit_create_path(@basket.id),notice: "fav created."
+      redirect_to favourit_create_path(@basket.id)
       else
         redirect_to favourit_path
       end

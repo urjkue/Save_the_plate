@@ -1,3 +1,45 @@
+.page-payment {
+  height: 100vh; /* Ajusté à 100vh au lieu de 200vh pour éviter un défilement excessif */
+  overflow-y: scroll;
+}
+
+.payment-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // position: sticky; /* Ajout de la propriété position sticky pour maintenir le conteneur en haut lors du défilement */
+  top: 0; /* Spécifie le haut du conteneur sticky */
+  background-color: #ffffff; /* Ajout d'une couleur de fond pour la visibilité */
+  z-index: 1000; /* Assure que le conteneur reste au-dessus des autres éléments */
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajout d'une légère ombre pour distinguer le conteneur de la page */
+}
+
+
+// Back- button
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 20px;
+  background-color: #7BB35D;
+  opacity: 0.5;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #5e8e3e;
+}
+
+.fa-chevron-left {
+  margin-right: 5px;
+}
+
+
 /* Styling for the payment form */
 
 .payment-form {
@@ -25,12 +67,13 @@
 }
 
 .payment-form input[type="submit"] {
-  background-color: blue;
+  background-color: #201095;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 
 .payment-form input[type="submit"]:hover {
-  background-color: navy;
+  background-color: #201095;
 }
+

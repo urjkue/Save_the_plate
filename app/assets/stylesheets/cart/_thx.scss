@@ -1,0 +1,58 @@
+/* Ajoutez ces styles pour ajuster la taille du logo */
+.logo {
+  width: 195px; /* Ajustez la largeur selon vos besoins */
+  height: auto; /* Maintient le ratio d'aspect d'origine */
+  // margin-top: 20px;
+}
+
+
+.thanks-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start; /* Modifier vers le bas */
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.thanks-image {
+  position: absolute;
+  bottom: 0; /* Modifier vers le bas */
+  left: 0;
+  width: 100%; /* Modifier la taille de l'image */
+  height: 70%; /* Modifier la taille de l'image */
+  clip-path: ellipse(65% 50% at 50% 80%); /* Inverser l'arrondi vers le haut */
+  background-image: url("https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1701861844/bmbsz3mgmfnkrp2tuytg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container-thanks {
+  position: relative;
+  text-align: center;
+  margin-top: 12px; /* Ajuster la marge supérieure pour descendre le contenu */
+}
+
+.container-thanks h1 {
+  margin-bottom: 20px; /* Ajouter de l'espace en bas du h1 */
+  margin-top: 40px;
+}
+
+.thanks-button {
+  padding: 12px 24px;
+  background-color: #201095;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 8px; /* Ajuster l'espace entre le texte et le bouton */
+  display: inline-block; /* Assurez-vous que le bouton ne prend que l'espace nécessaire */
+}
+
+.thanks-button:hover {
+  background-color: #201095;
+}

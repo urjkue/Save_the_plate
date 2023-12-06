@@ -51,31 +51,27 @@
     <div class="container-title-price">
       <h1 style="margin-top: 10px"><%= @business.name %></h1>
       <div class="basket-price">
-        <h2><%= @baskets.price %>MUR</h2>
+        <h2><%= (@baskets.price).round(0) %> MUR</h2>
       </div>
     </div>
+
     <div class="basket-infos">
       <span><i class="fa-solid fa-star"></i><%=(@rating/@review.count).round(1)%></span>
       <span><i class="fa-solid fa-basket-shopping"></i>Panier suprise</i></span>
       <span><i class="fa-solid fa-clock"></i>À récupérer aujourd'hui 16h-20h</span>
-         <span>
-      <i class="fa-solid fa-location-dot">
-      <p></p>
-      </i> <%= @business.address%></span>
     </div>
 
-    <%
-=begin%>
- <div class="container-address">
-      <span>
-      <i class="fa-solid fa-location-dot">
-      <p></p>
-      </i> <%= @business.address%></span>
+    <div class="container">
+      <div class="container-localisation">
+        <div class="header-localisation">
+          <div class ="parameter-localisation">
+          <i class="fa-solid fa-location-dot">
+          <span></i><%= @business.address%></span>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
     </div>
-<%
-=end%>
-
-
 
     <div class="container-low">
       <h1>Ce que vous pouvez avoir</h1>
@@ -83,9 +79,12 @@
     </div>
 
     <%if @check == false%>
-      <a href="<%= cart_new_path(@baskets.id) %>" class="surprise-button">Réserver</a>
+      <a href="<%= cart_new_path(@baskets.id) %>" class="basket-button">Réserver</a>
     <%else%>
-      <h1>Reservé</h1>
+     <div class="reserved">
+        <h2><strong>Panier déjà reservé !</strong></h2>
+     </div>
+      <a href="<%= profile_bookings_path %>" class="basket-button">Voir mes commandes</a>
     <%end%>
   </div>
 </div>
