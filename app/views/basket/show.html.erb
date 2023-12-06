@@ -66,7 +66,7 @@
         <div class="header-localisation">
           <div class ="parameter-localisation">
           <i class="fa-solid fa-location-dot">
-          <span></i> <%= @business.address%></span>
+          <span></i><%= @business.address%></span>
           </div>
           <i class="fa-solid fa-chevron-right"></i>
         </div>
@@ -79,10 +79,12 @@
     </div>
 
     <%if @check == false%>
-      <a href="<%= cart_new_path(@baskets.id) %>" class="surprise-button">Réserver</a>
+      <a href="<%= cart_new_path(@baskets.id) %>" class="basket-button">Réserver</a>
     <%else%>
-      <h1>Panier déjà reservé !</h1>
-      <a href="<%= profile_bookings_path %>" class="surprise-button">Voir mes commandes</a>
+     <div class="reserved">
+        <h2><strong>Panier déjà reservé !</strong></h2>
+     </div>
+      <a href="<%= profile_bookings_path %>" class="basket-button">Voir mes commandes</a>
     <%end%>
   </div>
 </div>

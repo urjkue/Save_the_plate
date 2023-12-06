@@ -1,3 +1,10 @@
+<div class="payment-button-container">
+  <%= link_to :back, class: "back-button" do %>
+    <i class="fas fa-chevron-left"></i>
+  <% end %>
+  <h1>Méthodes de paiement</h1>
+</div>
+
 <form action="<%= cart_show_path(@params) %>" method="post" class="payment-form">
   <label for="fname">Prénom:</label><br>
   <input type="text" id="fname" name="fname" value="John"><br>
@@ -17,3 +24,7 @@
   <p>En cliquant sur Soumettre, vous acceptez nos conditions générales.</p>
   <input type="submit" value="Payer">
 </form>
+
+<div class="page-payment">
+  <!-- Le reste de votre contenu de page ici -->
+</div>
