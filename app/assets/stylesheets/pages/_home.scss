@@ -168,12 +168,13 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // width: 270px;
-  border-radius: 30px;
-  width: calc(100vh - 30px);
+  border-radius: 15px;
+  width: calc(100vh - 15px);
+  padding-bottom: 5px;
 }
 .card-trip > img {
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   height: 80px;
   width: calc(100vw - 30px);
   object-fit: cover;
