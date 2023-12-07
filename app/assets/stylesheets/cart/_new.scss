@@ -1,3 +1,12 @@
+
+
+.page-scroll{
+  height: 150vh;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .new-button-container {
   display: flex;
   justify-content: flex-start;
