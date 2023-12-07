@@ -10,5 +10,16 @@ class BusinessesController < ApplicationController
       }
     end
   end
+  def show
+    @basket = Basket.find(params[:id])
+    @businesses = Business.where(id:@basket.business_id).all
+    @markers = @businesses.geocoded.map do |business|
+      {
+        lat: business.latitude,
+        lng: business.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {business: business})
+      }
+    end
+  end
 
 end

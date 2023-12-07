@@ -1,3 +1,12 @@
+
+
+.page-scroll{
+  height: 150vh;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .new-button-container {
   display: flex;
   justify-content: flex-start;
@@ -65,6 +74,7 @@
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
+  width: 80vw;
 }
 
 .surprise-button:hover {

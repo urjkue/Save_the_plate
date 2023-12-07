@@ -41,6 +41,11 @@ class PagesController < ApplicationController
 
   end
   def splashlogin
-
+  #   redirect_after_delay(splashlogin_path, 1)
+  # end
+  # private
+  # def redirect_after_delay(path, delay)
+  #   render js: "setTimeout(function() { window.location.href = '#{path}'; }, #{delay * 1000});"
+  # end
   end
 end
