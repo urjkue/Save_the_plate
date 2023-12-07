@@ -66,6 +66,7 @@
 }
 
 
+
 // Produit information (rating, prix...)
 
 .basket-description {
@@ -157,6 +158,10 @@
   color: #7BB35D;
 }
 
+.address{
+  color: #7BB35D;
+}
+
 // Description
 
 .container-low {
@@ -206,6 +211,10 @@
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
   margin-top: 15px;
+  width: 94vw;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.15rem;
 }
 
 .basket-button:hover {

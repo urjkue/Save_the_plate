@@ -33,12 +33,13 @@
 }
 
 .splash-button {
-  padding: 12px 24px;
+  padding: 18px 80px;
   background-color: #201095;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
+  font-weight: 700;
 }
 
 .splash-button:hover {
@@ -47,6 +48,6 @@
 
 @media screen and (max-width: 768px) {
   .splash-button {
-    font-size: 14px;
+    font-size: 16px;
   }
 }

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#splashlogin"
+  root to: "pages#splashscreen"
   resources :businesses
   get "/home",to: "pages#home", as: :home
   get "/splash/login",to: "pages#splashlogin", as: :splashlogin

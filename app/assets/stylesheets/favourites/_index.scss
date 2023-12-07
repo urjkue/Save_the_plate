@@ -4,10 +4,19 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 20px;
 
   h1 {
     padding-top: 0.5rem;
   }
+}
+
+.scroll_fav{
+  height: 300vh;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 // Back- button
