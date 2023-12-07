@@ -33,50 +33,53 @@ locations = [
   { address: 'Moka, Mauritius', latitude: -20.2356, longitude: 57.4964 },
   { address: 'Vacoas-Phoenix, Mauritius', latitude: -20.2986, longitude: 57.4783 }
 ]
+
 bakery_name = [
-  "La Baguette Dorée",
-  "La Boulangerie des îles",
-  "Pains et Délices",
-  "Le Pétrin Magique",
-  "Au Fournil Gourmand"
+  "Le Paradis du Pain",
+  "Au Four Kréol",
+  "Pains et Délices Îlois",
+  "Le Pétrin des Îles",
+  "La Boulangerie de Basile"
 ]
+
 restaurant_name = [
-  "Le Délice Épicurien",
-  "La Table Enchantée",
-  "Saveurs Divines",
-  "L'Auberge Gourmande",
+  "Le Délice Gourmand",
+  "La Table Enchantée Kréol",
+  "Saveurs Zordi",
+  "Le Wagon Gourmand",
   "Le bon goût"
 ]
+
 supermarket_name = [
-  "Supermarché Étoile",
-  "Marché Fantastique",
+  "Supermarché Étoilé",
+  "Marché Fantastik",
   "Supermarché Horizon",
-  "Épicentre Marchand" ,
+  "Supermarché des Kokottes" ,
   "Magasin des Merveilles"
 ]
 
 restaurant_descriptions = [
-"Découvrez une expérience culinaire inoubliable avec notre panier surprise du jour. Des saveurs exquises et des créations uniques vous attendent. Laissez-vous surprendre par notre chef ! Explorez notre carte diversifiée pour des choix gastronomiques infinis.",
-"Plongez-vous dans un monde de délices avec notre panier surprise. Des plats raffinés et des combinaisons de saveurs magiques pour une expérience gastronomique extraordinaire. Nos serveurs attentifs veilleront à ce que votre repas soit une expérience mémorable.",
-"Embarquez pour un voyage gustatif avec notre panier surprise. Des plats divins préparés avec passion vous attendent. Laissez-nous réveiller vos papilles ! Notre ambiance chaleureuse et notre décor élégant complètent parfaitement votre expérience culinaire.",
-"Découvrez le meilleur de notre cuisine avec notre panier surprise. Des plats savoureux, des ingrédients de qualité et une expérience gastronomique à couper le souffle. Nous sommes fiers de créer des moments spéciaux pour nos clients, que ce soit une célébration ou une soirée décontractée.",
-"Explorez des saveurs du monde entier avec notre panier surprise. Des plats inspirés de différentes cultures pour un voyage culinaire unique. Notre menu soigneusement élaboré offre quelque chose pour chaque palais, garantissant une satisfaction culinaire à chaque visite.",
+"Découvrez une expérience culinaire inoubliable avec notre panier surprise du jour. Des saveurs exquises et des créations uniques vous attendent. Laissez-vous surprendre par notre chef ! Explorez notre carte diversifiée pour des choix gastronomiques infinis qui célèbrent la richesse des saveurs locales.",
+"Plongez-vous dans un monde de délices avec notre panier surprise. Des plats raffinés et des combinaisons de saveurs magiques pour une expérience gastronomique extraordinaire. Nos serveurs attentifs veilleront à ce que votre repas soit une expérience mémorable, teintée de l'hospitalité chaleureuse de l'île Maurice.",
+"Embarquez pour un voyage gustatif avec notre panier surprise. Des plats divins préparés avec passion vous attendent. Laissez-nous réveiller vos papilles ! Notre ambiance chaleureuse et notre décor élégant complètent parfaitement votre expérience culinaire, transformant chaque repas en une célébration de la cuisine mauricienne.",
+"Chez nous, chaque bouchée est une expérience à couper le souffle, tout comme l'apprentissage au Bootcamp Le Wagon. Fiers de créer des moments spéciaux, que ce soit pour une célébration ou une soirée décontractée, notre cuisine fusionne l'authenticité mauricienne avec la créativité inspirée du monde du code. Laissez-vous emporter par cette expérience où la gastronomie et le codage se rencontrent harmonieusement.",
+"Explorez des saveurs du monde entier avec notre panier surprise. Des plats inspirés de différentes cultures pour un voyage culinaire unique. Notre menu soigneusement élaboré offre quelque chose pour chaque palais, garantissant une satisfaction culinaire à chaque visite avec une touche mauricienne.",
 ]
 
 bakery_descriptions = [
-"Éveillez vos sens avec notre panier surprise rempli de délices croustillants. Baguettes fraîches, pains spéciaux et douceurs sucrées vous réservent une expérience gourmande. Laissez-nous être votre destination pour des plaisirs de boulangerie quotidiens.",
-"Redécouvrez le plaisir du pain avec notre panier surprise. Des créations uniques, des saveurs variées et des douceurs qui réchauffent le cœur. Chaque morceau est une déclaration d'amour pour l'art de la boulangerie.",
-"Laissez-vous charmer par notre panier surprise rempli de douceurs divines. Des pâtisseries délicates, des biscuits artisanaux et bien plus encore. Notre équipe de boulangers dévoués met tout en œuvre pour créer des délices qui émerveillent vos papilles.",
-"Plongez dans un monde féerique de saveurs avec notre panier surprise. Des créations magiques, des pains enchantés et des surprises sucrées vous attendent. Nous sommes votre endroit de prédilection pour des moments sucrés inoubliables.",
-"Découvrez le plaisir du fournil avec notre panier surprise. Des pains croustillants, des gâteaux moelleux et des saveurs gourmandes pour combler vos envies. Chaque bouchée vous transporte dans l'art artisanal de la boulangerie, où la qualité est notre promesse.",
+"Éveillez vos sens avec notre panier surprise rempli de délices croustillants. Baguettes fraîches, pains spéciaux et douceurs sucrées vous réservent une expérience gourmande. Laissez-nous être votre destination pour des plaisirs de boulangerie quotidiens, mettant à l'honneur l'art authentique de la fabrication du pain dans le style mauricien.",
+"Redécouvrez le plaisir du pain avec notre panier surprise. Des créations uniques, des saveurs variées et des douceurs qui réchauffent le cœur. Chaque morceau est une déclaration d'amour pour l'art de la boulangerie, célébrant la diversité des pains mauriciens traditionnels.",
+"Laissez-vous charmer par notre panier surprise rempli de douceurs divines. Des pâtisseries délicates, des biscuits artisanaux et bien plus encore. Notre équipe de boulangers dévoués met tout en œuvre pour créer des délices qui émerveillent vos papilles, en ajoutant une touche mauricienne à chaque bouchée.",
+"Plongez dans un monde féerique de saveurs avec notre panier surprise. Des créations magiques, des pains enchantés et des surprises sucrées vous attendent. Nous sommes votre endroit de prédilection pour des moments sucrés inoubliables, en fusionnant la magie de la boulangerie avec le charme mauricien.",
+"Découvrez le plaisir du fournil avec notre panier surprise. Des pains croustillants, des gâteaux moelleux et des saveurs gourmandes pour combler vos envies. Chaque bouchée vous transporte dans l'art artisanal de la boulangerie, où la qualité est notre promesse, inspirée par la richesse des ingrédients mauriciens.",
 ]
 
 supermarket_descriptions = [
-"Explorez notre panier surprise rempli d'étoiles du quotidien. Des produits frais, des trouvailles inattendues et des pépites gourmandes pour un shopping étoilé. Parcourez nos allées pour découvrir des offres spéciales et des promotions exclusives.",
-"Découvrez le fantastique avec notre panier surprise. Des produits de qualité, des saveurs surprenantes et des trouvailles uniques pour un quotidien extraordinaire. Faites de chaque visite une aventure culinaire en explorant notre sélection soigneusement choisie de produits du monde entier.",
-"Faites un voyage autour du monde avec notre panier surprise. Des produits exotiques, des découvertes culinaires et des surprises pour éveiller votre curiosité. Nos étagères regorgent de trésors internationaux qui vous invitent à un périple sensoriel.",
-"Transformez votre routine avec notre panier surprise. Des produits du quotidien de qualité, des promotions spéciales et des surprises enchantées pour chaque panier. Faites de vos courses une expérience agréable en découvrant des produits uniques et en profitant de nos offres exclusives.",
-"Plongez dans un univers de merveilles avec notre panier surprise. Des produits de tous les jours transformés en trouvailles extraordinaires pour un shopping magique. Chaque article sur nos étagères est soigneusement sélectionné pour vous offrir une expérience de magasinage exceptionnelle.",
+"Explorez notre panier surprise rempli d'étoiles du quotidien. Des produits frais, des trouvailles inattendues et des pépites gourmandes pour un shopping étoilé. Parcourez nos allées pour découvrir des offres spéciales et des promotions exclusives, mettant en avant les délices locaux de l'île Maurice.",
+"Découvrez le fantastique avec notre panier surprise. Des produits de qualité, des saveurs surprenantes et des trouvailles uniques pour un quotidien extraordinaire. Faites de chaque visite une aventure culinaire en explorant notre sélection soigneusement choisie de produits du monde entier, avec une attention particulière aux produits mauriciens.",
+"Faites un voyage autour du monde avec notre panier surprise. Des produits exotiques, des découvertes culinaires et des surprises pour éveiller votre curiosité. Nos étagères regorgent de trésors internationaux qui vous invitent à un périple sensoriel, tout en mettant en avant la richesse des produits mauriciens.",
+"Transformez votre routine avec notre panier surprise. Des produits du quotidien de qualité, des promotions spéciales et des surprises enchantées pour chaque panier. Faites de vos courses une expérience agréable en découvrant des produits uniques et en profitant de nos offres exclusives, avec une touche mauricienne à chaque coin de rayon.",
+"Plongez dans un univers de merveilles avec notre panier surprise. Des produits de tous les jours transformés en trouvailles extraordinaires pour un shopping magique. Chaque article sur nos étagères est soigneusement sélectionné pour vous offrir une expérience de magasinage exceptionnelle, en mettant en avant la diversité des produits mauriciens.",
 ]
 
 # Define Cloudinary image URLs for each category
@@ -88,10 +91,10 @@ bakery_images = [
   'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152374/Bakery/mae-mu-m9pzwmxm2rk-unsplash_du53ci.jpg'
 ]
 restaurant_images = [
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60//v1700152364/Restaurant/jakub-kapusnak-4f4YZfDMLeU-unsplash_tvicnt.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152364/Restaurant/orijit-chatterjee-wEBg_pYtynw-unsplash_mmzcck.jpg',
-  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152357/Restaurant/ali-inay-y3aP9oo9Pjc-unsplash_avmqkr.jpg',
   'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152349/Restaurant/debbie-tea-LO7rNP0LRro-unsplash_v2nsbo.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152357/Restaurant/ali-inay-y3aP9oo9Pjc-unsplash_avmqkr.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152364/Restaurant/orijit-chatterjee-wEBg_pYtynw-unsplash_mmzcck.jpg',
+  'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60//v1700152364/Restaurant/jakub-kapusnak-4f4YZfDMLeU-unsplash_tvicnt.jpg',
   'https://res.cloudinary.com/dkhggfhkc/image/upload/q_60/v1700152340/Restaurant/mahmoud-fawzy-n1DePkKznLY-unsplash_krmasu.jpg'
 ]
 supermarket_images = [
